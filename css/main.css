@@ -28,3 +28,7 @@ ul.coolification li {
 	display: inline-block;
 	padding: 10px;
 }
+#map {
+	width: 500px;
+	height: 500px;
+}
