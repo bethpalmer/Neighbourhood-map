@@ -104,8 +104,6 @@ var poi = {
 	]
 };
 
-// var categoryList = ko.observableArray(['The Lanes', 'The Beach', 'The Landmarks', 'The Downs', 'The Music Venues']);
-
 var POI = function(data){
 	this.lanes = ko.observableArray(data.name, data.display, data.location);
 	this.beach = ko.observableArray(data.name, data.display, data.location);
@@ -113,37 +111,6 @@ var POI = function(data){
 	this.downs = ko.observableArray(data.name, data.display, data.location);
 	this.music = ko.observableArray(data.name, data.display, data.location);
 };
-
-// var Lanes = function(data){
-// 	this.name = ko.observable(data.name);
-// 	this.location = ko.observable(data.location);
-// };
-
-// var Beach = function(data){
-// 	this.name = ko.observable(data.name);
-// 	this.location = ko.observable(data.location);
-// };
-
-// var Landmark = function(data){
-// 	this.name = ko.observable(data.name);
-// 	this.location = ko.observable(data.location);
-// };
-
-// var Downs = function(data){
-// 	this.name = ko.observable(data.name);
-// 	this.location = ko.observable(data.location);
-// };
-
-// var Music = function(data){
-// 	this.name = ko.observable(data.name);
-// 	this.location = ko.observable(data.location);
-// };
-
-// var Place = function(data){
-// 	this.name = ko.observable(data.name);
-// 	this.category = ko.observable(data.category);
-// 	this.location = ko.observable(data.location);
-// };
 
 /////////////////////  VIEWMODEL ///////////////////////////////
 
@@ -153,15 +120,11 @@ var ViewModel = function(){
 
 	this.poiList = ko.observableArray([]);
 
-
 	var categories = Object.keys(poi);
 	for (var i=0; i<categories.length; i++){
 		self.poiList.push(categories[i]);
 	}
-	// poi.forEach(function(category){
-	// 	self.poiList.push( new POI(category) );
-	// })
-
+	
 	// this.selectedCategory = ko.observable(categoryList()[null]);
 
 	// this.selectCategory = function(clickedCategory){

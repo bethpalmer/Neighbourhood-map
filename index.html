@@ -92,14 +92,26 @@
             
             var locations = [];
 
-            // places.forEach(function(place){
-            //     locations.push(place);
-            // });
+            poi.lanes.forEach(function(obj){
+                locations.push(obj);
+            });
+            poi.beach.forEach(function(obj){
+                locations.push(obj);
+            });
+            poi.landmarks.forEach(function(obj){
+                locations.push(obj);
+            });
+            poi.downs.forEach(function(obj){
+                locations.push(obj);
+            });
+            poi.music.forEach(function(obj){
+                locations.push(obj);
+            });
+
 
             for (var i=0; i < locations.length; i++){
                 var postion = locations[i].location;
                 var name = locations[i].name;
-                var category = locations[i].category;
                 var marker = new google.maps.Marker({
                     map: map,
                     position: postion,
