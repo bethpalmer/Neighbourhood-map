@@ -1,40 +1,40 @@
 var places = [
 		{
-			name: "The Lanes"
+			category: "The Lanes"
 		},
 		{
-			name: "The Beach"
+			category: "The Beach"
 		},
 		{
-			name: "The Landmarks"
+			category: "The Landmarks"
 		},
 		{
-			name: "The Downs"
+			category: "The Downs"
 		},
 		{
-			name: "The Music Venues"
+			category: "The Music Venues"
 		}
 	];
 
-var Place = function(data){
-	this.name = ko.observable(data.name);
+var Category = function(data){
+	this.category = ko.observable(data.category);
 };
 
 var ViewModel = function(){
 
 	var self = this; // When you do this 'this' here is ViewModel object. This can help stop confusion between inner and outer this.
 
-	this.placeList = ko.observableArray([]);
+	this.categoryList = ko.observableArray([]);
 
-	places.forEach(function(place){
-		self.placeList.push( new Place(place) );
+	places.forEach(function(category){
+		self.categoryList.push( new Category(category) );
 	})
 
-	this.currentPlace = ko.observable(this.placeList()[0]);
+	this.currentCategory = ko.observable(this.categoryList()[0]);
 
-	this.changePlace = function(clickedPlace){
-		self.currentPlace(clickedPlace);
-		console.log("Place changed to "+ self.currentPlace(clickedPlace));
+	this.changeCategory = function(clickedCategory){
+		self.currentCategory(clickedCategory);
+		console.log("Category changed to "+ self.currentCategory(clickedCategory));
 	};
 };
 

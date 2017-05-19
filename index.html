@@ -10,7 +10,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="Beth Palmer www.bethpalmer.co.uk">
 
-    <title>Awesome Brighton | Why Brighton is as cool as a cucumber in an ice cold G&amp;T</title>
+    <title>Awesome Brighton | Why is Brighton as cool as an Eskimo's sunglasses?</title>
     <!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> -->
 
     <!-- CSS -->
@@ -25,21 +25,27 @@
 <body>
     
     <header class="container">
-        <div class="row">
+        <div class="row text-center">
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <h1>Brighton</h1>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-8">
-                <h2>Why Brighton is as cool as a cucumber in an ice cold G&amp;T?</h2>
+                <h2>Why is Brighton as cool as an Eskimo's sunglasses?</h2>
             </div>
         </div>
     </header>
 
     <menu class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <ul class="coolification" data-bind="foreach: placeList">
-                    <li data-bind="text: name, click: $parent.changePlace"></li>
+            <div class="col-sm-4">
+                <select data-bind= "options: categoryList,
+                                    optionsText: 'category',
+                                    value: currentCategory,
+                                    optionsCaption: 'Select a reason of cool...'"></select>
+            </div>
+            <div class="col-sm-8 text-right">
+                <ul class="coolification" data-bind="foreach: categoryList">
+                    <li data-bind="text: category, click: $parent.changeCategory"></li>
                 </ul>
             </div>
         </div>
@@ -67,7 +73,7 @@
     <footer>
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h6>Do you have another reason why Brighton is as cool as a cucumber in an ice cold G&amp;T? Get in touch: <a href="mailto:bpalmer360@gmail.com">bpalmer360@gmail.com</a></h6>
+                <h6>Do you have another reason why Brighton is as cool as an Eskimo's sunglasses? Get in touch: <a href="mailto:bpalmer360@gmail.com">bpalmer360@gmail.com</a></h6>
             </div>
         </div>
     </footer>
