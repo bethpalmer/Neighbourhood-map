@@ -125,11 +125,11 @@ var ViewModel = function(){
 		self.poiList.push(categories[i]);
 	}
 	
-	// this.selectedCategory = ko.observable(categoryList()[null]);
+	// this.selectedCategory = ko.observable(self.poiList()[null]);
 
 	// this.selectCategory = function(clickedCategory){
-		// self.selectedCategory(clickedCategory);
-	// 	console.log("Category changed");
+	// 	self.selectedCategory(clickedCategory);
+	// 	console.log("Category changed to "+self.selectedCategory);
 	// };
 };
 
