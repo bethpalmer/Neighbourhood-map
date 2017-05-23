@@ -39,13 +39,13 @@
         <div class="row">
             <div class="col-sm-4">
                 <select data-bind= "options: poiList,
-                                    value: selectedCategory,
                                     optionsText: 'area',
+                                    value: selectedCategory,
                                     optionsCaption: 'See all...'"></select>
             </div>
             <div class="col-sm-8 text-right">
                 <ul class="coolification" data-bind="foreach: poiList">
-                    <li id="list" data-bind="text: area, click: $parent.selectCategory"></li>
+                    <li id="list" data-bind="text: area, click: $parent.clickCategory"></li>
                 </ul>
             </div>
         </div>
@@ -58,7 +58,11 @@
             </div>
 
             <aside class="col-sm-12 col-md-6 col-lg-4">
-                <h6>This will be for instagram api
+                <h6>This will be for instagram api</h6>
+                <div data-bind="visible: selectedCategory"> <!-- Appears when you select something -->
+                    You have chosen area the
+                <span data-bind="text: selectedCategory() ? selectedCategory().area : 'unknown'"></span>.
+            </div>
             </aside>
         </div>
     </section>
@@ -80,10 +84,108 @@
     </footer>
 
     <script>
-       
+        //var map;
+        //var markers = [];
 
-    </script>
+        function initMap(){
 
+            vm.init();
+
+// I WANT TO...            
+// Build an array of places from my poiList observable array - iterate through each objects locations array objects?
+//var places = []; // Or if this stored the outer objects (categories) then I could drill down later when I need more detail
+
+            // poiList.forEach(function(obj){ 
+            //     places.push(obj);
+            // });
+
+// I WANT TO...            
+// Iterate through each of the places array objects, locations array, objects
+    // Store - position based on location:{}
+    //       - title based on name: value
+    // create a marker with new google.maps.Marker({options})
+    // push marker to markers []
+    // extend bounds to fit marker
+    // marker.addListener('click') to populate infowindow and populate additional info DOM section and instagram aside (sometimes).
+            
+            // for (var i=0; i<places.length; i++){
+            //      places[i].locations.forEach(function(object) {
+            //          var position = location;
+            //          var title = name;
+            //          var marker = new google.maps.Marker({
+            //             map: map,
+            //             position: postion,
+            //             title: title,
+            //             animation: google.maps.Animation.DROP,
+            //             id: i
+            //         });
+
+            //         markers.push(marker);
+            //         bounds.extend(marker.position);
+            //         marker.addListener('click', function(){
+            //             populateInfoWindow(this, largeInfowindow);
+            //         });
+            //     });
+            // };
+        }   
+
+// I WANT TO...
+// be able to show no markers, and then only show the ones in my selectedCategory - setVisible() google method?
+
+// MOSTLY GARBAGE UNDER HERE
+
+//     map.fitBounds(bounds);
+    // map.fitBounds(bounds); // won't set map bounds until we showHouses()
+    // document.getElementById('list_2').addEventListener('click', showLandmarks);
+    // document.getElementById('list_4').addEventListener('click', showMusic);
+// };
+// This function populates the infowindow when the marker is clicked. Only allows one info window to open, and populates based on markers position.
+// function populateInfoWindow(marker, infowindow){
+    // check to make sure infowindow is not already open
+    // if (infowindow.marker != marker) {
+    //     infowindow.marker = marker;
+    //     infowindow.setContent('<div>' + marker.title + '</div>');
+    //     infowindow.open(map, marker);
+        // make sure the marker property is cleared if the infowindow is closed
+    //     Infowindow.addListener('closeclick', function(){
+    //         infowindow.setMarker(null);
+    //     })
+    // }
+// }
+
+// function showAll(){
+//     var bounds = new google.maps.LatLngBounds();
+//     // Extend the boundaries of the map for each marker and display the marker
+//     for (var i=0; i<landmarkMarkers.length; i++){
+//         landmarkMarkers[i].setMap(map);
+//         bounds.extend(landmarkMarkers[i].position);
+//     }
+//     for (var i=0; i<musicMarkers.length; i++){
+//         musicMarkers[i].setMap(map);
+//         bounds.extend(musicMarkers[i].position);
+//     }
+//     map.fitBounds(bounds);
+// };
+// This function will loop through the markers array and display them all
+// function showLandmarks(){
+//     var bounds = new google.maps.LatLngBounds();
+    // Extend the boundaries of the map for each marker and display the marker
+//     for (var i=0; i<landmarkMarkers.length; i++){
+//         landmarkMarkers[i].setMap(map);
+//         bounds.extend(landmarkMarkers[i].position);
+//     }
+//     map.fitBounds(bounds);
+// }
+// function showMusic(){
+//     var bounds = new google.maps.LatLngBounds();
+//     for (var i=0; i<musicMarkers.length; i++){
+//         musicMarkers[i].setMap(map);
+//         bounds.extend(musicMarkers[i].position);
+//     }
+//     map.fitBounds(bounds);     
+
+
+</script>
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -92,7 +194,7 @@
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
 
-    -<script async defer
+     <script async defer
      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAoEnMQe4ZX1tFEinO8c3XUHt7AHO0ipEM&callback=initMap">
     </script> 
 
