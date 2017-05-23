@@ -39,12 +39,13 @@
         <div class="row">
             <div class="col-sm-4">
                 <select data-bind= "options: poiList,
-                                    optionsCaption: 'Select a reason of cool...'
-                                    "></select>
+                                    value: selectedCategory,
+                                    optionsText: 'area',
+                                    optionsCaption: 'See all...'"></select>
             </div>
             <div class="col-sm-8 text-right">
                 <ul class="coolification" data-bind="foreach: poiList">
-                    <li data-bind="text: $data, attr: {id: 'list_' + $index() }"></li>
+                    <li id="list" data-bind="text: area, click: $parent.selectCategory"></li>
                 </ul>
             </div>
         </div>
@@ -52,7 +53,7 @@
 
     <section class="container">
         <div class="row">
-            <div id="map" class="col-sm-12 col-md-6 col-lg-8">
+            <div id="map" data-bind="with: $data"class="col-sm-12 col-md-6 col-lg-8">
                 <h6>This will be my map section</h6>
             </div>
 
@@ -79,184 +80,8 @@
     </footer>
 
     <script>
-        var map;
-        var landmarkMarkers = [];
-        var musicMarkers = [];
-        function initMap(){
-            // Constructor creates a new map, only need lat/lng and zoom
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 50.827022, lng: -0.158278},
-                zoom: 12
-            });
-           
-            var largeInfowindow = new google.maps.InfoWindow();
-            // var bounds = new google.maps.LatLngBounds();
-            
-            var locations = {
-                lanes: [],
-                beach: [],
-                landmarks: [],
-                downs: [],
-                music: []
-            };
+       
 
-            poi.lanes.forEach(function(obj){
-                locations.lanes.push(obj);
-            });
-            poi.beach.forEach(function(obj){
-                locations.beach.push(obj);
-            });
-            poi.landmarks.forEach(function(obj){
-                locations.landmarks.push(obj);
-            });
-            poi.downs.forEach(function(obj){
-                locations.downs.push(obj);
-            });
-            poi.music.forEach(function(obj){
-                locations.music.push(obj);
-            });
-
-            for (var i=0; i<locations.landmarks.length; i++){
-                var postion = locations.landmarks[i].location;
-                var title = locations.landmarks[i].name;
-                var marker = new google.maps.Marker({
-                    // map: map,
-                    position: postion,
-                    title: title,
-                    animation: google.maps.Animation.DROP,
-                    id: i
-                });
-                // push the marker to our array of markers
-                landmarkMarkers.push(marker);
-                // extend the bounds of what is displayed on the map
-                // bounds.extend(marker.position);
-                // create an onclick event to open an info window at each marker
-                marker.addListener('click', function(){
-                    populateInfoWindow(this, largeInfowindow);
-                });
-            }
-
-            for (var i=0; i<locations.music.length; i++){
-                var postion = locations.music[i].location;
-                var title = locations.music[i].name;
-                var marker = new google.maps.Marker({
-                    // map: map,
-                    position: postion,
-                    title: title,
-                    animation: google.maps.Animation.DROP,
-                    id: i
-                });
-                // push the marker to our array of markers
-                musicMarkers.push(marker);
-                // extend the bounds of what is displayed on the map
-                // bounds.extend(marker.position);
-                // create an onclick event to open an info window at each marker
-                marker.addListener('click', function(){
-                    populateInfoWindow(this, largeInfowindow);
-                });
-            }
-
-            // console.log(locations);
-
-            // var markerCategory = [];
-
-            // for (var markerCategory in locations){
-            //     if (locations.hasOwnProperty(markerCategory)){
-            //         markerCategory.push(markerCategory);
-            //     }
-            // };
-            // console.log(markerCategory);
-
-            // for (var i=0; i < locations.length; i++){
-            //     locations[i].forEach( function (arrayItem){
-            //         var postion = arrayItem.location;
-            //         var name = arrayItem.name;
-            //         var marker = new google.maps.Marker({
-            //             map: map,
-            //             position: position,
-            //             title: name,
-            //             animation: google.maps.Animation.DROP,
-            //             id: locations[i]+[i]
-            //         })
-            //         markers.push(marker);
-            //         bounds.extend(marker.postion);
-
-            //     })
-
-                // var postion = locations[i].location;
-                // var name = locations[i].name;
-                // var marker = new google.maps.Marker({
-                //     map: map,
-                //     position: postion,
-                //     title: name,
-                //     animation: google.maps.Animation.DROP,
-                //     id: "landmarks"+i
-                // });
-                // push the marker to our array of markers
-                // markers.push(marker);
-                // extend the bounds of what is displayed on the map
-                // bounds.extend(marker.position);
-                // create an onclick event to open an info window at each marker
-                // marker.addListener('click', function(){
-                //     populateInfoWindow(this, largeInfowindow);
-                // });
-            // }
-            // map.fitBounds(bounds);
-            // map.fitBounds(bounds); // won't set map bounds until we showHouses()
-            document.getElementById('list_2').addEventListener('click', showLandmarks);
-            document.getElementById('list_4').addEventListener('click', showMusic);
-        }
-        // This function populates the infowindow when the marker is clicked. Only allows one info window to open, and populates based on markers position.
-        function populateInfoWindow(marker, infowindow){
-            // check to make sure infowindow is not already open
-            if (infowindow.marker != marker) {
-                infowindow.marker = marker;
-                infowindow.setContent('<div>' + marker.title + '</div>');
-                infowindow.open(map, marker);
-                // make sure the marker property is cleared if the infowindow is closed
-                Infowindow.addListener('closeclick', function(){
-                    infowindow.setMarker(null);
-                })
-            }
-        }
-
-        // function showAll(){
-        //     var bounds = new google.maps.LatLngBounds();
-        //     // Extend the boundaries of the map for each marker and display the marker
-        //     for (var i=0; i<landmarkMarkers.length; i++){
-        //         landmarkMarkers[i].setMap(map);
-        //         bounds.extend(landmarkMarkers[i].position);
-        //     }
-        //     for (var i=0; i<musicMarkers.length; i++){
-        //         musicMarkers[i].setMap(map);
-        //         bounds.extend(musicMarkers[i].position);
-        //     }
-        //     map.fitBounds(bounds);
-        // };
-        // This function will loop through the markers array and display them all
-        function showLandmarks(){
-            var bounds = new google.maps.LatLngBounds();
-            // Extend the boundaries of the map for each marker and display the marker
-            for (var i=0; i<landmarkMarkers.length; i++){
-                landmarkMarkers[i].setMap(map);
-                bounds.extend(landmarkMarkers[i].position);
-            }
-            map.fitBounds(bounds);
-        }
-        function showMusic(){
-            var bounds = new google.maps.LatLngBounds();
-            for (var i=0; i<musicMarkers.length; i++){
-                musicMarkers[i].setMap(map);
-                bounds.extend(musicMarkers[i].position);
-            }
-            map.fitBounds(bounds);
-        }       
-
-    </script>
-
-
-    <script async defer
-     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAoEnMQe4ZX1tFEinO8c3XUHt7AHO0ipEM&callback=initMap">
     </script>
 
     <!-- jQuery -->
@@ -266,6 +91,10 @@
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
+
+    -<script async defer
+     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAoEnMQe4ZX1tFEinO8c3XUHt7AHO0ipEM&callback=initMap">
+    </script> 
 
 </body>
 

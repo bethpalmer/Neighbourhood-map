@@ -32,3 +32,6 @@ ul.coolification li {
 	width: 500px;
 	height: 500px;
 }
+.selected {
+	color: red;
+}
