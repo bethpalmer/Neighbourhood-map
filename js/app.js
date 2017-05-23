@@ -1,13 +1,5 @@
 ///////////////////  MODEL  /////////////////////
 
-// places[i].locations[i].name
-// places[i].locations[i].location
-
-// selectedCategory is poiList[0]
-// for (var locations in selectedCategory){
-//	console.log('${selectedCategory[locations]}')
-// }
-
 // places of interest
 var poi = [
 	{
@@ -100,11 +92,6 @@ var poi = [
 	]}
 ];
 
-// var POI = function(area, locations){
-// 	this.area = ko.observable(area);
-// 	this.locations = ko.observableArray(locations);
-// };
-
 /////////////////////  VIEWMODEL ///////////////////////////////
 
 var ViewModel = function(){
@@ -116,39 +103,42 @@ var ViewModel = function(){
 	// Makes my model data observable and useable by the view via the ViewModel.
 	this.poiList = ko.observableArray([]); // observable array of objects
 
+	// Populate the observable array 
 	poi.forEach(function(object){
 		self.poiList.push(object);
 	});
 
 	this.selectedCategory = ko.observable();
-	// console.log("Category changed to "+self.selectedCategory.area);
 
-	this.places = ko.observableArray([]); // which needs to contain objects within the locations array containing name: and location:
-
-	this.clickCategory = function(clicked){ // THIS SETS THE selectedCategory to one of the array indexes of poiList
+	this.clickCategory = function(clicked){
 		self.selectedCategory(clicked);
 	};
 
-	this.selectedCategory.subscribe(function(newValue){
-		self.showMarkers(newValue.area);
+	// Observe when the selectedCategory changes and call the showMarkers function for that area
+	this.selectedCategory.subscribe(function(){
+		self.showMarkers(self.selectedCategory().area);
 	});
 
 	this.showMarkers = function(findArea) {
 
-		// clear markers
+		// Clear all markers
 		for (var i=0; i<self.markers.length; i++){
 			self.markers[i].setMap(null);
 		};
 		
 		self.markers = [];
 
-		// add markers
+		// Add markers
 		var bounds = new google.maps.LatLngBounds();
 
+		// Argument of area here is referring to the object
+		// When showMarkers function is called initially in the init function, it is passed an argument of null, so will show markers in all areas
+		// Otherwise filter for where the object area, area property, is equal to the area passed in by the selectedCategory.
 		poi.forEach(function(area) {
 			if (findArea == null || area.area == findArea) {
 				area.locations.forEach(function(location) {
 
+					// Make markers
 					var marker = new google.maps.Marker({
                         map: self.map,
                         position: location.location,
@@ -158,6 +148,7 @@ var ViewModel = function(){
 
                     bounds.extend(location.location);
 
+                    // Push markers to markers array
                     self.markers.push(marker);
 
 				});
@@ -176,26 +167,14 @@ var ViewModel = function(){
         });
        
         var largeInfowindow = new google.maps.InfoWindow();
-        var bounds = new google.maps.LatLngBounds();
 
+        // Initially call showMarkers with filter as empty
         self.showMarkers(null);
 
 	};
-
-	// LOOK WITHIN THE OBJECT AND PACKAGE UP LOCATIONS[I].OBJECTS TO BE USED BY MAPS
 };
 
+// Variable can be accessed easily from outside of this object
 var vm = new ViewModel();
 ko.applyBindings(vm);
-
-///////////////////// NEXT STEPS ////////////////////////////
-/*
-GOAL: CREATE AND DISPLAY MARKERS FOR EACH CATEGORY WHEN THAT CATEGORY IS MARKED AS SELECTEDCATEGORY
-GOAL2: DISPLAY MARKERS FOR ALL CATEGORIES ON INITIAL LOAD
-*/
-
-
-////////////////////// MAP HANDLING //////////////////////////
-
-//
 
