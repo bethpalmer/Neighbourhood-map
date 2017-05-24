@@ -31,27 +31,33 @@ var poi = [
 	locations: [
 		{
 			name: "The Pavilion",
-			location: {lat: 50.8223517, lng: -0.1376855}
+			location: {lat: 50.8223517, lng: -0.1376855},
+			wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Royal_Pavilion&section=0&prop=text&format=json&callback=?"
 		},
 		{
 			name: "The Bandstand",
-			location: {lat: 50.8247058, lng: -0.1413334}
+			location: {lat: 50.8247058, lng: -0.1413334},
+			wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Bandstand&section=0&prop=text&format=json&callback=?"
 		},
 		{
 			name: "The Palace Pier",
-			location: {lat: 50.8168555, lng: -0.136738}
+			location: {lat: 50.8168555, lng: -0.136738},
+			wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Brighton_Palace_Pier&section=0&prop=text&format=json&callback=?"
 		},
 		{
 			name: "The West Pier",
-			location: {lat: 50.8190545, lng: -0.1519598}
+			location: {lat: 50.8190545, lng: -0.1519598},
+			wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=West_Pier&section=0&prop=text&format=json&callback=?"
 		},
 		{
 			name: "The i360",
-			location: {lat: 50.821439, lng: -0.150754}
+			location: {lat: 50.821439, lng: -0.150754},
+			wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=British_Airways_i360&section=0&prop=text&format=json&callback=?"
 		},
 		{
 			name: "The Brighton Wheel",
-			location: {lat: 50.8191078, lng: -0.1343941}
+			location: {lat: 50.8191078, lng: -0.1343941},
+			wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Brighton_Wheel&section=0&prop=text&format=json&callback=?"
 		}
 	]},
 	{
@@ -125,13 +131,13 @@ var ViewModel = function(){
 		for (var i=0; i<self.markers.length; i++){
 			self.markers[i].setMap(null);
 		};
-		
+		// Clear array - not strictly necessary but array would eventually get clogged up with markers
 		self.markers = [];
 
 		// Add markers
 		var bounds = new google.maps.LatLngBounds();
 
-		// Argument of area here is referring to the object
+		// Argument of area here is referring to the whole object
 		// When showMarkers function is called initially in the init function, it is passed an argument of null, so will show markers in all areas
 		// Otherwise filter for where the object area, area property, is equal to the area passed in by the selectedCategory.
 		poi.forEach(function(area) {
@@ -150,6 +156,9 @@ var ViewModel = function(){
 
                     // Push markers to markers array
                     self.markers.push(marker);
+                    marker.addListener('click', function(){
+                        self.populateInfoWindow(this, self.largeInfowindow);
+                    });
 
 				});
 			}
@@ -159,6 +168,19 @@ var ViewModel = function(){
 
 	};
 
+	this.populateInfoWindow = function (marker, infowindow){
+		if (infowindow.marker != marker) {
+			infowindow.marker = marker;
+			infowindow.setContent('<div>'+marker.title+'</div>');
+			infowindow.open(self.map, marker);
+			// CLear marker property if infowindow is closed
+			infowindow.addListener('closeclilck', function() {
+				infowindow.setMarker(null);
+			})
+		}
+	};
+	
+
 	this.init = function() {
 
 		self.map = new google.maps.Map(document.getElementById('map'), {
@@ -166,11 +188,10 @@ var ViewModel = function(){
             zoom: 12
         });
        
-        var largeInfowindow = new google.maps.InfoWindow();
+        self.largeInfowindow = new google.maps.InfoWindow();
 
         // Initially call showMarkers with filter as empty
         self.showMarkers(null);
-
 	};
 };
 
