@@ -10,6 +10,7 @@ p {
 h1 {
 	font-family: 'Ravi Prakash', cursive, Verdana, Geneva, sans-serif;
 	font-size: 7em;
+	line-height: 0.7;
 }
 h2 {
 	font-family: 'Shadows Into Light', cursive, Verdana, Geneva, sans-serif;
@@ -24,18 +25,73 @@ h5 {
 		font-size: 2.4em;
 	}
 }
-ul.coolification {
-	
+
+.title {
+	padding-top: 10px;
 }
+
+/* FOr the smallest screens */
 ul.coolification li {
 	text-decoration: none;
 	display: inline-block;
-	padding: 10px;
+	padding: 3px;
 }
+/*.select {
+	width: 30%;
+}
+.list {
+	width: 60%;
+}*/
+@media (min-width: 768px) {
+	ul.coolification {
+	
+	}
+}
+
+hr {
+	width: 90%;
+	height: 3px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8c8c inset;
+}
+
+/* For smallest screens */
 #map {
-	width: 700px;
-	height: 500px;
+	margin: 10px 20px;
+	width: 90%;
+	height: 430px;
+	border: ridge 4px;
 }
+#imageDisplay {
+/*	display: inline-block;*/
+}
+
+@media (min-width: 1200px) {
+	.sub-title {
+		padding-top: 15px;
+	}
+}
+
+@media (min-width: 768px) {
+	#map {
+		width: 45%;
+		margin: 10px;
+		height: 541px;
+	}
+	#imageDisplay {
+		/*width: 45%;*/
+	}
+}
+
+@media (min-width: 992px) {
+	#map {
+		width: 55%;
+	}
+	#imageDisplay {
+	/*	width: 45%;*/
+	}
+}
+
 .selected {
 	color: red;
 }
@@ -46,6 +102,26 @@ figure {
 	display: inline-block;
 }
 
+figure img {
+	border: ridge 2px;
+}
+
+@media (max-width: 370px) {
+	figure {
+		margin: 3px;
+	}
+}
+
 .attrib {
 	font-size: 1em;
+}
+
+.footer {
+	/*padding-top: 10px;*/
+}
+
+aside {
+	position: absolute;
+	right: 0;
+	float: right;
 }
