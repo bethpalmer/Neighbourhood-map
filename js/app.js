@@ -12,7 +12,10 @@ var poi = [
 			{img: 'img/north-laine/5781531147_80b1b59b0e_q.jpg', attrib: 'https://www.flickr.com/photos/llamnuds/5781531147'},
 			{img: 'img/south-lanes/23731069090_f9477f4e1d_q.jpg', attrib: 'https://www.flickr.com/photos/peter2010/23731069090'}
 			],
-		infoContent: "</p>Here is some custom content that will show on Lanes page load...</p>",
+		infoContent: "<p><small>The charming, quirky and distinctive areas of the lanes are separated into two areas.</small></p>"+
+					"<p><small>The North Laine is a central row of streets of small quirky one off stores, niche cafes and bars, stretching north within a grid like layout of residential streets patched with other occasional shops.</small></p>"+
+					"<p><small>The lanes, also known as the south lanes, is a tangled web of narrow lanes with small stores and hidden squares. It has a high population of antique jewellery shops, high end fashion retailers, and is buzzing with all kinds of restaurants and bars.</small></p>"+
+					"<p><small>Both areas boast a changeable selection of performers and street merchants, creating a curious and enjoyable shopping experience.</small></p>",
 		locations: [
 			{
 				name: "North Laine",
@@ -54,7 +57,9 @@ var poi = [
 					{img: 'img/seafront/14784910924_c5db35e8f6_q.jpg', attrib: 'https://www.flickr.com/photos/garryknight/14784910924'},
 					{img: 'img/seafront/14867566034_6af7448638_q.jpg', attrib: 'https://www.flickr.com/photos/bexwalton/14867566034'}
 				],
-		infoContent: "<img src='img/seafront/where-to-sit.jpg' alt='comedy image of where to sit on Brighton Beach' width=50%><p>Attribution: <a href='https://www.phillucas.com/single-post/2014/10/16/Know-Where-to-Sit-on-Brighton-Beach'>Phil Lucas - Comedian</a></p>",
+		infoContent: "<div class='row'><div class='col-sm-6'><p><small>The beach in the city or Brighton and Hove ranges from busy and buzzing around the centre, between the 2 piers, to a more restful and spacious vibe at the two ends. The west side, heading up towards hove lagoon brings a distinct family feel with its iconic beach huts, and free range children. The east side of the palace pier hosts a slightly more hip and racey crowd. Situated just south of the gay friendly area of kemptown it leads up towards the infamous nudist beach on the way to the marina.</small></p>"+
+					"<p><small>The markers in this section are all based on Phil Lucas's comedy observations of the stereotypes of people you find in different areas of the beach on a sunny day. You can see the main part of his 2017 comedy illustration, which he updates annually, displayed in this information section.</small></p></div>"+
+					"<div class='col-sm-6'><img src='img/seafront/where-to-sit.jpg' alt='comedy image of where to sit on Brighton Beach' width=100%><p>Attribution: <a href='https://www.phillucas.com/single-post/2014/10/16/Know-Where-to-Sit-on-Brighton-Beach'>Phil Lucas - Comedian</a></p></div></div>",
 		locations: [
 			{
 				name: "Those who wish to be alone",
@@ -139,7 +144,9 @@ var poi = [
 			{img: 'img/i360/31803543046_6f694b9216_q.jpg', attrib: 'https://www.flickr.com/photos/mdpettitt/31803543046'},
 			{img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: 'https://www.flickr.com/photos/lamdogjunkie/8717901362'}
 		],
-		infoContent: "<p>Here is some custom content that will show on Landmarks page load...</p>",
+		infoContent: "<p><small>Brighton has a diverse, quirky and charming range of landmarks both historic and modern. The elaborate Brighton Pavilion, Indian style on the outside, Chinese style on the inside, sets the scene for the ecclectic mishmash of the city that has grown up around it. One of its crowning moments for me was the Dr Blighty light show in Brighton festival 2016 where the whole building was lit up in a spectacular fashion using a stunning colour palette as diverse as Brighton itself. You can see a picture of one of the light formations when you click on the landmark marker.</small></p>"+
+					"<p><small>On our vibrant city coast line there are a number of diverse landmarks: the two distinctive and quirky piers stretching out into the English Channel, the historic and recently beautifully refurbished bandstand, and the brand new shiny, but locally controversial i360 tower - the tallest structure in Sussex and in the Guinness book of world records as being the world most slender tower.</small></p>"+
+					"<p><small>The Brighton wheel, the charming tourist attraction east of the pier was sadly dismantled on the opening of the i360, compounding the controversy surrounding Brightons newest landmark. I have included the Brighton wheel in this section on landmarks because frankly, we miss it a little bit!</small></p>",
 		locations: [
 			{
 				name: "The Pavilion",
@@ -238,7 +245,9 @@ var poi = [
 			{img: 'img/downs/devils-dyke/9204422764_cbe7a8a587_q.jpg', attrib: 'https://www.flickr.com/photos/petercastleton/9204422764'},
 			{img: 'img/downs/devils-dyke/15523462694_f2ac554f52_q.jpg', attrib: 'https://www.flickr.com/photos/jaffathecake/15523462694'}
 		],
-		infoContent: "<p>Here is some custom content that will show on Downs page load...</p>",
+		infoContent: "<p><small>Brighton, nestled within the South Downs on the south coast of England, has its own little microclimate, making it one of the sunniest locations within the U.K.</small></p>"+
+					"<p><small>The South Downs stretching for 100 kilometers from Eastbourne to Winchester boast some beautiful scenery of stunning rolling hills and grassy peaks. The highest point in the South Downs at Ditchling beacon has views which stretch over 50miles in every direction.</small></p>"+
+					"<p><small>Just a couple of miles outside of the suburbs of Brighton the Downs are the perfect antidote to city life, and and afternoon escape which can make you feel a million miles away from civilisation even although geographically they are highly accessible.</small></p>",
 		locations: [
 			{
 				name: "Devils Dyke",
@@ -295,7 +304,9 @@ var poi = [
 					{img: 'img/nightlife/concorde2/218400484_998bbcb6dd_q.jpg', attrib: 'https://www.flickr.com/photos/sam_ford/218400484'},
 					{img: 'img/nightlife/audio/4997066747_e40a5664a3_q.jpg', attrib: 'https://www.flickr.com/photos/mkorcuska/4997066747'}
 				],
-		infoContent: "<p>Here is some custom content that will show on Nightlife page load...</p>",
+		infoContent: "<p><small>Brighton is renowned for its pumping nightlife. With its high density of pubs, bars and clubs and other venues there is something guaranteed to suit every taste. A selection of theatres, the Brighton centre offering high profile gigs, komedia for comedy nights, dance clubs and bars representing every genre of music.</small></p>"+
+					"<p><small>The city wide late licence means the town is buzzing at every hour of the night, with clubs often open until 6, with afterclubs and all night food places to head to when you're done with dancing.</small></p>"+
+					"<p><small>The city has even adopted its own local spirit - Tuaca - which although generally little known outside of Brighton, is available in almost every venue in town. Commonly served as a cold smooth shot in can also be mixed with ginger ale and a slice of lime for a popular Tuscan mule giving a nod to its Italian roots.</small></p>",
 		locations: [
 			{
 				name: "Concorde 2",
