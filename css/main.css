@@ -61,6 +61,7 @@ hr {
 	width: 90%;
 	height: 430px;
 	border: ridge 4px;
+/*	display: inline-block;*/
 }
 #imageDisplay {
 /*	display: inline-block;*/
@@ -119,9 +120,12 @@ figure img {
 .footer {
 	/*padding-top: 10px;*/
 }
-
+/*
+#main {
+	position: relative;
+}*/
+/*
 aside {
 	position: absolute;
 	right: 0;
-	float: right;
-}
+}*/

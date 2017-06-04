@@ -10,7 +10,7 @@ var poi = [
 			{img: 'img/north-laine/4160169690_9f625d73fa_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/4160169690'},
 			{img: 'img/south-lanes/24046937695_0752f8f814_q.jpg', attrib: 'https://www.flickr.com/photos/peter2010/24046937695'},
 			{img: 'img/north-laine/5781531147_80b1b59b0e_q.jpg', attrib: 'https://www.flickr.com/photos/llamnuds/5781531147'},
-			{img: 'img/south-lanes/23731069090_f9477f4e1d_q.jpg', attrib: 'https://www.flickr.com/photos/peter2010/23731069090'},
+			{img: 'img/south-lanes/23731069090_f9477f4e1d_q.jpg', attrib: 'https://www.flickr.com/photos/peter2010/23731069090'}
 			],
 		infoContent: "</p>Here is some custom content that will show on Lanes page load...</p>",
 		locations: [
@@ -47,12 +47,12 @@ var poi = [
 	{
 		area: "beach",
 		areaImages: [
-					{img: 'img/seafront/148674451_adde1f1354_q.jpg', attrib: ''},
-					{img: 'img/seafront/217805015_36dcb3a9fa_q.jpg', attrib: ''},
-					{img: 'img/seafront/379606222_7c6a271b2b_q.jpg', attrib: ''},
-					{img: 'img/seafront/9671912424_06227e046c_q.jpg', attrib: ''},
-					{img: 'img/seafront/14774074611_d5c26bb3fa_q.jpg', attrib: ''},
-					{img: 'img/seafront/14867566034_6af7448638_q.jpg', attrib: ''},
+					{img: 'img/seafront/148674451_adde1f1354_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/148674451'},
+					{img: 'img/seafront/217805015_36dcb3a9fa_q.jpg', attrib: 'https://www.flickr.com/photos/mikelo/217805015'},
+					{img: 'img/seafront/379606222_7c6a271b2b_q.jpg', attrib: 'https://www.flickr.com/photos/neilhooting/379606222'},
+					{img: 'img/seafront/6195951658_34204344cd_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/6195951658'},
+					{img: 'img/seafront/14784910924_c5db35e8f6_q.jpg', attrib: 'https://www.flickr.com/photos/garryknight/14784910924'},
+					{img: 'img/seafront/14867566034_6af7448638_q.jpg', attrib: 'https://www.flickr.com/photos/bexwalton/14867566034'}
 				],
 		infoContent: "<img src='img/seafront/where-to-sit.jpg' alt='comedy image of where to sit on Brighton Beach' width=50%><p>Attribution: <a href='https://www.phillucas.com/single-post/2014/10/16/Know-Where-to-Sit-on-Brighton-Beach'>Phil Lucas - Comedian</a></p>",
 		locations: [
@@ -60,48 +60,84 @@ var poi = [
 				name: "Those who wish to be alone",
 				location: {lat: 50.8245914, lng: -0.1700829},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
-				images: []
+				mainImage: {img: 'img/seafront/6195951658_34204344cd_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/6195951658'},
+				images: [
+					{img: 'img/seafront/379606222_7c6a271b2b_q.jpg', attrib: 'https://www.flickr.com/photos/neilhooting/379606222'},
+					{img: 'img/seafront/15617931079_0067b2196b_q.jpg', attrib: 'https://www.flickr.com/photos/petercastleton/15617931079'},
+					{img: 'img/seafront/6195951658_34204344cd_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/6195951658'},
+					{img: 'img/seafront/9465987126_97e55aa297_q.jpg', attrib: 'https://www.flickr.com/photos/fiverlocker/9465987126'},
+					{img: 'img/seafront/3131374956_3c3904b7a8_q.jpg', attrib: 'https://www.flickr.com/photos/handolio/3131374956'},
+					{img: 'img/seafront/15617931079_0067b2196b_q.jpg', attrib: 'https://www.flickr.com/photos/petercastleton/15617931079'}
+				]
 			},
 			{
-				name: "Freelancer, Middle class parents, Families with very large picnics",
+				name: "Freelancers,<br>Middle class parents,<br>Families with very large picnics",
 				location: {lat: 50.8222356, lng: -0.1541934},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
-				images: []
+				mainImage: {img: 'img/seafront/14867566034_6af7448638_q.jpg', attrib: 'https://www.flickr.com/photos/bexwalton/14867566034'},
+				images: [
+					{img: 'img/seafront/217805015_36dcb3a9fa_q.jpg', attrib: 'https://www.flickr.com/photos/mikelo/217805015'},
+					{img: 'img/seafront/14867566034_6af7448638_q.jpg', attrib: 'https://www.flickr.com/photos/bexwalton/14867566034'},
+					{img: 'img/west-pier/394504492_cc09843c57_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/394504492'},
+					{img: 'img/bandstand/14046071078_04e9688f83_q.jpg', attrib: 'https://www.flickr.com/photos/lihourj/14046071078'},
+					{img: 'img/i360/29482583831_68fbc62c95_q.jpg', attrib: 'https://www.flickr.com/photos/100289769@N08/29482583831'},
+					{img: 'img/west-pier/16474088376_f0aacc4138_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'}
+				]
 			},
 			{
-				name: "Day trippers, Hen and Stag Dos, London sorts",
+				name: "Day trippers,<br>Hen and Stag Dos,<br>London sorts",
 				location: {lat: 50.8208433, lng: -0.1468491},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
-				images: []
+				mainImage: {img: 'img/seafront/8011854258_c75ae444a9_q.jpg', attrib: 'https://www.flickr.com/photos/ajy/8011854258'},
+				images: [
+					{img: 'img/seafront/148674451_adde1f1354_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/148674451'},
+					{img: 'img/seafront/14774074611_d5c26bb3fa_q.jpg', attrib: ''},
+					{img: 'img/i360/31803543046_6f694b9216_q.jpg', attrib: 'https://www.flickr.com/photos/mdpettitt/31803543046'},
+					{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
+					{img: 'img/seafront/30820692266_e3b5fa10a6_q.jpg', attrib: 'https://www.flickr.com/photos/windybeach/30820692266'},
+					{img: 'img/seafront/8011854258_c75ae444a9_q.jpg', attrib: 'https://www.flickr.com/photos/ajy/8011854258'}
+
+				]
 			},
 			{
-				name: "Gay and Lesbian community, Arty types, and Hipsters",
+				name: "Gay and Lesbian community,<br>Arty types,<br>and Hipsters",
 				location: {lat: 50.8188354, lng: -0.1310034},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
-				images: []
+				mainImage: {img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: 'https://www.flickr.com/photos/lamdogjunkie/8717901362'},
+				images: [
+					{img: 'img/palace-pier/6985876181_5bf4c2d4a7_q.jpg', attrib: 'https://www.flickr.com/photos/valcker/6985876181'},
+					{img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: 'https://www.flickr.com/photos/lamdogjunkie/8717901362'},
+					{img: 'img/palace-pier/11422095636_42781da5c7_q.jpg', attrib: 'https://www.flickr.com/photos/pavlinajane/11422095636'},
+					{img: 'img/palace-pier/17537667234_405b66e6c3_q.jpg', attrib: 'https://www.flickr.com/photos/grassrootsgroundswell/17537667234'},
+					{img: 'img/wheel/8503870944_3cb8c8b922_q.jpg', attrib: 'https://www.flickr.com/photos/dgoomany/8503870944'},
+					{img: 'img/palace-pier/16712529701_647a6f2cb7_q.jpg', attrib: 'https://www.flickr.com/photos/glynlowe/16712529701'}
+				]
 			},
 			{
-				name: "Unemployed people who like fishing",
+				name: "Unemployed people<br>who like fishing",
 				location: {lat: 50.81167, lng: -0.10394},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
-				images: []
+				mainImage: {img: 'img/seafront/4753329720_d362817294_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/4753329720'},
+				images: [
+					{img: 'img/seafront/18563876_3fc3956c8b_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/18563876'},
+					{img: 'img/seafront/4753344557_a8d0611036_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/4753344557'},
+					{img: 'img/seafront/4753329720_d362817294_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/4753329720'},
+					{img: 'img/seafront/8765150914_2c4351fc18_q.jpg', attrib: 'https://www.flickr.com/photos/96021834@N06/8765150914'},
+					{img: 'img/seafront/8705777968_7158773376_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/8705777968'},
+					{img: 'img/seafront/3622810029_78511ffffd_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/3622810029'}
+				]
 			}
 		]
 	},
 	{
 		area: "landmarks",
 		areaImages: [
-			{img: 'img/pavilion/3323339269_ca33f086cb_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/3324484730'},
-			{img: 'img/bandstand/14046071078_04e9688f83_q.jpg', attrib: ''},
-			{img: 'img/palace-pier/6985876181_5bf4c2d4a7_q.jpg', attrib: ''},
-			{img: 'img/west-pier/394504492_cc09843c57_q.jpg', attrib: ''},
-			{img: 'img/i360/31803543046_6f694b9216_q.jpg', attrib: ''},
-			{img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: ''}
+			{img: 'img/pavilion/3323339269_ca33f086cb_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/3323339269'},
+			{img: 'img/bandstand/14046071078_04e9688f83_q.jpg', attrib: 'https://www.flickr.com/photos/lihourj/14046071078'},
+			{img: 'img/palace-pier/6985876181_5bf4c2d4a7_q.jpg', attrib: 'https://www.flickr.com/photos/valcker/6985876181'},
+			{img: 'img/west-pier/394504492_cc09843c57_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/394504492'},
+			{img: 'img/i360/31803543046_6f694b9216_q.jpg', attrib: 'https://www.flickr.com/photos/mdpettitt/31803543046'},
+			{img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: 'https://www.flickr.com/photos/lamdogjunkie/8717901362'}
 		],
 		infoContent: "<p>Here is some custom content that will show on Landmarks page load...</p>",
 		locations: [
@@ -109,84 +145,85 @@ var poi = [
 				name: "The Pavilion",
 				location: {lat: 50.8223517, lng: -0.1376855},
 				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Royal_Pavilion&section=0&prop=text&format=json&callback=?",
-				mainImage: {img: 'img/pavilion/8023877916_900b7269b5_q.jpg', attrib: '',},
+				mainImage: {img: 'img/pavilion/8023877916_900b7269b5_q.jpg', attrib: 'https://www.flickr.com/photos/wildlife_encounters/8023877916',},
 				images: [
-					{img: 'img/pavilion/3323339269_ca33f086cb_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/3324484730'},
-					{img: 'img/pavilion/15790666768_99f03d8de6_q.jpg', attrib: ''},
+					{img: 'img/pavilion/3323339269_ca33f086cb_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/3323339269'},
+					{img: 'img/pavilion/15790666768_99f03d8de6_q.jpg', attrib: 'https://www.flickr.com/photos/donnatomlinson/15790666768'},
 					{img: 'img/pavilion/27325425745_23568c76f4_q.jpg', attrib: 'https://www.flickr.com/photos/david0287/27325425745'},
-					{img: 'img/pavilion/6148841975_158004d2a4_q.jpg', attrib: ''},
+					{img: 'img/pavilion/6148841975_158004d2a4_q.jpg', attrib: 'https://www.flickr.com/photos/herry/6148841975'},
 					{img: 'img/pavilion/8023877916_900b7269b5_q.jpg', attrib: 'https://www.flickr.com/photos/wildlife_encounters/8023877916_900b7269b5_q'},
-					{img: 'img/pavilion/121894982_47f685cfb0_q.jpg', attrib: ''}
+					{img: 'img/pavilion/121894982_47f685cfb0_q.jpg', attrib: 'https://www.flickr.com/photos/clagnut/121894982'}
 				]
 			},
 			{
 				name: "The Bandstand",
 				location: {lat: 50.8222711, lng: -0.1548171},
 				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Bandstand&section=0&prop=text&format=json&callback=?",
-				mainImage: {img: 'img/bandstand/14046071078_04e9688f83_q.jpg', attrib: '',},
+				mainImage: {img: 'img/bandstand/14046071078_04e9688f83_q.jpg', attrib: 'https://www.flickr.com/photos/lihourj/14046071078',},
 				images: [
-					{img: 'img/bandstand/14046071078_04e9688f83_q.jpg', attrib: ''},
-					{img: 'img/bandstand/31376329692_1d531d7ec3_q.jpg', attrib: ''},
-					{img: 'img/bandstand/6952821202_7bccaed344_q.jpg', attrib: ''},
-					{img: 'img/bandstand/4174955248_69f3ef6e82_q.jpg', attrib: ''},
-					{img: 'img/bandstand/4120736098_1cd0515286_q.jpg', attrib: ''},
-					{img: 'img/bandstand/4225381466_e753fe2f1e_q.jpg', attrib: ''}
+					// {img: 'img/bandstand/14046071078_04e9688f83_q.jpg', attrib: 'https://www.flickr.com/photos/lihourj/14046071078'},
+					{img: 'img/bandstand/383876389_f0df733a1c_q.jpg', attrib: 'https://www.flickr.com/photos/neilhooting/383876389'},
+					{img: 'img/bandstand/5845670941_97b927f301_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/5845670941'},
+					{img: 'img/bandstand/6952821202_7bccaed344_q.jpg', attrib: 'https://www.flickr.com/photos/josh_emerson/6952821202'},
+					{img: 'img/bandstand/4174955248_69f3ef6e82_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/4174955248'},
+					{img: 'img/bandstand/4120736098_1cd0515286_q.jpg', attrib: 'https://www.flickr.com/photos/petercastleton/4120736098'},
+					{img: 'img/bandstand/4225381466_e753fe2f1e_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/4225381466'}
 				]
 			},
 			{
 				name: "The Palace Pier",
 				location: {lat: 50.8168555, lng: -0.136738},
 				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Brighton_Palace_Pier&section=0&prop=text&format=json&callback=?",
-				mainImage: {img: 'img/palace-pier/16712529701_647a6f2cb7_q.jpg', attrib: '',},
+				mainImage: {img: 'img/palace-pier/16712529701_647a6f2cb7_q.jpg', attrib: 'https://www.flickr.com/photos/glynlowe/16712529701',},
 				images: [
-					{img: 'img/palace-pier/1013795516_63de524d2f_q.jpg', attrib: ''},
-					{img: 'img/palace-pier/16712529701_647a6f2cb7_q.jpg', attrib: ''},
-					{img: 'img/palace-pier/1012935875_0819ad12d9_q.jpg', attrib: ''},
-					{img: 'img/palace-pier/6985876181_5bf4c2d4a7_q.jpg', attrib: ''},
-					{img: 'img/palace-pier/11422095636_42781da5c7_q.jpg', attrib: ''},
-					{img: 'img/palace-pier/17537667234_405b66e6c3_q.jpg', attrib: ''}
+					{img: 'img/palace-pier/1013795516_63de524d2f_q.jpg', attrib: 'https://www.flickr.com/photos/jp_london/1013795516'},
+					{img: 'img/palace-pier/16712529701_647a6f2cb7_q.jpg', attrib: 'https://www.flickr.com/photos/glynlowe/16712529701'},
+					{img: 'img/palace-pier/1012935875_0819ad12d9_q.jpg', attrib: 'https://www.flickr.com/photos/jp_london/1012935875'},
+					{img: 'img/palace-pier/6985876181_5bf4c2d4a7_q.jpg', attrib: 'https://www.flickr.com/photos/valcker/6985876181'},
+					{img: 'img/palace-pier/11422095636_42781da5c7_q.jpg', attrib: 'https://www.flickr.com/photos/pavlinajane/11422095636'},
+					{img: 'img/palace-pier/17537667234_405b66e6c3_q.jpg', attrib: 'https://www.flickr.com/photos/grassrootsgroundswell/17537667234'}
 				]
 			},
 			{
 				name: "The West Pier",
 				location: {lat: 50.8190545, lng: -0.1519598},
 				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=West_Pier&section=0&prop=text&format=json&callback=?",
-				mainImage: {img: 'img/west-pier/33528982172_e567f1d0d4_q.jpg', attrib: '',},
+				mainImage: {img: 'img/west-pier/33528982172_e567f1d0d4_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/33528982172',},
 				images: [
 					{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
-					{img: 'img/west-pier/394504492_cc09843c57_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
-					{img: 'img/west-pier/5967760435_c25838b65a_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
-					{img: 'img/west-pier/7584224040_0136934031_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
-					{img: 'img/west-pier/16474088376_f0aacc4138_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
-					{img: 'img/west-pier/33528982172_e567f1d0d4_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'}
+					{img: 'img/west-pier/394504492_cc09843c57_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/394504492'},
+					{img: 'img/west-pier/5967760435_c25838b65a_q.jpg', attrib: 'https://www.flickr.com/photos/damianmoore/5967760435'},
+					{img: 'img/west-pier/7584224040_0136934031_q.jpg', attrib: 'https://www.flickr.com/photos/garryknight/7584224040'},
+					{img: 'img/west-pier/16474088376_f0aacc4138_q.jpg', attrib: 'https://www.flickr.com/photos/130489637@N04/16474088376'},
+					{img: 'img/west-pier/33528982172_e567f1d0d4_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/33528982172'}
 				]
 			},
 			{
 				name: "The i360",
 				location: {lat: 50.821439, lng: -0.150754},
 				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=British_Airways_i360&section=0&prop=text&format=json&callback=?",
-				mainImage: {img: 'img/i360/29482583831_68fbc62c95_q.jpg', attrib: '',},
+				mainImage: {img: 'img/i360/29482583831_68fbc62c95_q.jpg', attrib: 'https://www.flickr.com/photos/100289769@N08/29482583831',},
 				images: [
-					{img: 'img/i360/29482583831_68fbc62c95_q.jpg', attrib: ''},
-					{img: 'img/i360/30219857810_18dd92dfb8_q.jpg', attrib: ''},
-					{img: 'img/i360/30518153195_79aa8d460a_q.jpg', attrib: ''},
-					{img: 'img/i360/31803543046_6f694b9216_q.jpg', attrib: ''},
-					{img: 'img/i360/32172673813_e3d512a1b5_q.jpg', attrib: ''},
-					{img: 'img/i360/33125713276_d060058ea7_q.jpg', attrib: ''}
+					{img: 'img/i360/29482583831_68fbc62c95_q.jpg', attrib: 'https://www.flickr.com/photos/100289769@N08/29482583831'},
+					{img: 'img/i360/30219857810_18dd92dfb8_q.jpg', attrib: 'https://www.flickr.com/photos/neilhooting/30219857810'},
+					{img: 'img/i360/30518153195_79aa8d460a_q.jpg', attrib: 'https://www.flickr.com/photos/neilhooting/30518153195'},
+					{img: 'img/i360/31803543046_6f694b9216_q.jpg', attrib: 'https://www.flickr.com/photos/mdpettitt/31803543046'},
+					{img: 'img/i360/32172673813_e3d512a1b5_q.jpg', attrib: 'https://www.flickr.com/photos/sagesolar/32172673813'},
+					{img: 'img/i360/33125713276_d060058ea7_q.jpg', attrib: 'https://www.flickr.com/photos/davehamster/33125713276'}
 				]
 			},
 			{
 				name: "The Brighton Wheel",
 				location: {lat: 50.8191078, lng: -0.1343941},
 				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Brighton_Wheel&section=0&prop=text&format=json&callback=?",
-				mainImage: {img: 'img/wheel/6220401503_09f84eccfe_q.jpg', attrib: '',},
+				mainImage: {img: 'img/wheel/6220401503_09f84eccfe_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/6220401503',},
 				images: [
-					{img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: ''},
-					{img: 'img/wheel/6220401503_09f84eccfe_q.jpg', attrib: ''},
-					{img: 'img/wheel/6404242061_f705d146f8_q.jpg', attrib: ''},
-					{img: 'img/wheel/6890339892_ec45b60a79_q.jpg', attrib: ''},
-					{img: 'img/wheel/8503870944_3cb8c8b922_q.jpg', attrib: ''},
-					{img: 'img/wheel/14292530155_7da7988640_q.jpg', attrib: ''}
+					{img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: 'https://www.flickr.com/photos/lamdogjunkie/8717901362'},
+					{img: 'img/wheel/6220401503_09f84eccfe_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/6220401503'},
+					{img: 'img/wheel/6404242061_f705d146f8_q.jpg', attrib: 'https://www.flickr.com/photos/brighton/6404242061'},
+					{img: 'img/wheel/6890339892_ec45b60a79_q.jpg', attrib: 'https://www.flickr.com/photos/kevandotorg/6890339892'},
+					{img: 'img/wheel/8503870944_3cb8c8b922_q.jpg', attrib: 'https://www.flickr.com/photos/dgoomany/8503870944'},
+					{img: 'img/wheel/14292530155_7da7988640_q.jpg', attrib: 'https://www.flickr.com/photos/simonhaytack/14292530155'}
 				]
 			}
 		]
@@ -194,12 +231,12 @@ var poi = [
 	{
 		area: "downs",
 		areaImages: [
-			{img: '', attrib: ''},
-			{img: '', attrib: ''},
-			{img: '', attrib: ''},
-			{img: '', attrib: ''},
-			{img: '', attrib: ''},
-			{img: '', attrib: ''}
+			{img: 'img/downs/devils-dyke/7818003410_5554422ef5_q.jpg', attrib: 'https://www.flickr.com/photos/_szuszu/7818003410'},
+			{img: 'img/downs/ditchling-beacon/5182867968_d7fda405b6_q.jpg', attrib: 'https://www.flickr.com/photos/herry/5182867968'},
+			{img: 'img/downs/ditchling-beacon/8522196132_c025b3857f_q.jpg', attrib: 'https://www.flickr.com/photos/flintman45/8522196132'},
+			{img: 'img/downs/stanmer/30514648420_b9bd7c6f9a_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/30514648420'},
+			{img: 'img/downs/devils-dyke/9204422764_cbe7a8a587_q.jpg', attrib: 'https://www.flickr.com/photos/petercastleton/9204422764'},
+			{img: 'img/downs/devils-dyke/15523462694_f2ac554f52_q.jpg', attrib: 'https://www.flickr.com/photos/jaffathecake/15523462694'}
 		],
 		infoContent: "<p>Here is some custom content that will show on Downs page load...</p>",
 		locations: [
@@ -207,28 +244,43 @@ var poi = [
 				name: "Devils Dyke",
 				location: {lat: 50.8826218, lng: -0.2089273},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
+				mainImage: {img: 'img/downs/devils-dyke/7818003410_5554422ef5_q.jpg', attrib: 'https://www.flickr.com/photos/_szuszu/7818003410'},
 				images: [
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''}
+					{img: 'img/downs/devils-dyke/5077533_3dde6885d2_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/5077533'},
+					{img: 'img/downs/devils-dyke/7818003410_5554422ef5_q.jpg', attrib: 'https://www.flickr.com/photos/_szuszu/7818003410'},
+					{img: 'img/downs/devils-dyke/9204422764_cbe7a8a587_q.jpg', attrib: 'https://www.flickr.com/photos/petercastleton/9204422764'},
+					{img: 'img/downs/devils-dyke/15523462694_f2ac554f52_q.jpg', attrib: 'https://www.flickr.com/photos/jaffathecake/15523462694'},
+					{img: 'img/downs/devils-dyke/29649749370_513f508221_q.jpg', attrib: 'https://www.flickr.com/photos/grassrootsgroundswell/29649749370'},
+					{img: 'img/downs/devils-dyke/16120010686_09969341c1_q.jpg', attrib: 'https://www.flickr.com/photos/jaffathecake/16120010686'}
+					
 				]
 			},
 			{
 				name: "Ditchling Beacon",
 				location: {lat: 50.9003315, lng: -0.1085077},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
+				mainImage: {img: 'img/downs/ditchling-beacon/5182867968_d7fda405b6_q.jpg', attrib: 'https://www.flickr.com/photos/herry/5182867968'},
 				images: [
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''}
+					{img: 'img/downs/ditchling-beacon/5182867968_d7fda405b6_q.jpg', attrib: 'https://www.flickr.com/photos/herry/5182867968'},
+					{img: 'img/downs/ditchling-beacon/7817866622_c095d01962_q.jpg', attrib: 'https://www.flickr.com/photos/flintman45/7817866622'},
+					{img: 'img/downs/ditchling-beacon/7797074966_8d7065c7e9_q.jpg', attrib: 'https://www.flickr.com/photos/_szuszu/7797074966'},
+					{img: 'img/downs/ditchling-beacon/8522196132_c025b3857f_q.jpg', attrib: 'https://www.flickr.com/photos/flintman45/8522196132'},
+					{img: 'img/downs/ditchling-beacon/7797073740_b405cb956c_q.jpg', attrib: 'https://www.flickr.com/photos/_szuszu/7797073740'},
+					{img: 'img/downs/ditchling-beacon/26304638541_2669580158_q.jpg', attrib: 'https://www.flickr.com/photos/grassrootsgroundswell/26304638541'}
+				]
+			},
+			{
+				name: "Stanmer",
+				location: {lat: 50.8634037, lng: -0.0980768},
+				wiki: '',
+				mainImage: {img: 'img/downs/stanmer/3289309070_de4585f7a2_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/3289309070'},
+				images: [
+					{img: 'img/downs/stanmer/7208670050_298d816a1a_q.jpg', attrib: 'https://www.flickr.com/photos/harveymarketingcompany/7208670050'},
+					{img: 'img/downs/stanmer/3289309070_de4585f7a2_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/3289309070'},
+					{img: 'img/downs/stanmer/3480212260_e7e705812d_q.jpg', attrib: 'https://www.flickr.com/photos/montpelier/3480212260'},
+					{img: 'img/downs/stanmer/30183734654_c3d13387db_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/30183734654'},
+					{img: 'img/downs/stanmer/30514648420_b9bd7c6f9a_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/30514648420'},
+					{img: 'img/downs/stanmer/31050565261_4c2b41436e_q.jpg', attrib: 'https://www.flickr.com/photos/yandle/31050565261'}
 				]
 			}
 		]
@@ -236,12 +288,12 @@ var poi = [
 	{
 		area: "nightlife",
 		areaImages: [
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''}
+					{img: 'img/nightlife/audio/5008166467_eb5fcf5c09_q.jpg', attrib: 'https://www.flickr.com/photos/mixtribe/5008166467'},
+					{img: 'img/nightlife/audio/5721570854_338ac38679_q.jpg', attrib: 'https://www.flickr.com/photos/catrinaustin/5721570854'},
+					{img: 'img/nightlife/concorde2/4353676211_0278f1ddd3_q.jpg', attrib: 'https://www.flickr.com/photos/ryawesome/4353676211'},
+					{img: 'img/nightlife/green-door/2931447597_b0a790a470_q.jpg', attrib: 'https://www.flickr.com/photos/ektogamat/2931447597'},
+					{img: 'img/nightlife/concorde2/218400484_998bbcb6dd_q.jpg', attrib: 'https://www.flickr.com/photos/sam_ford/218400484'},
+					{img: 'img/nightlife/audio/4997066747_e40a5664a3_q.jpg', attrib: 'https://www.flickr.com/photos/mkorcuska/4997066747'}
 				],
 		infoContent: "<p>Here is some custom content that will show on Nightlife page load...</p>",
 		locations: [
@@ -249,70 +301,85 @@ var poi = [
 				name: "Concorde 2",
 				location: {lat: 50.8173252, lng: -0.1252401},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
+				mainImage: {img: 'img/nightlife/concorde2/concorde2.jpg', attrib: '', source: 'https://www.concorde2.co.uk/'},
 				images: [
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''}
+					{img: 'img/nightlife/concorde2/concorde2.jpg', attrib: '', source: 'https://www.concorde2.co.uk/'},
+					{img: 'img/nightlife/concorde2/4370785941_43f2e9c317_q.jpg', attrib: 'https://www.flickr.com/photos/icanfoto/4370785941'},
+					{img: 'img/nightlife/concorde2/398257430_1db028926d_q.jpg', attrib: 'https://www.flickr.com/photos/matt-m/398257430'},
+					{img: 'img/nightlife/concorde2/32806841594_dda58aa44b_q.jpg', attrib: 'https://www.flickr.com/photos/jordan_gillard_photography/32806841594'},
+					{img: 'img/nightlife/concorde2/4353676211_0278f1ddd3_q.jpg', attrib: 'https://www.flickr.com/photos/ryawesome/4353676211'},
+					{img: 'img/nightlife/audio/5008166467_eb5fcf5c09_q.jpg', attrib: 'https://www.flickr.com/photos/mixtribe/5008166467'}
 				]
 			},
 			{
 				name: "Casablanca Jazz Club",
 				location: {lat: 50.8209047, lng: -0.1455632},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
+				mainImage: {img: 'img/nightlife/casablancas/casablancas.jpg', attrib: '', source: 'https://www.casablancajazzclub.com/'},
 				images: [
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''}
+					{img: 'img/nightlife/casablancas/casablancas.jpg', attrib: '', source: 'https://www.casablancajazzclub.com/'},
+					{img: 'img/nightlife/casablancas/oomph.jpg', attrib: 'https://www.casablancajazzclub.com/'},
+					{img: 'img/nightlife/casablancas/1006533333_2dc9a771d1_q.jpg', attrib: 'https://www.flickr.com/photos/cowbite/1006533333'},
+					{img: 'img/nightlife/casablancas/oomph2.jpg', attrib: 'http://www.rhlive.com/evening-bands/oompf/'},
+					{img: 'img/nightlife/casablancas/16133843727_2e6ba77fd5_q.jpg', attrib: 'https://www.flickr.com/photos/ter-burg/16133843727'},
+					{img: 'img/nightlife/concorde2/218400484_998bbcb6dd_q.jpg', attrib: 'https://www.flickr.com/photos/sam_ford/218400484'}
 				]
 			},
 			{
 				name: "Green Door Store",
 				location: {lat: 50.8293094, lng: -0.1424677},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
+				mainImage: {img: 'img/nightlife/green-door/green-door-store.jpg', attrib: '', source: 'http://thegreendoorstore.co.uk/'},
 				images: [
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''}
+					{img: 'img/nightlife/green-door/green-door-store.jpg', attrib: '', source: 'http://thegreendoorstore.co.uk/'},
+					{img: 'img/nightlife/concorde2/4353676211_0278f1ddd3_q.jpg', attrib: 'https://www.flickr.com/photos/ryawesome/4353676211'},
+					{img: 'img/nightlife/audio/5721570854_338ac38679_q.jpg', attrib: 'https://www.flickr.com/photos/catrinaustin/5721570854'},
+					{img: 'img/nightlife/green-door/3259421511_6f87d573e4_q.jpg', attrib: 'https://www.flickr.com/photos/jetalone/3259421511'},
+					{img: 'img/nightlife/green-door/8999573840_b3ea80fc49_q.jpg', attrib: 'https://www.flickr.com/photos/karen_od/8999573840'},
+					{img: 'img/nightlife/green-door/2931447597_b0a790a470_q.jpg', attrib: 'https://www.flickr.com/photos/ektogamat/2931447597'}
 				]
 			},
 			{
 				name: "Patterns (formally Audio)",
 				location: {lat: 50.8200005, lng: -0.1373349},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
+				mainImage: {img: 'img/nightlife/audio/patterns.jpg', attrib: '', source: 'http://patternsbrighton.com/'},
 				images: [
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''}
+					{img: 'img/nightlife/audio/patterns.jpg', attrib: '', source: 'http://patternsbrighton.com/'},
+					{img: 'img/nightlife/audio/194206581_2b9e190481_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/194206581'},
+					{img: 'img/nightlife/audio/4997066747_e40a5664a3_q.jpg', attrib: 'https://www.flickr.com/photos/mkorcuska/4997066747'},
+					{img: 'img/nightlife/audio/5008166467_eb5fcf5c09_q.jpg', attrib: 'https://www.flickr.com/photos/mixtribe/5008166467'},
+					{img: 'img/nightlife/audio/5721570854_338ac38679_q.jpg', attrib: 'https://www.flickr.com/photos/catrinaustin/5721570854'},
+					{img: 'img/nightlife/audio/4058744515_2528d1ea7f_q.jpg', attrib: 'https://www.flickr.com/photos/wobble-san/4058744515'}
 				]
 			},
 			{
 				name: "The Volks",
 				location: {lat: 50.8192982, lng: -0.1350255},
 				wiki: '',
-				mainImage: {img: '', attrib: '',},
+				mainImage: {img: 'img/nightlife/volks/volks.jpg', attrib: '', source: 'https://www.volksclub.co.uk/'},
 				images: [
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''},
-					{img: '', attrib: ''}
+					{img: 'img/nightlife/volks/volks.jpg', attrib: '', source: 'https://www.volksclub.co.uk/'},
+					{img: 'img/nightlife/volks/411818295_41f677d93a_q.jpg', attrib: 'https://www.flickr.com/photos/jaygooby/411818295'},
+					{img: 'img/nightlife/volks/14668535524_a282740dba_q.jpg', attrib: 'https://www.flickr.com/photos/seniju/14668535524'},
+					{img: 'img/nightlife/green-door/5696887715_7b759fc3ec_q.jpg', attrib: 'https://www.flickr.com/photos/king-edward/5696887715'},
+					{img: 'img/nightlife/audio/5721570854_338ac38679_q.jpg', attrib: 'https://www.flickr.com/photos/catrinaustin/5721570854'},
+					{img: 'img/nightlife/green-door/3259421511_6f87d573e4_q.jpg', attrib: 'https://www.flickr.com/photos/jetalone/3259421511'}
+				]
+			},
+			{
+				name: "Komedia Comedy Club",
+				location: {lat: 50.824875, lng: -0.1394362},
+				wiki: '',
+				mainImage: {img: 'img/nightlife/komedia/491695767_e484e2954c_q.jpg', attrib: 'https://www.flickr.com/photos/fsse-info/491695767'},
+				images: [
+					{img: 'img/nightlife/komedia/10717486433_1d755366cf_q.jpg', attrib: ''},
+					{img: 'img/nightlife/komedia/491695767_e484e2954c_q.jpg', attrib: 'https://www.flickr.com/photos/fsse-info/491695767'},
+					{img: 'img/nightlife/komedia/2051969021_4d785383f5_q.jpg', attrib: 'https://www.flickr.com/photos/maryanne67/2051969021'},
+					// {img: 'img/nightlife/komedia/13373224534_ef4a0a4ee7_q.jpg', attrib: 'https://www.flickr.com/photos/robtrick/13373224534'},
+					{img: 'img/nightlife/komedia/4425063060_3675f68960_q.jpg', attrib: 'https://www.flickr.com/photos/macabrephotographer/4425063060'},
+					{img: 'img/nightlife/komedia/9092710260_cf5649e678_q.jpg', attrib: 'https://www.flickr.com/photos/langecom/9092710260'},
+					{img: 'img/nightlife/komedia/komedia.jpg', attrib: '', source: 'https://www.komedia.co.uk/brighton/'}
 				]
 			}
 		]
@@ -328,11 +395,11 @@ var onLoadInfo = {
 				"<p><small>Even when there's not an organised event on, the sheer volume of visitors in the summer months, the density of pubs and clubs of every description, and the best summer hang out spots all equal one thing: Brighton vibes - as standard! If the sun has been shining, or the moon is full, or the day has a y in it, there will be crazy's to be found and fun to be had.</small></p>",
 	photos:	[
 		{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
-		{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
-		{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
-		{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
-		{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
-		{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'}
+		{img: 'img/seafront/217805015_36dcb3a9fa_q.jpg', attrib: 'https://www.flickr.com/photos/mikelo/217805015'},
+		{img: 'img/palace-pier/11422095636_42781da5c7_q.jpg', attrib: 'https://www.flickr.com/photos/pavlinajane/11422095636'},
+		{img: 'img/pavilion/8023877916_900b7269b5_q.jpg', attrib: 'https://www.flickr.com/photos/wildlife_encounters/8023877916',},
+		{img: 'img/north-laine/5781531147_80b1b59b0e_q.jpg', attrib: 'https://www.flickr.com/photos/llamnuds/5781531147'},
+		{img: 'img/seafront/379606222_7c6a271b2b_q.jpg', attrib: 'https://www.flickr.com/photos/neilhooting/379606222'}
 	]
 };
 
@@ -356,6 +423,7 @@ var ViewModel = function(){
 
 	this.clickCategory = function(clicked){
 		self.selectedCategory(clicked);
+		// $('self').addClass('selected');
 	};
 
 	// Observe when the selectedCategory changes and call the showMarkers and showPhotos function for that area
@@ -528,6 +596,5 @@ ko.applyBindings(vm);
 // Missing image attribution
 // OnLoad / Downs / Nightlife category images
 // Beach / Downs / Nightlife items image data
-
 
 
