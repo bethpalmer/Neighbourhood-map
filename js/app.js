@@ -487,6 +487,13 @@ var ViewModel = function(){
 		// Clear array - not strictly necessary but will stop array getting clogged up with markers
 		self.markers = [];
 
+		// // Style the markers a bit. This will be our listing marker icon.
+	 //    self.defaultIcon = makeMarkerIcon('ef4b3f');
+
+  //       // Create a "highlighted location" marker color for when the user
+  //       // mouses over the marker.
+  //       self.highlightedIcon = makeMarkerIcon('e01e19');
+
 		// Add markers
 		var bounds = new google.maps.LatLngBounds();
 
@@ -502,6 +509,7 @@ var ViewModel = function(){
                         map: self.map,
                         position: location.location,
                         title: location.name,
+                        // icon: defaultIcon,
                         image: location.mainImage.img,
                         attrib: location.mainImage.attrib,
                         animation: google.maps.Animation.DROP
@@ -514,6 +522,11 @@ var ViewModel = function(){
                     marker.addListener('click', function(){
                         self.populateInfoWindow(this, self.smallInfowindow);
                         self.populateImageArea(this, location.images);
+                        // Clear any previous individual marker animation before animating the current clicked marker
+                        for (var i=0; i<self.markers.length; i++){
+                        	self.markers[i].setAnimation(null);
+                        };
+                        self.toggleBounce(this);
                         // self.showWikiInfo(this, location);
                     });
 
@@ -524,6 +537,11 @@ var ViewModel = function(){
 		self.map.fitBounds(bounds);
 
 	};
+
+	// Animate individual clicked marker
+	this.toggleBounce = function(marker) {
+	    marker.setAnimation(google.maps.Animation.BOUNCE);
+	}
 
 	// this.listStyling = function (selected) {
 	// 	$("#list").removeClass('selected').addClass('selected', self);
@@ -631,9 +649,6 @@ var ViewModel = function(){
 var vm = new ViewModel();
 ko.applyBindings(vm);
 
-// SOMEWAY TO LOAD THE LOADWIKI (Was loadData function in example)
-// $('#form-container').submit(loadData);
-
 
 // TO DO
 
@@ -645,5 +660,16 @@ ko.applyBindings(vm);
 
 // CSS
 // Images area to display central or right of row
+
+
+// RUBRIC
+// Map marker should animate when clicked i.e. change colour
+// Knock out should not be used to handle the oogle map api
+// All data requests are recevied asynchronously
+// Data requests that fail are handled gracefully (timeout error msgs etc.)
+// Provide attribution for the source of additional data in UI and in the README
+// README includes all steps required to successfully run the app
+// Comments explain the code
+
 
 
