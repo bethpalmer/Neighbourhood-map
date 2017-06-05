@@ -450,15 +450,18 @@ var ViewModel = function(){
 	// Populate the observable array 
 	poi.forEach(function(object){
 		self.poiList.push(object);
-		// console.log(object);
 	});
 
+	// console.log(self.poiList());
 	this.selectedCategory = ko.observable();
 
 	this.clickCategory = function(clicked){
 		self.selectedCategory(clicked);
 		// console.log(clicked.area);
+		// $('this').siblings().css('color', 'black');
+		// $('this').css('color', 'red');
 		// var element = ;
+		// console.log(self.poiList(clicked));
 		// if (clicked.area === 'landmarks') {
 		// 	$('li').css('color', 'red');
 		// } else {
@@ -663,8 +666,7 @@ ko.applyBindings(vm);
 
 
 // RUBRIC
-// Map marker should animate when clicked i.e. change colour
-// Knock out should not be used to handle the oogle map api
+// Knock out should not be used to handle the google map api
 // All data requests are recevied asynchronously
 // Data requests that fail are handled gracefully (timeout error msgs etc.)
 // Provide attribution for the source of additional data in UI and in the README

@@ -30,12 +30,22 @@ h5 {
 	padding-top: 10px;
 }
 
-/* FOr the smallest screens */
+ul.coolification {
+	padding-left: 20px;
+}
+
+/* For the smallest screens */
 ul.coolification li {
 	text-decoration: none;
 	display: inline-block;
 	padding: 3px;
 }
+
+/*@media (max-width: 400px) {
+	ul.coolification {
+		display: block;
+	}
+}*/
 /*.select {
 	width: 30%;
 }
@@ -44,7 +54,7 @@ ul.coolification li {
 }*/
 @media (min-width: 768px) {
 	ul.coolification {
-	
+		margin-right: 10%;
 	}
 }
 
@@ -61,11 +71,14 @@ hr {
 	width: 90%;
 	height: 430px;
 	border: ridge 4px;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
 /*	display: inline-block;*/
 }
-#imageDisplay {
-/*	display: inline-block;*/
-}
+/*#imageDisplay {
+	float: right;
+}*/
 
 @media (min-width: 1200px) {
 	.sub-title {
@@ -83,6 +96,12 @@ hr {
 		/*width: 45%;*/
 	}
 }
+
+/*@media (max-width: 767px) {
+	#imageDisplay {
+		text-align: text-center;
+	}
+}*/
 
 @media (min-width: 992px) {
 	#map {
@@ -120,6 +139,15 @@ figure img {
 .footer {
 	/*padding-top: 10px;*/
 }
+@media (min-width: 992px) {
+	#images {
+		width: 40%;
+	}
+}
+
+/*#images {
+	width: 40%;
+}*/
 /*
 #main {
 	position: relative;
