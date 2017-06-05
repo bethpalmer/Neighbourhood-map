@@ -530,7 +530,9 @@ var ViewModel = function(){
                         	self.markers[i].setAnimation(null);
                         };
                         self.toggleBounce(this);
-                        // self.showWikiInfo(this, location);
+
+                        self.selectedCategory(area);
+                        self.loadLocationInfo(location);
                     });
 
 				});
@@ -592,34 +594,75 @@ var ViewModel = function(){
 	// 	// }
 	// };
 
-	// this.loadWiki = function (argument) {
-	// 	var $wikiElem = $('#infoDisplayBody');
-	// 	// clear out old data before new request
-	//     $wikiElem.text("");
-	//     // load Wikipedia articles via AJAX request and JSON-P to get round CORS
-	//     var wikiUrl = argument.wiki
+	this.loadLocationInfo = function (location) {
 
-	//     var wikiRequestTimeout = setTimeout(function(){
-	//         $wikiElem.text("failed to get Wikipedia resources");
-	//     }, 8000);
+		if (!location.wiki && !location.yelp) {
+			return;
+		}
 
-	//     $.ajax({
-	// 	    type: "GET",
-	// 	    url: wikiUrl,
-	// 	    contentType: "application/json; charset=utf-8",
-	// 	    async: true,
-	// 	    dataType: "json",
-	// 	    success: function (response) {
+		$('#infoDisplayHead, #infoDisplayBody').empty();
 
-	// 	        var markup = data.parse.text["*"];
-	// 	        var blurb = $('<div></div>').html(markup);
-	// 	        $('#infoDisplayBody').html($(blurb).find('p'));
+		if (location.wiki) {
 
-	// 	    },
-	// 	    clearTimeout(wikiRequestTimeout);
-	// 	})
-	// 	return false;
-	// };
+			$.ajax({
+		        type: "GET",
+		        url: location.wiki,
+		        contentType: "application/json; charset=utf-8",
+		        async: true,
+		        dataType: "json",
+		        timeout: 8000,
+		        success: function (data, textStatus, jqXHR) {
+		            var markup = data.parse.text["*"];
+		            var blurb = $('<div></div>').html(markup);
+		            $('#infoDisplayBody').html($(blurb).find('p'));
+
+		        },
+		        error: function (errorMessage) {
+		        	$('#infoDisplayBody').html("We haven't managed to find the data you are looking for. Please try again!");
+		        }
+		    });
+
+		}
+
+		
+		if (location.yelp) {
+
+			/* $.ajax({
+		        type: "POST",
+		        url: "https://api.yelp.com/oauth2/token",
+		        data: {
+		        	grant_type: "client_credentials",
+		        	client_id: "GQ_3I3NLQHnUlhnp1tXFwQ",
+		        	client_secret: "JzPnt5RPDQQsJLKT0GNYtmLYe7WkE3TxyEYCwabbGz8IYbdrYanpGCQsZutSQhvW"
+		        },
+		        timeout: 8000,
+		        success: function (data, textStatus, jqXHR) {
+		            console.log(data);
+
+		        },
+		        error: function (errorMessage) {
+		        }
+		    }); */
+
+			$.ajax({
+		        type: "GET",
+		        url: location.yelp,
+				beforeSend: function (xhr) {
+				    xhr.setRequestHeader('Authorization', 'Bearer UYjhs7SaNHI0YoVw4WSIOMVc3w0qjxG3oWZH_1HlZRyGFmd0e2zsShx3wuHok4z_vbVBuxBldjRtrXPGjf5V7yOm5232sqRqIuOrUG17Tt7LAJ5KzIMWJtS5ls41WXYx');
+				},
+		        timeout: 8000,
+		        success: function (data, textStatus, jqXHR) {
+		            console.log(data);
+
+		        },
+		        error: function (errorMessage) {
+		        }
+		    });
+
+		}
+
+
+	};
 
 	this.onLoadDisplay = function (content) {
 		$('#imageDisplay').empty();

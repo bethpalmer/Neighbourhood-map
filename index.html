@@ -46,7 +46,7 @@
             </div>
             <div class="col-xs-9 text-right">
                 <ul id="list" class="coolification" data-bind="foreach: poiList">
-                    <li data-bind="text: area, click: $parent.clickCategory"></li>
+                    <li data-bind="text: area, click: $parent.clickCategory, css: { selected: $parent.selectedCategory() == $data }"></li>
                 </ul>
             </div>
         </div>
