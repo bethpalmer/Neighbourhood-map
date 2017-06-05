@@ -20,7 +20,7 @@ var poi = [
 			{
 				name: "North Laine",
 				location: {lat: 50.8249028, lng: -0.1395479},
-				wiki: '',
+				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=North_Laine&prop=text&format=json&callback=?",
 				mainImage: {img: 'img/north-laine/19448793731_6f7f389dcb_q.jpg', attrib: 'https://www.flickr.com/photos/garryknight/19448793731'},
 				images: [
 					{img: 'img/north-laine/4160169690_9f625d73fa_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/4160169690'},
@@ -34,7 +34,7 @@ var poi = [
 			{
 				name: "The South Lanes",
 				location: {lat: 50.8219453, lng: -0.1404023},
-				wiki: '',
+				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=The_Lanes&prop=text&format=json&callback=?",
 				mainImage: {img: 'img/south-lanes/23731069090_f9477f4e1d_q.jpg', attrib: 'https://www.flickr.com/photos/peter2010/23731069090'},
 				images: [
 					{img: 'img/south-lanes/6070703057_38161fb4d2_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/6071247928'},
@@ -252,7 +252,7 @@ var poi = [
 			{
 				name: "Devils Dyke",
 				location: {lat: 50.8826218, lng: -0.2089273},
-				wiki: '',
+				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Devil%27s_Dyke,_Sussex&prop=text&format=json&callback=?",
 				mainImage: {img: 'img/downs/devils-dyke/7818003410_5554422ef5_q.jpg', attrib: 'https://www.flickr.com/photos/_szuszu/7818003410'},
 				images: [
 					{img: 'img/downs/devils-dyke/5077533_3dde6885d2_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/5077533'},
@@ -267,7 +267,7 @@ var poi = [
 			{
 				name: "Ditchling Beacon",
 				location: {lat: 50.9003315, lng: -0.1085077},
-				wiki: '',
+				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Ditchling_Beacon&prop=text&format=json&callback=?",
 				mainImage: {img: 'img/downs/ditchling-beacon/5182867968_d7fda405b6_q.jpg', attrib: 'https://www.flickr.com/photos/herry/5182867968'},
 				images: [
 					{img: 'img/downs/ditchling-beacon/5182867968_d7fda405b6_q.jpg', attrib: 'https://www.flickr.com/photos/herry/5182867968'},
@@ -281,7 +281,7 @@ var poi = [
 			{
 				name: "Stanmer",
 				location: {lat: 50.8634037, lng: -0.0980768},
-				wiki: '',
+				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Stanmer_Park&prop=text&format=json&callback=?",
 				mainImage: {img: 'img/downs/stanmer/3289309070_de4585f7a2_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/3289309070'},
 				images: [
 					{img: 'img/downs/stanmer/7208670050_298d816a1a_q.jpg', attrib: 'https://www.flickr.com/photos/harveymarketingcompany/7208670050'},
@@ -428,13 +428,23 @@ var ViewModel = function(){
 	// Populate the observable array 
 	poi.forEach(function(object){
 		self.poiList.push(object);
+		// console.log(object);
 	});
 
 	this.selectedCategory = ko.observable();
 
 	this.clickCategory = function(clicked){
 		self.selectedCategory(clicked);
-		// $('self').addClass('selected');
+		// console.log(clicked.area);
+		// var element = ;
+		// if (clicked.area === 'landmarks') {
+		// 	$('li').css('color', 'red');
+		// } else {
+		// 	return;
+		// };
+		// $('li:contains("beach")').css('color', 'red');
+		// $('#list').addClass('selected');
+		// self.selectedCategory.addClass('selected');
 	};
 
 	// Observe when the selectedCategory changes and call the showMarkers and showPhotos function for that area
@@ -442,7 +452,7 @@ var ViewModel = function(){
 		self.showMarkers(self.selectedCategory().area);
 		self.showCategoryInfo(self.selectedCategory());
 		// self.listStyling(self.selectedCategory().area);
-		console.log(self.selectedCategory().area);
+		// console.log(self.selectedCategory().area);
 		// self.selectedCategory().area.style(color, 'red');
 	});
 
@@ -597,15 +607,10 @@ ko.applyBindings(vm);
 // FUNCTIONALIY
 // selectedCategory li styling
 // Load Wiki api on individual marker load
+// Load Yelp api on nightlife markers
 // Bonus: selecting a marker selects the category the marker belongs to
 
 // CSS
 // Images area to display central or right of row
-
-// DATA
-// Lanes / Beach / Landmarks / Downs / Nightlife custom content
-// Missing image attribution
-// OnLoad / Downs / Nightlife category images
-// Beach / Downs / Nightlife items image data
 
 

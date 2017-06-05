@@ -39,7 +39,7 @@ $(document).ready(function(){
     $.ajax({
         type: "GET",
         // url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0+1&page=The_Lanes&callback=?",
-        url: "http://en.wikipedia.org/w/api.php?action=parse&page=Brighton_Wheel&section=0&prop=text&format=json&callback=?",
+        url: "http://en.wikipedia.org/w/api.php?action=parse&page=Brighton_Wheel&section=0&section=1&prop=text&format=json&callback=?",
         // url: "https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json",
         // url: "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=Stack%20Overflow",
         // url: "http://en.wikipedia.org/w/api.php?action=parse&page=google&prop=text&format=json&callback=?"
