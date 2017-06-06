@@ -306,9 +306,9 @@ var poi = [
 				name: "Concorde 2",
 				location: {lat: 50.8173252, lng: -0.1252401},
 				yelp: 'https://api.yelp.co.uk/v3/businesses/concorde-2-brighton/reviews',
-				mainImage: {img: 'img/nightlife/concorde2/concorde2.jpg', attrib: '', source: 'https://www.concorde2.co.uk/'},
+				mainImage: {img: 'img/nightlife/concorde2/concorde2.jpg', source: 'https://www.concorde2.co.uk/'},
 				images: [
-					{img: 'img/nightlife/concorde2/concorde2.jpg', attrib: '', source: 'https://www.concorde2.co.uk/'},
+					{img: 'img/nightlife/concorde2/concorde2.jpg', source: 'https://www.concorde2.co.uk/'},
 					{img: 'img/nightlife/concorde2/4370785941_43f2e9c317_q.jpg', attrib: 'https://www.flickr.com/photos/icanfoto/4370785941'},
 					{img: 'img/nightlife/concorde2/398257430_1db028926d_q.jpg', attrib: 'https://www.flickr.com/photos/matt-m/398257430'},
 					{img: 'img/nightlife/concorde2/32806841594_dda58aa44b_q.jpg', attrib: 'https://www.flickr.com/photos/jordan_gillard_photography/32806841594'},
@@ -320,9 +320,9 @@ var poi = [
 				name: "Casablanca Jazz Club",
 				location: {lat: 50.8209047, lng: -0.1455632},
 				yelp: 'https://api.yelp.co.uk/v3/businesses/casablanca-jazz-club-brighton-2/reviews',
-				mainImage: {img: 'img/nightlife/casablancas/casablancas.jpg', attrib: '', source: 'https://www.casablancajazzclub.com/'},
+				mainImage: {img: 'img/nightlife/casablancas/casablancas.jpg', source: 'https://www.casablancajazzclub.com/'},
 				images: [
-					{img: 'img/nightlife/casablancas/casablancas.jpg', attrib: '', source: 'https://www.casablancajazzclub.com/'},
+					{img: 'img/nightlife/casablancas/casablancas.jpg', source: 'https://www.casablancajazzclub.com/'},
 					{img: 'img/nightlife/casablancas/oomph.jpg', attrib: 'https://www.casablancajazzclub.com/'},
 					{img: 'img/nightlife/casablancas/1006533333_2dc9a771d1_q.jpg', attrib: 'https://www.flickr.com/photos/cowbite/1006533333'},
 					{img: 'img/nightlife/casablancas/oomph2.jpg', attrib: 'http://www.rhlive.com/evening-bands/oompf/'},
@@ -334,9 +334,9 @@ var poi = [
 				name: "Green Door Store",
 				location: {lat: 50.8293094, lng: -0.1424677},
 				yelp: 'https://api.yelp.co.uk/v3/businesses/green-door-store-brighton-2/reviews',
-				mainImage: {img: 'img/nightlife/green-door/green-door-store.jpg', attrib: '', source: 'http://thegreendoorstore.co.uk/'},
+				mainImage: {img: 'img/nightlife/green-door/green-door-store.jpg', source: 'http://thegreendoorstore.co.uk/'},
 				images: [
-					{img: 'img/nightlife/green-door/green-door-store.jpg', attrib: '', source: 'http://thegreendoorstore.co.uk/'},
+					{img: 'img/nightlife/green-door/green-door-store.jpg', source: 'http://thegreendoorstore.co.uk/'},
 					{img: 'img/nightlife/concorde2/4353676211_0278f1ddd3_q.jpg', attrib: 'https://www.flickr.com/photos/ryawesome/4353676211'},
 					{img: 'img/nightlife/audio/5721570854_338ac38679_q.jpg', attrib: 'https://www.flickr.com/photos/catrinaustin/5721570854'},
 					{img: 'img/nightlife/green-door/3259421511_6f87d573e4_q.jpg', attrib: 'https://www.flickr.com/photos/jetalone/3259421511'},
@@ -348,9 +348,9 @@ var poi = [
 				name: "Patterns (formally Audio)",
 				location: {lat: 50.8200005, lng: -0.1373349},
 				yelp: 'https://api.yelp.co.uk/v3/businesses/patterns-brighton/reviews',
-				mainImage: {img: 'img/nightlife/audio/patterns.jpg', attrib: '', source: 'http://patternsbrighton.com/'},
+				mainImage: {img: 'img/nightlife/audio/patterns.jpg', source: 'http://patternsbrighton.com/'},
 				images: [
-					{img: 'img/nightlife/audio/patterns.jpg', attrib: '', source: 'http://patternsbrighton.com/'},
+					{img: 'img/nightlife/audio/patterns.jpg', source: 'http://patternsbrighton.com/'},
 					{img: 'img/nightlife/audio/194206581_2b9e190481_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/194206581'},
 					{img: 'img/nightlife/audio/4997066747_e40a5664a3_q.jpg', attrib: 'https://www.flickr.com/photos/mkorcuska/4997066747'},
 					{img: 'img/nightlife/audio/5008166467_eb5fcf5c09_q.jpg', attrib: 'https://www.flickr.com/photos/mixtribe/5008166467'},
@@ -362,9 +362,9 @@ var poi = [
 				name: "The Volks",
 				location: {lat: 50.8192982, lng: -0.1350255},
 				yelp: 'https://api.yelp.co.uk/v3/businesses/volks-bar-and-club-brighton/reviews',
-				mainImage: {img: 'img/nightlife/volks/volks.jpg', attrib: '', source: 'https://www.volksclub.co.uk/'},
+				mainImage: {img: 'img/nightlife/volks/volks.jpg', source: 'https://www.volksclub.co.uk/'},
 				images: [
-					{img: 'img/nightlife/volks/volks.jpg', attrib: '', source: 'https://www.volksclub.co.uk/'},
+					{img: 'img/nightlife/volks/volks.jpg', source: 'https://www.volksclub.co.uk/'},
 					{img: 'img/nightlife/volks/411818295_41f677d93a_q.jpg', attrib: 'https://www.flickr.com/photos/jaygooby/411818295'},
 					{img: 'img/nightlife/volks/14668535524_a282740dba_q.jpg', attrib: 'https://www.flickr.com/photos/seniju/14668535524'},
 					{img: 'img/nightlife/green-door/5696887715_7b759fc3ec_q.jpg', attrib: 'https://www.flickr.com/photos/king-edward/5696887715'},
@@ -383,7 +383,7 @@ var poi = [
 					{img: 'img/nightlife/komedia/2051969021_4d785383f5_q.jpg', attrib: 'https://www.flickr.com/photos/maryanne67/2051969021'},
 					{img: 'img/nightlife/komedia/4425063060_3675f68960_q.jpg', attrib: 'https://www.flickr.com/photos/macabrephotographer/4425063060'},
 					{img: 'img/nightlife/komedia/9092710260_cf5649e678_q.jpg', attrib: 'https://www.flickr.com/photos/langecom/9092710260'},
-					{img: 'img/nightlife/komedia/komedia.jpg', attrib: '', source: 'https://www.komedia.co.uk/brighton/'}
+					{img: 'img/nightlife/komedia/komedia.jpg', source: 'https://www.komedia.co.uk/brighton/'}
 				]
 			}
 		]
@@ -528,15 +528,19 @@ var ViewModel = function(){
 	// WHOLE AREA OBJECT: imgArray whatever.areaImages, alt is whatever.area, attrib is whatever.areaImages[i].attrib, and standard CC licence.
 	// LOCATION OBJECT: imgArray whatever.images, alt is either whatever.name OR whatever.images[i].alt, attrib is whatever.images[i].attrib and standard CC licence, or if there is on it will be whatever.images[i].source and excert from the company website and link to site.
 	// ONLOAD OBJECT: imgArray whatever.photos, alt is "Image of Brighton",
+
+	// PROBLEM WITH FOREACH LOOP HERE IN THAT ALL IMAGES ARE ATTRIBUTED WITH THE LAST IMAGES DETAILS. DO I NEED TO CREATE A NEW ARRAY FOR ATTRIBUTION AND REFERENCE THAT WITH THE [i]?
 	this.populateImageArea = function (object){
 		$('#imageDisplay').empty();
 		var imgArray = [];
 		var alt = '';
-		var attrib = '';
+		var attrib = [];
 		if (object.areaImages) {
 			imgArray = object.areaImages;
 			alt = 'Brighton '+object.area;
-			attrib = '<a target="_blank" href="'+object.areaImages.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
+			imgArray.forEach(function(img){
+				attrib.push('<a target="_blank" href="'+img.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
+			});
 		} else if (object.images) {
 			console.log(object.images);
 			imgArray = object.images;
@@ -546,33 +550,33 @@ var ViewModel = function(){
 			} else {
 				alt = object.name;
 			}
-
-			if (object.images.source) {
-				attrib = 'Image from venue <a target="_blank" href="'+object.images.source+'">Website</a>';
-			} else {
-				attrib = '<a target="_blank" href="'+object.images.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
-			}
-			 
+			imgArray.forEach(function(img){
+				if (img.source) {
+					attrib.push('Image from venue <a target="_blank" href="'+img.source+'">Website</a>');
+				} else {
+					attrib.push('<a target="_blank" href="'+img.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
+				}
+			});	 
 		} else if (object.photos) {
 			imgArray = object.photos;
 			alt = 'Brighton';
-			attrib = '<a target="_blank" href="'+object.photos.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
+			imgArray.forEach(function(img){
+				attrib.push('<a target="_blank" href="'+img.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
+			});
 		}
 
-		// console.log(imgArray);
-
 		for (var i=0; i<imgArray.length; i++){
-			$('#imageDisplay').append('<figure><img src="'+imgArray[i].img+'" class="img-responsive" alt="image of '+alt+'"><figcaption class="attrib">'+attrib+'</figcaption></figure>');
+			$('#imageDisplay').append('<figure><img src="'+imgArray[i].img+'" class="img-responsive" alt="image of '+alt+'"><figcaption class="attrib">'+attrib[i]+'</figcaption></figure>');
 		};
 	};
 	
 	// To display images and info relating to the area 
 	this.showAreaInfo = function (object) {
-		$('#imageDisplay').empty();
-		for (var i=0; i<object.areaImages.length; i++){
-			$('#imageDisplay').append('<figure><img src="'+object.areaImages[i].img+'" class="img-responsive" alt="image of '+object.area+'"><figcaption class="attrib"><a href="'+object.areaImages[i].attrib+'" target="_blank">Photo</a> licenced under CC</figcaption></figure>');
-		};
-		// populateImageArea(object);
+		// $('#imageDisplay').empty();
+		// for (var i=0; i<object.areaImages.length; i++){
+		// 	$('#imageDisplay').append('<figure><img src="'+object.areaImages[i].img+'" class="img-responsive" alt="image of '+object.area+'"><figcaption class="attrib"><a href="'+object.areaImages[i].attrib+'" target="_blank">Photo</a> licenced under CC</figcaption></figure>');
+		// };
+		self.populateImageArea(object);
 		$('#infoDisplayHead, #infoDisplayBody').empty();
 		$('#infoDisplayHead').append('The '+object.area);
 		$('#infoDisplayBody').append(object.infoContent);
