@@ -93,7 +93,7 @@ var poi = [
 				mainImage: {img: 'img/seafront/8011854258_c75ae444a9_q.jpg', attrib: 'https://www.flickr.com/photos/ajy/8011854258', alt: 'Day trippers, Hen and Stag Dos, London sorts'},
 				images: [
 					{img: 'img/seafront/148674451_adde1f1354_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/148674451'},
-					{img: 'img/seafront/14774074611_d5c26bb3fa_q.jpg', attrib: ''},
+					{img: 'img/seafront/10626283333_c0c35e2fc3_q.jpg', attrib: 'https://www.flickr.com/photos/psigrist/10626283333'},
 					{img: 'img/i360/31803543046_6f694b9216_q.jpg', attrib: 'https://www.flickr.com/photos/mdpettitt/31803543046'},
 					{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
 					{img: 'img/seafront/30820692266_e3b5fa10a6_q.jpg', attrib: 'https://www.flickr.com/photos/windybeach/30820692266'},
@@ -305,7 +305,10 @@ var poi = [
 			{
 				name: "Concorde 2",
 				location: {lat: 50.8173252, lng: -0.1252401},
-				yelp: 'https://api.yelp.co.uk/v3/businesses/concorde-2-brighton/reviews',
+				yelp: [
+					'<span class="yelp-review" data-review-id="y-ttMi7ei9eX2CXf1Ac5dQ" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=BsWAjLlPgOlO7b4QYgvdjA" rel="nofollow noopener">Hikaru C.</a><a href="https://www.yelp.co.uk/biz/concorde-2-brighton?hrid=y-ttMi7ei9eX2CXf1Ac5dQ" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/ZLg_g9x7DGvIAeVEku-RUw" rel="nofollow noopener">Concorde 2</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>',
+					'<span class="yelp-review" data-review-id="0MpSPSJmz4Oc-mcD-fuN8A" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=-EBBz6xfC-w16ZowU8GZEA" rel="nofollow noopener">Mike F.</a> <a href="https://www.yelp.co.uk/biz/concorde-2-brighton?hrid=0MpSPSJmz4Oc-mcD-fuN8A" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/ZLg_g9x7DGvIAeVEku-RUw" rel="nofollow noopener">Concorde 2</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>'
+				],
 				mainImage: {img: 'img/nightlife/concorde2/concorde2.jpg', source: 'https://www.concorde2.co.uk/'},
 				images: [
 					{img: 'img/nightlife/concorde2/concorde2.jpg', source: 'https://www.concorde2.co.uk/'},
@@ -319,7 +322,10 @@ var poi = [
 			{
 				name: "Casablanca Jazz Club",
 				location: {lat: 50.8209047, lng: -0.1455632},
-				yelp: 'https://api.yelp.co.uk/v3/businesses/casablanca-jazz-club-brighton-2/reviews',
+				yelp: [
+					'<span class="yelp-review" data-review-id="IcWXVPjhjzEUB8o1-IorAQ" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=6QiXS9ZsJKAyz96Xo-QZLA" rel="nofollow noopener">Laura H.</a> <a href="https://www.yelp.co.uk/biz/casablanca-jazz-club-brighton-2?hrid=IcWXVPjhjzEUB8o1-IorAQ" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/zpqTyUOOqKXAyzjaMmlEVg" rel="nofollow noopener">Casablanca Jazz Club</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>',
+					'<span class="yelp-review" data-review-id="RPlxluZp1t7s140iv9Klfg" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=nU8D5d8RdPA8PIo1jMc0RA" rel="nofollow noopener">Das Y.</a> <a href="https://www.yelp.co.uk/biz/casablanca-jazz-club-brighton-2?hrid=RPlxluZp1t7s140iv9Klfg" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/zpqTyUOOqKXAyzjaMmlEVg" rel="nofollow noopener">Casablanca Jazz Club</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>'
+				],
 				mainImage: {img: 'img/nightlife/casablancas/casablancas.jpg', source: 'https://www.casablancajazzclub.com/'},
 				images: [
 					{img: 'img/nightlife/casablancas/casablancas.jpg', source: 'https://www.casablancajazzclub.com/'},
@@ -333,7 +339,10 @@ var poi = [
 			{
 				name: "Green Door Store",
 				location: {lat: 50.8293094, lng: -0.1424677},
-				yelp: 'https://api.yelp.co.uk/v3/businesses/green-door-store-brighton-2/reviews',
+				yelp: [
+					'<span class="yelp-review" data-review-id="xCRMxeDjVdZaSa6nGIQShw" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=wK7unWb9i25ekCP37sWtfQ" rel="nofollow noopener">Kerry G.</a> <a href="https://www.yelp.co.uk/biz/green-door-store-brighton-2?hrid=xCRMxeDjVdZaSa6nGIQShw" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/ecL1CMx7_okyM9hBOC6mzQ" rel="nofollow noopener">Green Door Store</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>',
+					'<span class="yelp-review" data-review-id="g4fzNFQUee3OHZBePF6OIw" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=EL9a1CZKTpDtTcYD5g_0zg" rel="nofollow noopener">Dean T.</a> <a href="https://www.yelp.co.uk/biz/green-door-store-brighton-2?hrid=g4fzNFQUee3OHZBePF6OIw" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/ecL1CMx7_okyM9hBOC6mzQ" rel="nofollow noopener">Green Door Store</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>'
+				],
 				mainImage: {img: 'img/nightlife/green-door/green-door-store.jpg', source: 'http://thegreendoorstore.co.uk/'},
 				images: [
 					{img: 'img/nightlife/green-door/green-door-store.jpg', source: 'http://thegreendoorstore.co.uk/'},
@@ -347,7 +356,10 @@ var poi = [
 			{
 				name: "Patterns (formally Audio)",
 				location: {lat: 50.8200005, lng: -0.1373349},
-				yelp: 'https://api.yelp.co.uk/v3/businesses/patterns-brighton/reviews',
+				yelp: [
+					'<span class="yelp-review" data-review-id="qhDRU2AvIeilUqI9yxboqw" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=F7T7QlRWKxUHSVEsr-zgoQ" rel="nofollow noopener">Rachael H.</a> <a href="https://www.yelp.co.uk/biz/patterns-brighton?hrid=qhDRU2AvIeilUqI9yxboqw" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/xEKU-RW6VuchSGFw54pmRQ" rel="nofollow noopener">Patterns</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>',
+					'<span class="yelp-review" data-review-id="2kFHYQ4ezJYqb0C6b6WSNw" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=15Jq6oZmbpDSPN13Y4V87g" rel="nofollow noopener">Georgina W.</a> <a href="https://www.yelp.co.uk/biz/patterns-brighton?hrid=2kFHYQ4ezJYqb0C6b6WSNw" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/xEKU-RW6VuchSGFw54pmRQ" rel="nofollow noopener">Patterns</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>'
+				],
 				mainImage: {img: 'img/nightlife/audio/patterns.jpg', source: 'http://patternsbrighton.com/'},
 				images: [
 					{img: 'img/nightlife/audio/patterns.jpg', source: 'http://patternsbrighton.com/'},
@@ -361,7 +373,10 @@ var poi = [
 			{
 				name: "The Volks",
 				location: {lat: 50.8192982, lng: -0.1350255},
-				yelp: 'https://api.yelp.co.uk/v3/businesses/volks-bar-and-club-brighton/reviews',
+				yelp: [
+					'<span class="yelp-review" data-review-id="C8yI03m0RhAr96vOm4-jkA" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=RyX1zKWXGPemgx1Cau7Ffw" rel="nofollow noopener">Karolina G.</a> <a href="https://www.yelp.co.uk/biz/volks-bar-and-club-brighton?hrid=C8yI03m0RhAr96vOm4-jkA" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/8th47PAKr0vuu6F81Wu2ug" rel="nofollow noopener">Volks Bar & Club</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>',
+					'<span class="yelp-review" data-review-id="Ar2U9bl0SEyU3yYVp4ysoQ" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=1_6V_1DvXcBA47xcncDosQ" rel="nofollow noopener">Alice C.</a> <a href="https://www.yelp.co.uk/biz/volks-bar-and-club-brighton?hrid=Ar2U9bl0SEyU3yYVp4ysoQ" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/8th47PAKr0vuu6F81Wu2ug" rel="nofollow noopener">Volks Bar & Club</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>'
+				],
 				mainImage: {img: 'img/nightlife/volks/volks.jpg', source: 'https://www.volksclub.co.uk/'},
 				images: [
 					{img: 'img/nightlife/volks/volks.jpg', source: 'https://www.volksclub.co.uk/'},
@@ -375,7 +390,10 @@ var poi = [
 			{
 				name: "Komedia Comedy Club",
 				location: {lat: 50.824875, lng: -0.1394362},
-				yelp: 'https://api.yelp.co.uk/v3/businesses/komedia-brighton-3/reviews',
+				yelp: [
+					'<span class="yelp-review" data-review-id="NXiyZ4DJuncUHIuR49_hXw" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=IxfljBBglWHk-qzWMEE5NQ" rel="nofollow noopener">Gary P.</a> <a href="https://www.yelp.co.uk/biz/komedia-brighton-3?hrid=NXiyZ4DJuncUHIuR49_hXw" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/yxwSNLi4RLRSAkG5KV5AAA" rel="nofollow noopener">Komedia</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>',
+					'<span class="yelp-review" data-review-id="9ejOQ7RIuW7d2EBJt28RTQ" data-hostname="www.yelp.co.uk">Read <a href="https://www.yelp.com/user_details?userid=wK7unWb9i25ekCP37sWtfQ" rel="nofollow noopener">Kerry G.</a> <a href="https://www.yelp.co.uk/biz/komedia-brighton-3?hrid=9ejOQ7RIuW7d2EBJt28RTQ" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/yxwSNLi4RLRSAkG5KV5AAA" rel="nofollow noopener">Komedia</a> on <a href="https://www.yelp.co.uk" rel="nofollow noopener">Yelp</a><script async="async" src="https://www.yelp.co.uk/embed/widgets.js" type="text/javascript"></script></span>'
+				],
 				mainImage: {img: 'img/nightlife/komedia/491695767_e484e2954c_q.jpg', attrib: 'https://www.flickr.com/photos/fsse-info/491695767'},
 				images: [
 					{img: 'img/nightlife/komedia/10717486433_1d755366cf_q.jpg', attrib: 'https://www.flickr.com/photos/lukeas09/10717486433'},
@@ -440,7 +458,7 @@ var ViewModel = function(){
 		// Clear all markers
 		for (var i=0; i<self.markers.length; i++){
 			self.markers[i].setMap(null);
-		};
+		}
 		// Clear array - not strictly necessary but will stop array getting clogged up with markers
 		self.markers = [];
 
@@ -451,7 +469,7 @@ var ViewModel = function(){
 		// When showMarkers function is called initially in the init function, it is passed an argument of null, so will show markers in all areas
 		// Otherwise filter for where the object area, area property, is equal to the area passed in by the selectedCategory.
 		poi.forEach(function(area) {
-			if (findArea == null || area.area == findArea) {
+			if (findArea === null || area.area == findArea) {
 				// For each location within the filtered area
 				area.locations.forEach(function(location) {
 
@@ -485,7 +503,7 @@ var ViewModel = function(){
                         // Clear any previous individual marker animation before animating the current clicked marker
                         for (var i=0; i<self.markers.length; i++){
                         	self.markers[i].setAnimation(null);
-                        };
+                        }
                         self.toggleBounce(this);
                         
                     });
@@ -501,26 +519,26 @@ var ViewModel = function(){
 	// Animate individual clicked marker
 	this.toggleBounce = function(marker) {
 	    marker.setAnimation(google.maps.Animation.BOUNCE);
-	}
+	};
 
 	this.populateInfoPopup = function (marker, location, infoPopup){
 		
 		// Get info for image alt from 2 different locations because of long title formatting issue
 		var alt = '';
 		if (!location.mainImage.alt) {
-			alt = location.name
+			alt = location.name;
 		} else {
-			alt = location.mainImage.alt
+			alt = location.mainImage.alt;
 		}
 
 		if (infoPopup.marker != marker) {
 			infoPopup.marker = marker;
-			infoPopup.setContent('<h5>'+marker.title+'</h5><figure><img src="'+marker.image+'" alt="image of "'+alt+'><figcaption class="attrib">'+marker.attrib+'</figcaption></figure>');
+			infoPopup.setContent('<h5>'+marker.title+'</h5><figure><img src="'+marker.image+'" alt="image of "'+alt+'><figcaption>'+marker.attrib+'</figcaption></figure>');
 			infoPopup.open(self.map, marker);
 			// Clear marker property when infoPopup is closed
 			infoPopup.addListener('closeclilck', function() {
 				infoPopup.setMarker(null);
-			})
+			});
 		}
 	};
 
@@ -566,8 +584,8 @@ var ViewModel = function(){
 		}
 
 		for (var i=0; i<imgArray.length; i++){
-			$('#imageDisplay').append('<figure><img src="'+imgArray[i].img+'" class="img-responsive" alt="image of '+alt+'"><figcaption class="attrib">'+attrib[i]+'</figcaption></figure>');
-		};
+			$('#imageDisplay').append('<figure><img src="'+imgArray[i].img+'" class="img-responsive" alt="image of '+alt+'"><figcaption>'+attrib[i]+'</figcaption></figure>');
+		}
 	};
 	
 	// To display images and info relating to the area 
@@ -620,7 +638,12 @@ var ViewModel = function(){
 
 		
 		if (location.yelp) {
-
+			$('#infoDisplayHead').append("<p style='text-decoration:underline'>Information displayed here is sourced from the popular review site <a href='https://www.yelp.co.uk/'>Yelp</a></p>");
+			console.log(location.yelp);
+			for (var i=0; i<location.yelp.length; i++){
+				$('#infoDisplayBody').append('<div class="col-xs-12 col-sm-6">'+location.yelp[i]+'</div>');
+			}
+			
 			/* $.ajax({
 		        type: "POST",
 		        url: "https://api.yelp.com/oauth2/token",
@@ -638,20 +661,20 @@ var ViewModel = function(){
 		        }
 		    }); */
 
-			$.ajax({
-		        type: "GET",
-		        url: location.yelp,
-				beforeSend: function (xhr) {
-				    xhr.setRequestHeader('Authorization', 'Bearer UYjhs7SaNHI0YoVw4WSIOMVc3w0qjxG3oWZH_1HlZRyGFmd0e2zsShx3wuHok4z_vbVBuxBldjRtrXPGjf5V7yOm5232sqRqIuOrUG17Tt7LAJ5KzIMWJtS5ls41WXYx');
-				},
-		        timeout: 8000,
-		        success: function (data, textStatus, jqXHR) {
-		            console.log(data);
+			// $.ajax({
+		 //        type: "GET",
+		 //        url: location.yelp,
+			// 	beforeSend: function (xhr) {
+			// 	    xhr.setRequestHeader('Authorization', 'Bearer UYjhs7SaNHI0YoVw4WSIOMVc3w0qjxG3oWZH_1HlZRyGFmd0e2zsShx3wuHok4z_vbVBuxBldjRtrXPGjf5V7yOm5232sqRqIuOrUG17Tt7LAJ5KzIMWJtS5ls41WXYx');
+			// 	},
+		 //        timeout: 8000,
+		 //        success: function (data, textStatus, jqXHR) {
+		 //            console.log(data);
 
-		        },
-		        error: function (errorMessage) {
-		        }
-		    });
+		 //        },
+		 //        error: function (errorMessage) {
+		 //        }
+		 //    });
 
 		}
 
@@ -667,7 +690,7 @@ var ViewModel = function(){
 		$('#infoDisplayHead,  #infoDisplayBody').empty();
 		$('#infoDisplayHead').append('What makes Brighton cooler than an Eskimos sunglasses is...');
 		$('#infoDisplayBody').append(onLoadInfo.infoContent);
-	}
+	};
 
 	// this.infoDisplay = function ()
 

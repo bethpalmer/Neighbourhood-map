@@ -18,7 +18,8 @@
     <link href="css/main.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Ravi+Prakash|Shadows+Into+Light" rel="stylesheet">
+    <!-- Note %7C used as a URL encode value of the pipe to correct HTML checker error -->
+    <link href="https://fonts.googleapis.com/css?family=Ravi+Prakash%7CShadows+Into+Light" rel="stylesheet">
 
 </head>
 
@@ -45,7 +46,7 @@
                                     optionsCaption: 'See all...'"></select>
             </div>
             <div class="col-xs-9 text-right">
-                <ul id="list" class="coolification" data-bind="foreach: poiList">
+                <ul id="list" class="cool" data-bind="foreach: poiList">
                     <li data-bind="text: area, click: $parent.clickArea, css: { selected: $parent.selectedArea() == $data }"></li>
                 </ul>
             </div>
@@ -59,10 +60,6 @@
 
             <div id="images" class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
                 <div id="imageDisplay" class="text-center"></div>
-                <!-- <div data-bind="visible: selectedCategory"> --> <!-- Appears when you select something -->
-                    <!-- Images of the
-                <span data-bind="text: selectedCategory() ? selectedCategory().area : 'unknown'"></span>.
-            </div> -->
             </div>
         </div>
     </section>
@@ -70,9 +67,16 @@
     <section class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h3 id="infoDisplayHead" class="text-center"><h3>
+                <h3 id="infoDisplayHead" class="text-center"></h3>
                 <div id="infoDisplayBody"></div>
             </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div id="review0" class="col-xs-12 col-sm-6"></div>
+            <div id="review1" class="col-xs-12 col-sm-6"></div>
         </div>
     </section>
 
@@ -92,82 +96,7 @@
         // Initialise function now handled in the ViewModel
         function initMap(){
             vm.init();
-        };
-
-
-    // marker.addListener('click') to populate infowindow and populate additional info DOM section and instagram aside (sometimes).
-            
-            // for (var i=0; i<places.length; i++){
-            //      places[i].locations.forEach(function(object) {
-            //          var position = location;
-            //          var title = name;
-            //          var marker = new google.maps.Marker({
-            //             map: map,
-            //             position: postion,
-            //             title: title,
-            //             animation: google.maps.Animation.DROP,
-            //             id: i
-            //         });
-
-            //         markers.push(marker);
-            //         bounds.extend(marker.position);
-            //         marker.addListener('click', function(){
-            //             populateInfoWindow(this, largeInfowindow);
-            //         });
-            //     });
-            // }   
-
-// MOSTLY GARBAGE UNDER HERE
-
-//     map.fitBounds(bounds);
-    // map.fitBounds(bounds); // won't set map bounds until we showHouses()
-    // document.getElementById('list_2').addEventListener('click', showLandmarks);
-    // document.getElementById('list_4').addEventListener('click', showMusic);
-// };
-// This function populates the infowindow when the marker is clicked. Only allows one info window to open, and populates based on markers position.
-// function populateInfoWindow(marker, infowindow){
-    // check to make sure infowindow is not already open
-    // if (infowindow.marker != marker) {
-    //     infowindow.marker = marker;
-    //     infowindow.setContent('<div>' + marker.title + '</div>');
-    //     infowindow.open(map, marker);
-        // make sure the marker property is cleared if the infowindow is closed
-    //     Infowindow.addListener('closeclick', function(){
-    //         infowindow.setMarker(null);
-    //     })
-    // }
-// }
-
-// function showAll(){
-//     var bounds = new google.maps.LatLngBounds();
-//     // Extend the boundaries of the map for each marker and display the marker
-//     for (var i=0; i<landmarkMarkers.length; i++){
-//         landmarkMarkers[i].setMap(map);
-//         bounds.extend(landmarkMarkers[i].position);
-//     }
-//     for (var i=0; i<musicMarkers.length; i++){
-//         musicMarkers[i].setMap(map);
-//         bounds.extend(musicMarkers[i].position);
-//     }
-//     map.fitBounds(bounds);
-// };
-// This function will loop through the markers array and display them all
-// function showLandmarks(){
-//     var bounds = new google.maps.LatLngBounds();
-    // Extend the boundaries of the map for each marker and display the marker
-//     for (var i=0; i<landmarkMarkers.length; i++){
-//         landmarkMarkers[i].setMap(map);
-//         bounds.extend(landmarkMarkers[i].position);
-//     }
-//     map.fitBounds(bounds);
-// }
-// function showMusic(){
-//     var bounds = new google.maps.LatLngBounds();
-//     for (var i=0; i<musicMarkers.length; i++){
-//         musicMarkers[i].setMap(map);
-//         bounds.extend(musicMarkers[i].position);
-//     }
-//     map.fitBounds(bounds);     
+        };  
 
 
 </script>

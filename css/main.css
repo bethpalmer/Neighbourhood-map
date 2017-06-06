@@ -2,25 +2,40 @@ body {
     font-family: 'Shadows Into Light', cursive, Verdana, Geneva, sans-serif;
     font-family: 'Ravi Prakash', cursive, Verdana, Geneva, sans-serif;
 }
+
+p,
+h2 {
+	font-family: 'Shadows Into Light', cursive, Verdana, Geneva, sans-serif;
+}
+
+h1,
+h3,
+h4,
+h5,
+h6,
+figure {
+	font-family: 'Ravi Prakash', cursive, Verdana, Geneva, sans-serif;
+}
+
 p {
   font-size: 15px;
   line-height: 30px;
-  font-family: 'Shadows Into Light', cursive, Verdana, Geneva, sans-serif;
   color: #233140
 }
 h1 {
-	font-family: 'Ravi Prakash', cursive, Verdana, Geneva, sans-serif;
 	font-size: 7em;
 	line-height: 0.7;
 }
 h2 {
-	font-family: 'Shadows Into Light', cursive, Verdana, Geneva, sans-serif;
 	font-size: 2.3em;
 }
 h5 {
-	font-family: 'Ravi Prakash', cursive, Verdana, Geneva, sans-serif;
 	font-size: 1.5em;
 }
+h6 {
+	font-size: 1em;
+}
+
 @media (min-width: 992px) {
 	h2 {
 		font-size: 2.4em;
@@ -31,30 +46,19 @@ h5 {
 	padding-top: 10px;
 }
 
-ul.coolification {
+ul.cool {
 	padding-left: 20px;
 }
 
 /* For the smallest screens */
-ul.coolification li {
+ul.cool li {
 	text-decoration: none;
 	display: inline-block;
 	padding: 3px;
 }
 
-/*@media (max-width: 400px) {
-	ul.coolification {
-		display: block;
-	}
-}*/
-/*.select {
-	width: 30%;
-}
-.list {
-	width: 60%;
-}*/
 @media (min-width: 768px) {
-	ul.coolification {
+	ul.cool {
 		margin-right: 10%;
 	}
 }
@@ -74,12 +78,7 @@ hr {
 	border: ridge 4px;
 	margin-left: auto;
 	margin-right: auto;
-/*	float: none;*/
-/*	display: inline-block;*/
 }
-/*#imageDisplay {
-	float: right;
-}*/
 
 @media (max-width: 767px) {
 	#map {
@@ -99,23 +98,11 @@ hr {
 		margin: 10px;
 		height: 541px;
 	}
-	#imageDisplay {
-		/*width: 45%;*/
-	}
 }
-
-/*@media (max-width: 767px) {
-	#imageDisplay {
-		text-align: text-center;
-	}
-}*/
 
 @media (min-width: 992px) {
 	#map {
 		width: 55%;
-	}
-	#imageDisplay {
-	/*	width: 45%;*/
 	}
 }
 
@@ -127,7 +114,6 @@ figure {
 	margin: 10px;
 	width: 150px;
 	display: inline-block;
-	font-family: 'Ravi Prakash', cursive, Verdana, Geneva, sans-serif;
 }
 
 figure img {
@@ -140,28 +126,12 @@ figure img {
 	}
 }
 
-.attrib {
-	font-size: 1em;
-}
-
-.footer {
-	/*padding-top: 10px;*/
-}
 @media (min-width: 992px) {
 	#images {
 		width: 40%;
 	}
 }
 
-/*#images {
-	width: 40%;
-}*/
-/*
-#main {
-	position: relative;
-}*/
-/*
-aside {
-	position: absolute;
-	right: 0;
-}*/
+.review {
+	margin: 10px;
+}
