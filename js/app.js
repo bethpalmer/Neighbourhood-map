@@ -12,16 +12,15 @@ var poi = [
 			{img: 'img/north-laine/5781531147_80b1b59b0e_q.jpg', attrib: 'https://www.flickr.com/photos/llamnuds/5781531147'},
 			{img: 'img/south-lanes/23731069090_f9477f4e1d_q.jpg', attrib: 'https://www.flickr.com/photos/peter2010/23731069090'}
 			],
-		infoContent: "<p><small>The charming, quirky and distinctive areas of the lanes are separated into two areas.</small></p>"+
-					"<p><small>The North Laine is a central row of streets of small quirky one off stores, niche cafes and bars, stretching north within a grid like layout of residential streets patched with other occasional shops.</small></p>"+
-					"<p><small>The lanes, also known as the south lanes, is a tangled web of narrow lanes with small stores and hidden squares. It has a high population of antique jewellery shops, high end fashion retailers, and is buzzing with all kinds of restaurants and bars.</small></p>"+
-					"<p><small>Both areas boast a changeable selection of performers and street merchants, creating a curious and enjoyable shopping experience.</small></p>",
+		infoContent: "<p>The charming, quirky and distinctive areas of the lanes are separated into two areas.</p>"+
+					"<p>The North Laine is a central row of streets of small quirky one off stores, niche cafes and bars, stretching north within a grid like layout of residential streets patched with other occasional shops.</p>"+
+					"<p>The lanes, also known as the south lanes, is a tangled web of narrow lanes with small stores and hidden squares. It has a high population of antique jewellery shops, high end fashion retailers, and is buzzing with all kinds of restaurants and bars.</p>"+
+					"<p>Both areas boast a changeable selection of performers and street merchants, creating a curious and enjoyable shopping experience.</p>",
 		locations: [
 			{
-				name: "North Laine",
+				name: "The North Laine",
 				location: {lat: 50.8249028, lng: -0.1395479},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=North_Laine&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "North_Laine",
 				mainImage: {img: 'img/north-laine/19448793731_6f7f389dcb_q.jpg', attrib: 'https://www.flickr.com/photos/garryknight/19448793731'},
 				images: [
 					{img: 'img/north-laine/4160169690_9f625d73fa_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/4160169690'},
@@ -35,8 +34,7 @@ var poi = [
 			{
 				name: "The South Lanes",
 				location: {lat: 50.8219453, lng: -0.1404023},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=The_Lanes&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "The_Lanes",
 				mainImage: {img: 'img/south-lanes/23731069090_f9477f4e1d_q.jpg', attrib: 'https://www.flickr.com/photos/peter2010/23731069090'},
 				images: [
 					{img: 'img/south-lanes/6070703057_38161fb4d2_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/6071247928'},
@@ -59,15 +57,13 @@ var poi = [
 					{img: 'img/seafront/14784910924_c5db35e8f6_q.jpg', attrib: 'https://www.flickr.com/photos/garryknight/14784910924'},
 					{img: 'img/seafront/14867566034_6af7448638_q.jpg', attrib: 'https://www.flickr.com/photos/bexwalton/14867566034'}
 				],
-		infoContent: "<div class='row'><div class='col-sm-6'><p><small>The beach in the city or Brighton and Hove ranges from busy and buzzing around the centre, between the 2 piers, to a more restful and spacious vibe at the two ends. The west side, heading up towards hove lagoon brings a distinct family feel with its iconic beach huts, and free range children. The east side of the palace pier hosts a slightly more hip and racey crowd. Situated just south of the gay friendly area of kemptown it leads up towards the infamous nudist beach on the way to the marina.</small></p>"+
-					"<p><small>The markers in this section are all based on Phil Lucas's comedy observations of the stereotypes of people you find in different areas of the beach on a sunny day. You can see the main part of his 2017 comedy illustration, which he updates annually, displayed in this information section.</small></p></div>"+
+		infoContent: "<div class='row'><div class='col-sm-6'><p>The beach in the city or Brighton and Hove ranges from busy and buzzing around the centre, between the 2 piers, to a more restful and spacious vibe at the two ends. The west side, heading up towards hove lagoon brings a distinct family feel with its iconic beach huts, and free range children. The east side of the palace pier hosts a slightly more hip and racey crowd. Situated just south of the gay friendly area of kemptown it leads up towards the infamous nudist beach on the way to the marina.</p>"+
+					"<p>The markers in this section are all based on Phil Lucas's comedy observations of the stereotypes of people you find in different areas of the beach on a sunny day. You can see the main part of his 2017 comedy illustration, which he updates annually, displayed in this information section.</p></div>"+
 					"<div class='col-sm-6'><img src='img/seafront/where-to-sit.jpg' alt='comedy image of where to sit on Brighton Beach' width=100%><p>Attribution: <a href='https://www.phillucas.com/single-post/2014/10/16/Know-Where-to-Sit-on-Brighton-Beach'>Phil Lucas - Comedian</a></p></div></div>",
 		locations: [
 			{
 				name: "Those who wish to be alone",
 				location: {lat: 50.8245914, lng: -0.1700829},
-				wiki: '',
-				yelp: '',
 				mainImage: {img: 'img/seafront/6195951658_34204344cd_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/6195951658'},
 				images: [
 					{img: 'img/seafront/379606222_7c6a271b2b_q.jpg', attrib: 'https://www.flickr.com/photos/neilhooting/379606222'},
@@ -81,9 +77,7 @@ var poi = [
 			{
 				name: "Freelancers,<br>Middle class parents,<br>Families with very large picnics",
 				location: {lat: 50.8222356, lng: -0.1541934},
-				wiki: '',
-				yelp: '',
-				mainImage: {img: 'img/seafront/14867566034_6af7448638_q.jpg', attrib: 'https://www.flickr.com/photos/bexwalton/14867566034'},
+				mainImage: {img: 'img/seafront/14867566034_6af7448638_q.jpg', attrib: 'https://www.flickr.com/photos/bexwalton/14867566034', alt: 'Freelancers, Middle class parents, Families with very large picnics'},
 				images: [
 					{img: 'img/seafront/217805015_36dcb3a9fa_q.jpg', attrib: 'https://www.flickr.com/photos/mikelo/217805015'},
 					{img: 'img/seafront/14867566034_6af7448638_q.jpg', attrib: 'https://www.flickr.com/photos/bexwalton/14867566034'},
@@ -96,9 +90,7 @@ var poi = [
 			{
 				name: "Day trippers,<br>Hen and Stag Dos,<br>London sorts",
 				location: {lat: 50.8208433, lng: -0.1468491},
-				wiki: '',
-				yelp: '',
-				mainImage: {img: 'img/seafront/8011854258_c75ae444a9_q.jpg', attrib: 'https://www.flickr.com/photos/ajy/8011854258'},
+				mainImage: {img: 'img/seafront/8011854258_c75ae444a9_q.jpg', attrib: 'https://www.flickr.com/photos/ajy/8011854258', alt: 'Day trippers, Hen and Stag Dos, London sorts'},
 				images: [
 					{img: 'img/seafront/148674451_adde1f1354_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/148674451'},
 					{img: 'img/seafront/14774074611_d5c26bb3fa_q.jpg', attrib: ''},
@@ -110,11 +102,9 @@ var poi = [
 				]
 			},
 			{
-				name: "Gay and Lesbian community,<br>Arty types,<br>and Hipsters",
+				name: "Gay and Lesbian community,<br>Arty types<br>and Hipsters",
 				location: {lat: 50.8188354, lng: -0.1310034},
-				wiki: '',
-				yelp: '',
-				mainImage: {img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: 'https://www.flickr.com/photos/lamdogjunkie/8717901362'},
+				mainImage: {img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: 'https://www.flickr.com/photos/lamdogjunkie/8717901362', alt: 'Gay and Lesbian community, Arty types and Hipsters'},
 				images: [
 					{img: 'img/palace-pier/6985876181_5bf4c2d4a7_q.jpg', attrib: 'https://www.flickr.com/photos/valcker/6985876181'},
 					{img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: 'https://www.flickr.com/photos/lamdogjunkie/8717901362'},
@@ -127,9 +117,7 @@ var poi = [
 			{
 				name: "Unemployed people<br>who like fishing",
 				location: {lat: 50.81167, lng: -0.10394},
-				wiki: '',
-				yelp: '',
-				mainImage: {img: 'img/seafront/4753329720_d362817294_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/4753329720'},
+				mainImage: {img: 'img/seafront/4753329720_d362817294_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/4753329720', alt: 'Unemployed people who like fishing'},
 				images: [
 					{img: 'img/seafront/18563876_3fc3956c8b_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/18563876'},
 					{img: 'img/seafront/4753344557_a8d0611036_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/4753344557'},
@@ -151,15 +139,14 @@ var poi = [
 			{img: 'img/i360/31803543046_6f694b9216_q.jpg', attrib: 'https://www.flickr.com/photos/mdpettitt/31803543046'},
 			{img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: 'https://www.flickr.com/photos/lamdogjunkie/8717901362'}
 		],
-		infoContent: "<p><small>Brighton has a diverse, quirky and charming range of landmarks both historic and modern. The elaborate Brighton Pavilion, Indian style on the outside, Chinese style on the inside, sets the scene for the ecclectic mishmash of the city that has grown up around it. One of its crowning moments for me was the Dr Blighty light show in Brighton festival 2016 where the whole building was lit up in a spectacular fashion using a stunning colour palette as diverse as Brighton itself. You can see a picture of one of the light formations when you click on the landmark marker.</small></p>"+
-					"<p><small>On our vibrant city coast line there are a number of diverse landmarks: the two distinctive and quirky piers stretching out into the English Channel, the historic and recently beautifully refurbished bandstand, and the brand new shiny, but locally controversial i360 tower - the tallest structure in Sussex and in the Guinness book of world records as being the world most slender tower.</small></p>"+
-					"<p><small>The Brighton wheel, the charming tourist attraction east of the pier was sadly dismantled on the opening of the i360, compounding the controversy surrounding Brightons newest landmark. I have included the Brighton wheel in this section on landmarks because frankly, we miss it a little bit!</small></p>",
+		infoContent: "<p>Brighton has a diverse, quirky and charming range of landmarks both historic and modern. The elaborate Brighton Pavilion, Indian style on the outside, Chinese style on the inside, sets the scene for the ecclectic mishmash of the city that has grown up around it. One of its crowning moments for me was the Dr Blighty light show in Brighton festival 2016 where the whole building was lit up in a spectacular fashion using a stunning colour palette as diverse as Brighton itself. You can see a picture of one of the light formations when you click on the landmark marker.</p>"+
+					"<p>On our vibrant city coast line there are a number of diverse landmarks: the two distinctive and quirky piers stretching out into the English Channel, the historic and recently beautifully refurbished bandstand, and the brand new shiny, but locally controversial i360 tower - the tallest structure in Sussex and in the Guinness book of world records as being the world most slender tower.</p>"+
+					"<p>The Brighton wheel, the charming tourist attraction east of the pier was sadly dismantled on the opening of the i360, compounding the controversy surrounding Brightons newest landmark. I have included the Brighton wheel in this section on landmarks because frankly, we miss it a little bit!</p>",
 		locations: [
 			{
-				name: "The Pavilion",
+				name: "The Royal Pavilion",
 				location: {lat: 50.8223517, lng: -0.1376855},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Royal_Pavilion&section=0&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "Royal_Pavilion",
 				mainImage: {img: 'img/pavilion/8023877916_900b7269b5_q.jpg', attrib: 'https://www.flickr.com/photos/wildlife_encounters/8023877916',},
 				images: [
 					{img: 'img/pavilion/3323339269_ca33f086cb_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/3323339269'},
@@ -173,11 +160,9 @@ var poi = [
 			{
 				name: "The Bandstand",
 				location: {lat: 50.8222711, lng: -0.1548171},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Bandstand&section=0&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "Bandstand&section=1",
 				mainImage: {img: 'img/bandstand/14046071078_04e9688f83_q.jpg', attrib: 'https://www.flickr.com/photos/lihourj/14046071078',},
 				images: [
-					// {img: 'img/bandstand/14046071078_04e9688f83_q.jpg', attrib: 'https://www.flickr.com/photos/lihourj/14046071078'},
 					{img: 'img/bandstand/383876389_f0df733a1c_q.jpg', attrib: 'https://www.flickr.com/photos/neilhooting/383876389'},
 					{img: 'img/bandstand/5845670941_97b927f301_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/5845670941'},
 					{img: 'img/bandstand/6952821202_7bccaed344_q.jpg', attrib: 'https://www.flickr.com/photos/josh_emerson/6952821202'},
@@ -189,8 +174,7 @@ var poi = [
 			{
 				name: "The Palace Pier",
 				location: {lat: 50.8168555, lng: -0.136738},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Brighton_Palace_Pier&section=0&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "Brighton_Palace_Pier",
 				mainImage: {img: 'img/palace-pier/1013795516_63de524d2f_q.jpg', attrib: 'https://www.flickr.com/photos/jp_london/1013795516'},
 				images: [
 					{img: 'img/palace-pier/1013795516_63de524d2f_q.jpg', attrib: 'https://www.flickr.com/photos/jp_london/1013795516'},
@@ -204,8 +188,7 @@ var poi = [
 			{
 				name: "The West Pier",
 				location: {lat: 50.8190545, lng: -0.1519598},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=West_Pier&section=0&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "West_Pier",
 				mainImage: {img: 'img/west-pier/33528982172_e567f1d0d4_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/33528982172',},
 				images: [
 					{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
@@ -219,8 +202,7 @@ var poi = [
 			{
 				name: "The i360",
 				location: {lat: 50.821439, lng: -0.150754},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=British_Airways_i360&section=0&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "British_Airways_i360",
 				mainImage: {img: 'img/i360/29482583831_68fbc62c95_q.jpg', attrib: 'https://www.flickr.com/photos/100289769@N08/29482583831',},
 				images: [
 					{img: 'img/i360/29482583831_68fbc62c95_q.jpg', attrib: 'https://www.flickr.com/photos/100289769@N08/29482583831'},
@@ -234,8 +216,7 @@ var poi = [
 			{
 				name: "The Brighton Wheel",
 				location: {lat: 50.8191078, lng: -0.1343941},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Brighton_Wheel&section=0&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "Brighton_Wheel",
 				mainImage: {img: 'img/wheel/6220401503_09f84eccfe_q.jpg', attrib: 'https://www.flickr.com/photos/martin_thomas/6220401503',},
 				images: [
 					{img: 'img/wheel/8717901362_48cfeb14e7_q.jpg', attrib: 'https://www.flickr.com/photos/lamdogjunkie/8717901362'},
@@ -258,15 +239,14 @@ var poi = [
 			{img: 'img/downs/devils-dyke/9204422764_cbe7a8a587_q.jpg', attrib: 'https://www.flickr.com/photos/petercastleton/9204422764'},
 			{img: 'img/downs/devils-dyke/15523462694_f2ac554f52_q.jpg', attrib: 'https://www.flickr.com/photos/jaffathecake/15523462694'}
 		],
-		infoContent: "<p><small>Brighton, nestled within the South Downs on the south coast of England, has its own little microclimate, making it one of the sunniest locations within the U.K.</small></p>"+
-					"<p><small>The South Downs stretching for 100 kilometers from Eastbourne to Winchester boast some beautiful scenery of stunning rolling hills and grassy peaks. The highest point in the South Downs at Ditchling beacon has views which stretch over 50miles in every direction.</small></p>"+
-					"<p><small>Just a couple of miles outside of the suburbs of Brighton the Downs are the perfect antidote to city life, and and afternoon escape which can make you feel a million miles away from civilisation even although geographically they are highly accessible.</small></p>",
+		infoContent: "<p>Brighton, nestled within the South Downs on the south coast of England, has its own little microclimate, making it one of the sunniest locations within the U.K.</p>"+
+					"<p>The South Downs stretching for 100 kilometers from Eastbourne to Winchester boast some beautiful scenery of stunning rolling hills and grassy peaks. The highest point in the South Downs at Ditchling beacon has views which stretch over 50miles in every direction.</p>"+
+					"<p>Just a couple of miles outside of the suburbs of Brighton the Downs are the perfect antidote to city life, and and afternoon escape which can make you feel a million miles away from civilisation even although geographically they are highly accessible.</p>",
 		locations: [
 			{
 				name: "Devils Dyke",
 				location: {lat: 50.8826218, lng: -0.2089273},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Devil%27s_Dyke,_Sussex&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "Devil%27s_Dyke,_Sussex",
 				mainImage: {img: 'img/downs/devils-dyke/7818003410_5554422ef5_q.jpg', attrib: 'https://www.flickr.com/photos/_szuszu/7818003410'},
 				images: [
 					{img: 'img/downs/devils-dyke/5077533_3dde6885d2_q.jpg', attrib: 'https://www.flickr.com/photos/elsie/5077533'},
@@ -281,8 +261,7 @@ var poi = [
 			{
 				name: "Ditchling Beacon",
 				location: {lat: 50.9003315, lng: -0.1085077},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Ditchling_Beacon&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "Ditchling_Beacon",
 				mainImage: {img: 'img/downs/ditchling-beacon/5182867968_d7fda405b6_q.jpg', attrib: 'https://www.flickr.com/photos/herry/5182867968'},
 				images: [
 					{img: 'img/downs/ditchling-beacon/5182867968_d7fda405b6_q.jpg', attrib: 'https://www.flickr.com/photos/herry/5182867968'},
@@ -296,8 +275,7 @@ var poi = [
 			{
 				name: "Stanmer",
 				location: {lat: 50.8634037, lng: -0.0980768},
-				wiki: "http://en.wikipedia.org/w/api.php?action=parse&page=Stanmer_Park&prop=text&format=json&callback=?",
-				yelp: '',
+				wiki: "Stanmer_Park",
 				mainImage: {img: 'img/downs/stanmer/3289309070_de4585f7a2_q.jpg', attrib: 'https://www.flickr.com/photos/dominicspics/3289309070'},
 				images: [
 					{img: 'img/downs/stanmer/7208670050_298d816a1a_q.jpg', attrib: 'https://www.flickr.com/photos/harveymarketingcompany/7208670050'},
@@ -320,14 +298,13 @@ var poi = [
 					{img: 'img/nightlife/concorde2/218400484_998bbcb6dd_q.jpg', attrib: 'https://www.flickr.com/photos/sam_ford/218400484'},
 					{img: 'img/nightlife/audio/4997066747_e40a5664a3_q.jpg', attrib: 'https://www.flickr.com/photos/mkorcuska/4997066747'}
 				],
-		infoContent: "<p><small>Brighton is renowned for its pumping nightlife. With its high density of pubs, bars and clubs and other venues there is something guaranteed to suit every taste. A selection of theatres, the Brighton centre offering high profile gigs, komedia for comedy nights, dance clubs and bars representing every genre of music.</small></p>"+
-					"<p><small>The city wide late licence means the town is buzzing at every hour of the night, with clubs often open until 6, with afterclubs and all night food places to head to when you're done with dancing.</small></p>"+
-					"<p><small>The city has even adopted its own local spirit - Tuaca - which although generally little known outside of Brighton, is available in almost every venue in town. Commonly served as a cold smooth shot in can also be mixed with ginger ale and a slice of lime for a popular Tuscan mule giving a nod to its Italian roots.</small></p>",
+		infoContent: "<p>Brighton is renowned for its pumping nightlife. With its high density of pubs, bars and clubs and other venues there is something guaranteed to suit every taste. A selection of theatres, the Brighton centre offering high profile gigs, komedia for comedy nights, dance clubs and bars representing every genre of music.</p>"+
+					"<p>The city wide late licence means the town is buzzing at every hour of the night, with clubs often open until 6, with afterclubs and all night food places to head to when you're done with dancing.</p>"+
+					"<p>The city has even adopted its own local spirit - Tuaca - which although generally little known outside of Brighton, is available in almost every venue in town. Commonly served as a cold smooth shot in can also be mixed with ginger ale and a slice of lime for a popular Tuscan mule giving a nod to its Italian roots.</p>",
 		locations: [
 			{
 				name: "Concorde 2",
 				location: {lat: 50.8173252, lng: -0.1252401},
-				wiki: '',
 				yelp: 'https://api.yelp.co.uk/v3/businesses/concorde-2-brighton/reviews',
 				mainImage: {img: 'img/nightlife/concorde2/concorde2.jpg', attrib: '', source: 'https://www.concorde2.co.uk/'},
 				images: [
@@ -342,7 +319,6 @@ var poi = [
 			{
 				name: "Casablanca Jazz Club",
 				location: {lat: 50.8209047, lng: -0.1455632},
-				wiki: '',
 				yelp: 'https://api.yelp.co.uk/v3/businesses/casablanca-jazz-club-brighton-2/reviews',
 				mainImage: {img: 'img/nightlife/casablancas/casablancas.jpg', attrib: '', source: 'https://www.casablancajazzclub.com/'},
 				images: [
@@ -357,7 +333,6 @@ var poi = [
 			{
 				name: "Green Door Store",
 				location: {lat: 50.8293094, lng: -0.1424677},
-				wiki: '',
 				yelp: 'https://api.yelp.co.uk/v3/businesses/green-door-store-brighton-2/reviews',
 				mainImage: {img: 'img/nightlife/green-door/green-door-store.jpg', attrib: '', source: 'http://thegreendoorstore.co.uk/'},
 				images: [
@@ -372,7 +347,6 @@ var poi = [
 			{
 				name: "Patterns (formally Audio)",
 				location: {lat: 50.8200005, lng: -0.1373349},
-				wiki: '',
 				yelp: 'https://api.yelp.co.uk/v3/businesses/patterns-brighton/reviews',
 				mainImage: {img: 'img/nightlife/audio/patterns.jpg', attrib: '', source: 'http://patternsbrighton.com/'},
 				images: [
@@ -387,7 +361,6 @@ var poi = [
 			{
 				name: "The Volks",
 				location: {lat: 50.8192982, lng: -0.1350255},
-				wiki: '',
 				yelp: 'https://api.yelp.co.uk/v3/businesses/volks-bar-and-club-brighton/reviews',
 				mainImage: {img: 'img/nightlife/volks/volks.jpg', attrib: '', source: 'https://www.volksclub.co.uk/'},
 				images: [
@@ -402,14 +375,12 @@ var poi = [
 			{
 				name: "Komedia Comedy Club",
 				location: {lat: 50.824875, lng: -0.1394362},
-				wiki: '',
 				yelp: 'https://api.yelp.co.uk/v3/businesses/komedia-brighton-3/reviews',
 				mainImage: {img: 'img/nightlife/komedia/491695767_e484e2954c_q.jpg', attrib: 'https://www.flickr.com/photos/fsse-info/491695767'},
 				images: [
-					{img: 'img/nightlife/komedia/10717486433_1d755366cf_q.jpg', attrib: ''},
+					{img: 'img/nightlife/komedia/10717486433_1d755366cf_q.jpg', attrib: 'https://www.flickr.com/photos/lukeas09/10717486433'},
 					{img: 'img/nightlife/komedia/491695767_e484e2954c_q.jpg', attrib: 'https://www.flickr.com/photos/fsse-info/491695767'},
 					{img: 'img/nightlife/komedia/2051969021_4d785383f5_q.jpg', attrib: 'https://www.flickr.com/photos/maryanne67/2051969021'},
-					// {img: 'img/nightlife/komedia/13373224534_ef4a0a4ee7_q.jpg', attrib: 'https://www.flickr.com/photos/robtrick/13373224534'},
 					{img: 'img/nightlife/komedia/4425063060_3675f68960_q.jpg', attrib: 'https://www.flickr.com/photos/macabrephotographer/4425063060'},
 					{img: 'img/nightlife/komedia/9092710260_cf5649e678_q.jpg', attrib: 'https://www.flickr.com/photos/langecom/9092710260'},
 					{img: 'img/nightlife/komedia/komedia.jpg', attrib: '', source: 'https://www.komedia.co.uk/brighton/'}
@@ -421,11 +392,11 @@ var poi = [
 
 var onLoadInfo = {
 	infoContent: "<h4>The People</h4>"+
-				"<p><small>Brighton - the gay capital of England - is brimming with eccentric characters. Anything goes here in Brighton and Hove and even the most extreme of fashion statements are accepted as the norm. Brightonians are unconventional as standard. We are the only  constituency in the UK to vote in political leadership by the Green Party. There is in fact a local movement to become an independent state - The People's Republic Of Brighton And Hove! In the current political climate, one could argue that it’s an ideal that doesn't seem quite so absurd! And we have even adopted our own unconventional local spirit - Tuaca - a smooth sweet shot served best cold.</small></p>"+
+				"<p>Brighton - the gay capital of England - is brimming with eccentric characters. Anything goes here in Brighton and Hove and even the most extreme of fashion statements are accepted as the norm. Brightonians are unconventional as standard. We are the only  constituency in the UK to vote in political leadership by the Green Party. There is in fact a local movement to become an independent state - The People's Republic Of Brighton And Hove! In the current political climate, one could argue that it’s an ideal that doesn't seem quite so absurd! And we have even adopted our own unconventional local spirit - Tuaca - a smooth sweet shot served best cold.</p>"+
 				"<h4>The Events</h4>"+
-				"<p><small>Brighton has an impressive Calender of annual events. The whole month of May Brighton is wrapped up in a party atmosphere as the city celebrates the Brighton festival and Brighton fringe both running concurrently for the 4 week period. With street theatre, spectacular costumes, free performances, music, art installations, pop up bars and venues, it's every locals favourite time of year! Other organised events that Brighton boasts include the annual Pride celebration, one of the biggest in Europe, the Kemptown Carnival, Paddle Round the Pier, The Great Escape, October's Comedy Festival, Wildlife Festival, Funk the Format, Shakedown / Boundary Festival, Together the People, the Brighton Zombie Walk, the Naked Bike Ride - we have an occasion for whatever your preference!</small></p>"+
+				"<p>Brighton has an impressive Calender of annual events. The whole month of May Brighton is wrapped up in a party atmosphere as the city celebrates the Brighton festival and Brighton fringe both running concurrently for the 4 week period. With street theatre, spectacular costumes, free performances, music, art installations, pop up bars and venues, it's every locals favourite time of year! Other organised events that Brighton boasts include the annual Pride celebration, one of the biggest in Europe, the Kemptown Carnival, Paddle Round the Pier, The Great Escape, October's Comedy Festival, Wildlife Festival, Funk the Format, Shakedown / Boundary Festival, Together the People, the Brighton Zombie Walk, the Naked Bike Ride - we have an occasion for whatever your preference!</p>"+
 				"<h4>The Vibe</h4>"+
-				"<p><small>Even when there's not an organised event on, the sheer volume of visitors in the summer months, the density of pubs and clubs of every description, and the best summer hang out spots all equal one thing: Brighton vibes - as standard! If the sun has been shining, or the moon is full, or the day has a y in it, there will be crazy's to be found and fun to be had.</small></p>",
+				"<p>Even when there's not an organised event on, the sheer volume of visitors in the summer months, the density of pubs and clubs of every description, and the best summer hang out spots all equal one thing: Brighton vibes - as standard! If the sun has been shining, or the moon is full, or the day has a y in it, there will be crazy's to be found and fun to be had.</p>",
 	photos:	[
 		{img: 'img/west-pier/5629808414_7069fde68b_q.jpg', attrib: 'https://www.flickr.com/photos/hozinja/5629808414'},
 		{img: 'img/seafront/217805015_36dcb3a9fa_q.jpg', attrib: 'https://www.flickr.com/photos/mikelo/217805015'},
@@ -448,37 +419,20 @@ var ViewModel = function(){
 	this.poiList = ko.observableArray([]); // observable array of objects
 
 	// Populate the observable array 
-	poi.forEach(function(object){
-		self.poiList.push(object);
+	poi.forEach(function(area){
+		self.poiList.push(area);
 	});
+	
+	this.selectedArea = ko.observable();
 
-	// console.log(self.poiList());
-	this.selectedCategory = ko.observable();
-
-	this.clickCategory = function(clicked){
-		self.selectedCategory(clicked);
-		// console.log(clicked.area);
-		// $('this').siblings().css('color', 'black');
-		// $('this').css('color', 'red');
-		// var element = ;
-		// console.log(self.poiList(clicked));
-		// if (clicked.area === 'landmarks') {
-		// 	$('li').css('color', 'red');
-		// } else {
-		// 	return;
-		// };
-		// $('li:contains("beach")').css('color', 'red');
-		// $('#list').addClass('selected');
-		// self.selectedCategory.addClass('selected');
+	this.clickArea = function(clicked){
+		self.selectedArea(clicked);
 	};
 
 	// Observe when the selectedCategory changes and call the showMarkers and showPhotos function for that area
-	this.selectedCategory.subscribe(function(){
-		self.showMarkers(self.selectedCategory().area);
-		self.showCategoryInfo(self.selectedCategory());
-		// self.listStyling(self.selectedCategory().area);
-		// console.log(self.selectedCategory().area);
-		// self.selectedCategory().area.style(color, 'red');
+	this.selectedArea.subscribe(function(){
+		self.showMarkers(self.selectedArea().area);
+		self.showAreaInfo(self.selectedArea());
 	});
 
 	this.showMarkers = function(findArea) {
@@ -490,13 +444,6 @@ var ViewModel = function(){
 		// Clear array - not strictly necessary but will stop array getting clogged up with markers
 		self.markers = [];
 
-		// // Style the markers a bit. This will be our listing marker icon.
-	 //    self.defaultIcon = makeMarkerIcon('ef4b3f');
-
-  //       // Create a "highlighted location" marker color for when the user
-  //       // mouses over the marker.
-  //       self.highlightedIcon = makeMarkerIcon('e01e19');
-
 		// Add markers
 		var bounds = new google.maps.LatLngBounds();
 
@@ -505,16 +452,23 @@ var ViewModel = function(){
 		// Otherwise filter for where the object area, area property, is equal to the area passed in by the selectedCategory.
 		poi.forEach(function(area) {
 			if (findArea == null || area.area == findArea) {
+				// For each location within the filtered area
 				area.locations.forEach(function(location) {
+
+					var attrib = '';
+					if (location.mainImage.source){
+						attrib = 'Image from venue <a target="_blank" href="'+location.mainImage.source+'">Website</a>';
+					} else {
+						attrib = '<a target="_blank" href="'+location.mainImage.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
+					}
 
 					// Make markers
 					var marker = new google.maps.Marker({
                         map: self.map,
                         position: location.location,
                         title: location.name,
-                        // icon: defaultIcon,
                         image: location.mainImage.img,
-                        attrib: location.mainImage.attrib,
+                        attrib: attrib,
                         animation: google.maps.Animation.DROP
                     });
 
@@ -522,17 +476,18 @@ var ViewModel = function(){
 
                     // Push markers to markers array
                     self.markers.push(marker);
+
                     marker.addListener('click', function(){
-                        self.populateInfoWindow(this, self.smallInfowindow);
-                        self.populateImageArea(this, location.images);
+                        self.populateInfoPopup(this, location, self.infoPopup);
+                        self.populateImageArea(location);
+                        self.loadLocationInfo(location);
+                        
                         // Clear any previous individual marker animation before animating the current clicked marker
                         for (var i=0; i<self.markers.length; i++){
                         	self.markers[i].setAnimation(null);
                         };
                         self.toggleBounce(this);
-
-                        self.selectedCategory(area);
-                        self.loadLocationInfo(location);
+                        
                     });
 
 				});
@@ -548,51 +503,82 @@ var ViewModel = function(){
 	    marker.setAnimation(google.maps.Animation.BOUNCE);
 	}
 
-	// this.listStyling = function (selected) {
-	// 	$("#list").removeClass('selected').addClass('selected', self);
-	// }
+	this.populateInfoPopup = function (marker, location, infoPopup){
+		
+		// Get info for image alt from 2 different locations because of long title formatting issue
+		var alt = '';
+		if (!location.mainImage.alt) {
+			alt = location.name
+		} else {
+			alt = location.mainImage.alt
+		}
 
-	this.populateInfoWindow = function (marker, infowindow){
-		if (infowindow.marker != marker) {
-			infowindow.marker = marker;
-			infowindow.setContent('<h5>'+marker.title+'</h5><figure><img src="'+marker.image+'" alt="image of "'+marker.title+'><figcaption class="attrib"><a href="'+marker.attrib+'" target="_blank">Photo</a> licenced under CC</figcaption></figure>');
-			infowindow.open(self.map, marker);
-			// CLear marker property if infowindow is closed
-			infowindow.addListener('closeclilck', function() {
-				infowindow.setMarker(null);
+		if (infoPopup.marker != marker) {
+			infoPopup.marker = marker;
+			infoPopup.setContent('<h5>'+marker.title+'</h5><figure><img src="'+marker.image+'" alt="image of "'+alt+'><figcaption class="attrib">'+marker.attrib+'</figcaption></figure>');
+			infoPopup.open(self.map, marker);
+			// Clear marker property when infoPopup is closed
+			infoPopup.addListener('closeclilck', function() {
+				infoPopup.setMarker(null);
 			})
 		}
 	};
 
-	// To display images relating to a specific marker
-	this.populateImageArea = function (marker, imagesArray){
+	// To display images arrays relating to markers or areas (called in both places)
+	// WHOLE AREA OBJECT: imgArray whatever.areaImages, alt is whatever.area, attrib is whatever.areaImages[i].attrib, and standard CC licence.
+	// LOCATION OBJECT: imgArray whatever.images, alt is either whatever.name OR whatever.images[i].alt, attrib is whatever.images[i].attrib and standard CC licence, or if there is on it will be whatever.images[i].source and excert from the company website and link to site.
+	// ONLOAD OBJECT: imgArray whatever.photos, alt is "Image of Brighton",
+	this.populateImageArea = function (object){
 		$('#imageDisplay').empty();
-		for (var i=0; i<imagesArray.length; i++){
-			$('#imageDisplay').append('<figure><img src="'+imagesArray[i].img+'" class="img-responsive" alt="image of '+marker.title+'"><figcaption class="attrib"><a href="'+marker.attrib+'" target="_blank">Photo</a> licenced under CC</figcaption></figure>');
+		var imgArray = [];
+		var alt = '';
+		var attrib = '';
+		if (object.areaImages) {
+			imgArray = object.areaImages;
+			alt = 'Brighton '+object.area;
+			attrib = '<a target="_blank" href="'+object.areaImages.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
+		} else if (object.images) {
+			console.log(object.images);
+			imgArray = object.images;
+			
+			if (object.images.alt) {
+				alt = object.images.alt;
+			} else {
+				alt = object.name;
+			}
+
+			if (object.images.source) {
+				attrib = 'Image from venue <a target="_blank" href="'+object.images.source+'">Website</a>';
+			} else {
+				attrib = '<a target="_blank" href="'+object.images.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
+			}
+			 
+		} else if (object.photos) {
+			imgArray = object.photos;
+			alt = 'Brighton';
+			attrib = '<a target="_blank" href="'+object.photos.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
+		}
+
+		// console.log(imgArray);
+
+		for (var i=0; i<imgArray.length; i++){
+			$('#imageDisplay').append('<figure><img src="'+imgArray[i].img+'" class="img-responsive" alt="image of '+alt+'"><figcaption class="attrib">'+attrib+'</figcaption></figure>');
 		};
 	};
 	
-	// To display images and info relating to the category 
-	this.showCategoryInfo = function (object) {
+	// To display images and info relating to the area 
+	this.showAreaInfo = function (object) {
 		$('#imageDisplay').empty();
 		for (var i=0; i<object.areaImages.length; i++){
 			$('#imageDisplay').append('<figure><img src="'+object.areaImages[i].img+'" class="img-responsive" alt="image of '+object.area+'"><figcaption class="attrib"><a href="'+object.areaImages[i].attrib+'" target="_blank">Photo</a> licenced under CC</figcaption></figure>');
 		};
+		// populateImageArea(object);
 		$('#infoDisplayHead, #infoDisplayBody').empty();
 		$('#infoDisplayHead').append('The '+object.area);
 		$('#infoDisplayBody').append(object.infoContent);
 
 	};
 
-	// this.showWikiInfo = function (marker, object) {
-	// 	console.log(object.wiki);
-	// 	loadWiki(object);
-	// 	// if (object.wiki !== '') {
-	// 	// 	// var wiki = ;
-	// 	// 	$('#infoDisplayHead').append('The '+object.area);
-	// 	// 	$('#infoDisplayBody').append(loadWiki(object));
-	// 	// }
-	// };
 
 	this.loadLocationInfo = function (location) {
 
@@ -600,13 +586,17 @@ var ViewModel = function(){
 			return;
 		}
 
+		// console.log(location);
 		$('#infoDisplayHead, #infoDisplayBody').empty();
+		$('#infoDisplayHead').append(location.name);
 
 		if (location.wiki) {
 
+			$('#infoDisplayHead').append("<p style='text-decoration:underline'>Information displayed here is sourced from the encyclopedia of <a href='https://en.wikipedia.org/wiki/Main_Page'>Wikipedia</a></p>");
+
 			$.ajax({
 		        type: "GET",
-		        url: location.wiki,
+		        url: "http://en.wikipedia.org/w/api.php?action=parse&page="+location.wiki+"&prop=text&format=json&callback=?",
 		        contentType: "application/json; charset=utf-8",
 		        async: true,
 		        dataType: "json",
@@ -618,7 +608,7 @@ var ViewModel = function(){
 
 		        },
 		        error: function (errorMessage) {
-		        	$('#infoDisplayBody').html("We haven't managed to find the data you are looking for. Please try again!");
+		        	$('#infoDisplayBody').html("<p><b>Oops... looks like the extra information failed to load. Please try again!</b></p>");
 		        }
 		    });
 
@@ -683,7 +673,7 @@ var ViewModel = function(){
             zoom: 12
         });
        
-        self.smallInfowindow = new google.maps.InfoWindow();
+        self.infoPopup = new google.maps.InfoWindow();
 
         // Initially call showMarkers with filter as empty
         self.showMarkers(null);

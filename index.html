@@ -41,12 +41,12 @@
             <div class="col-xs-3 text-center">
                 <select data-bind= "options: poiList,
                                     optionsText: 'area',
-                                    value: selectedCategory,
+                                    value: selectedArea,
                                     optionsCaption: 'See all...'"></select>
             </div>
             <div class="col-xs-9 text-right">
                 <ul id="list" class="coolification" data-bind="foreach: poiList">
-                    <li data-bind="text: area, click: $parent.clickCategory, css: { selected: $parent.selectedCategory() == $data }"></li>
+                    <li data-bind="text: area, click: $parent.clickArea, css: { selected: $parent.selectedArea() == $data }"></li>
                 </ul>
             </div>
         </div>
