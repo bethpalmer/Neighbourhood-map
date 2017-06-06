@@ -434,7 +434,7 @@ var ViewModel = function(){
 	this.markers = [];
 
 	// Makes my model data observable and useable by the view via the ViewModel.
-	this.poiList = ko.observableArray([]); // observable array of objects
+	this.poiList = ko.observableArray([]);
 
 	// Populate the observable array 
 	poi.forEach(function(area){
@@ -443,11 +443,12 @@ var ViewModel = function(){
 	
 	this.selectedArea = ko.observable();
 
+	// For when you click on a list item
 	this.clickArea = function(clicked){
 		self.selectedArea(clicked);
 	};
 
-	// Observe when the selectedCategory changes and call the showMarkers and showPhotos function for that area
+	// Observe when the selectedArea changes and show markers and area info specific to that area
 	this.selectedArea.subscribe(function(){
 		self.showMarkers(self.selectedArea().area);
 		self.showAreaInfo(self.selectedArea());
@@ -467,12 +468,12 @@ var ViewModel = function(){
 
 		// Argument of area here is referring to the whole object
 		// When showMarkers function is called initially in the init function, it is passed an argument of null, so will show markers in all areas
-		// Otherwise filter for where the object area, area property, is equal to the area passed in by the selectedCategory.
+		// Otherwise filter for where the object area, area property, is equal to the area passed in by the selectedArea.
 		poi.forEach(function(area) {
 			if (findArea === null || area.area == findArea) {
 				// For each location within the filtered area
 				area.locations.forEach(function(location) {
-
+					// Set the attribution to image source if it has one or else attribution is source is absent
 					var attrib = '';
 					if (location.mainImage.source){
 						attrib = 'Image from venue <a target="_blank" href="'+location.mainImage.source+'">Website</a>';
@@ -523,7 +524,7 @@ var ViewModel = function(){
 
 	this.populateInfoPopup = function (marker, location, infoPopup){
 		
-		// Get info for image alt from 2 different locations because of long title formatting issue
+		// Get info for image alt either from location name or from alt property of img where there are formatting issue from long location names
 		var alt = '';
 		if (!location.mainImage.alt) {
 			alt = location.name;
@@ -542,27 +543,25 @@ var ViewModel = function(){
 		}
 	};
 
-	// To display images arrays relating to markers or areas (called in both places)
-	// WHOLE AREA OBJECT: imgArray whatever.areaImages, alt is whatever.area, attrib is whatever.areaImages[i].attrib, and standard CC licence.
-	// LOCATION OBJECT: imgArray whatever.images, alt is either whatever.name OR whatever.images[i].alt, attrib is whatever.images[i].attrib and standard CC licence, or if there is on it will be whatever.images[i].source and excert from the company website and link to site.
-	// ONLOAD OBJECT: imgArray whatever.photos, alt is "Image of Brighton",
-
-	// PROBLEM WITH FOREACH LOOP HERE IN THAT ALL IMAGES ARE ATTRIBUTED WITH THE LAST IMAGES DETAILS. DO I NEED TO CREATE A NEW ARRAY FOR ATTRIBUTION AND REFERENCE THAT WITH THE [i]?
+	// To display images arrays relating to the area, or the specific location, or the initial load selection
 	this.populateImageArea = function (object){
+		
 		$('#imageDisplay').empty();
-		var imgArray = [];
-		var alt = '';
-		var attrib = [];
+		
+		var imgArray = [], alt = '', attrib = [];
+		// for object passed in from area
 		if (object.areaImages) {
 			imgArray = object.areaImages;
 			alt = 'Brighton '+object.area;
 			imgArray.forEach(function(img){
 				attrib.push('<a target="_blank" href="'+img.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
 			});
+		// for object passed in from location
 		} else if (object.images) {
 			console.log(object.images);
 			imgArray = object.images;
-			
+		
+			// alt from 2 diffenet sources depending on licence	
 			if (object.images.alt) {
 				alt = object.images.alt;
 			} else {
@@ -574,7 +573,8 @@ var ViewModel = function(){
 				} else {
 					attrib.push('<a target="_blank" href="'+img.attrib+'">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
 				}
-			});	 
+			});
+		// for object passed in from initial load data object
 		} else if (object.photos) {
 			imgArray = object.photos;
 			alt = 'Brighton';
@@ -583,6 +583,7 @@ var ViewModel = function(){
 			});
 		}
 
+		// display images
 		for (var i=0; i<imgArray.length; i++){
 			$('#imageDisplay').append('<figure><img src="'+imgArray[i].img+'" class="img-responsive" alt="image of '+alt+'"><figcaption>'+attrib[i]+'</figcaption></figure>');
 		}
@@ -590,10 +591,6 @@ var ViewModel = function(){
 	
 	// To display images and info relating to the area 
 	this.showAreaInfo = function (object) {
-		// $('#imageDisplay').empty();
-		// for (var i=0; i<object.areaImages.length; i++){
-		// 	$('#imageDisplay').append('<figure><img src="'+object.areaImages[i].img+'" class="img-responsive" alt="image of '+object.area+'"><figcaption class="attrib"><a href="'+object.areaImages[i].attrib+'" target="_blank">Photo</a> licenced under CC</figcaption></figure>');
-		// };
 		self.populateImageArea(object);
 		$('#infoDisplayHead, #infoDisplayBody').empty();
 		$('#infoDisplayHead').append('The '+object.area);
@@ -601,19 +598,20 @@ var ViewModel = function(){
 
 	};
 
-
+	// To display information in the info area from either wiki api or embeded yelp reviews
 	this.loadLocationInfo = function (location) {
 
 		if (!location.wiki && !location.yelp) {
 			return;
 		}
 
-		// console.log(location);
 		$('#infoDisplayHead, #infoDisplayBody').empty();
 		$('#infoDisplayHead').append(location.name);
 
+		// Display wiki info for 3 of the 5 categories
 		if (location.wiki) {
 
+			// attribute wikipedia
 			$('#infoDisplayHead').append("<p style='text-decoration:underline'>Information displayed here is sourced from the encyclopedia of <a href='https://en.wikipedia.org/wiki/Main_Page'>Wikipedia</a></p>");
 
 			$.ajax({
@@ -636,64 +634,25 @@ var ViewModel = function(){
 
 		}
 
-		
+		// Display embeded yelp review for nightlife area only
 		if (location.yelp) {
 			$('#infoDisplayHead').append("<p style='text-decoration:underline'>Information displayed here is sourced from the popular review site <a href='https://www.yelp.co.uk/'>Yelp</a></p>");
 			console.log(location.yelp);
 			for (var i=0; i<location.yelp.length; i++){
 				$('#infoDisplayBody').append('<div class="col-xs-12 col-sm-6">'+location.yelp[i]+'</div>');
 			}
-			
-			/* $.ajax({
-		        type: "POST",
-		        url: "https://api.yelp.com/oauth2/token",
-		        data: {
-		        	grant_type: "client_credentials",
-		        	client_id: "GQ_3I3NLQHnUlhnp1tXFwQ",
-		        	client_secret: "JzPnt5RPDQQsJLKT0GNYtmLYe7WkE3TxyEYCwabbGz8IYbdrYanpGCQsZutSQhvW"
-		        },
-		        timeout: 8000,
-		        success: function (data, textStatus, jqXHR) {
-		            console.log(data);
-
-		        },
-		        error: function (errorMessage) {
-		        }
-		    }); */
-
-			// $.ajax({
-		 //        type: "GET",
-		 //        url: location.yelp,
-			// 	beforeSend: function (xhr) {
-			// 	    xhr.setRequestHeader('Authorization', 'Bearer UYjhs7SaNHI0YoVw4WSIOMVc3w0qjxG3oWZH_1HlZRyGFmd0e2zsShx3wuHok4z_vbVBuxBldjRtrXPGjf5V7yOm5232sqRqIuOrUG17Tt7LAJ5KzIMWJtS5ls41WXYx');
-			// 	},
-		 //        timeout: 8000,
-		 //        success: function (data, textStatus, jqXHR) {
-		 //            console.log(data);
-
-		 //        },
-		 //        error: function (errorMessage) {
-		 //        }
-		 //    });
-
 		}
-
-
 	};
 
+	// To display images and custom info content on initial load from onLoadInfo object
 	this.onLoadDisplay = function (onLoadInfo) {
-		// $('#imageDisplay').empty();
-		// for (var i=0; i<content.photos.length; i++){
-		// 	$('#imageDisplay').append('<figure><img src="'+content.photos[i].img+'" alt="image of Brighton"><figcaption class="attrib"><a href="'+content.photos[i].attrib+'" target="_blank">Photo</a> licenced under CC</figcaption></figure>');
-		// };
 		self.populateImageArea(onLoadInfo);
 		$('#infoDisplayHead,  #infoDisplayBody').empty();
 		$('#infoDisplayHead').append('What makes Brighton cooler than an Eskimos sunglasses is...');
 		$('#infoDisplayBody').append(onLoadInfo.infoContent);
 	};
 
-	// this.infoDisplay = function ()
-
+	// Initialise all the things needed on page load
 	this.init = function() {
 
 		self.map = new google.maps.Map(document.getElementById('map'), {
@@ -714,25 +673,8 @@ var vm = new ViewModel();
 ko.applyBindings(vm);
 
 
-// TO DO
-
-// FUNCTIONALIY
-// selectedCategory li styling
-// Load Wiki api on individual marker load - For categories Lanes, Landmarks, Downs. No data for Beach, Nightlife.
-// Load Yelp api on individual marker load - For category Nightlife ONLY.
-// Bonus: selecting a marker selects the category the marker belongs to
-
-// CSS
-// Images area to display central or right of row
-
-
-// RUBRIC
-// Knock out should not be used to handle the google map api
-// All data requests are recevied asynchronously
-// Data requests that fail are handled gracefully (timeout error msgs etc.)
-// Provide attribution for the source of additional data in UI and in the README
-// README includes all steps required to successfully run the app
-// Comments explain the code
+// TODO - Future amends
+// selecting a marker selects the category the marker belongs to and also allows all the other marker functionality to happen
 
 
 
