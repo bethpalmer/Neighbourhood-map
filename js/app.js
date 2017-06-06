@@ -658,14 +658,15 @@ var ViewModel = function(){
 
 	};
 
-	this.onLoadDisplay = function (content) {
-		$('#imageDisplay').empty();
-		for (var i=0; i<content.photos.length; i++){
-			$('#imageDisplay').append('<figure><img src="'+content.photos[i].img+'" alt="image of Brighton"><figcaption class="attrib"><a href="'+content.photos[i].attrib+'" target="_blank">Photo</a> licenced under CC</figcaption></figure>');
-		};
+	this.onLoadDisplay = function (onLoadInfo) {
+		// $('#imageDisplay').empty();
+		// for (var i=0; i<content.photos.length; i++){
+		// 	$('#imageDisplay').append('<figure><img src="'+content.photos[i].img+'" alt="image of Brighton"><figcaption class="attrib"><a href="'+content.photos[i].attrib+'" target="_blank">Photo</a> licenced under CC</figcaption></figure>');
+		// };
+		self.populateImageArea(onLoadInfo);
 		$('#infoDisplayHead,  #infoDisplayBody').empty();
 		$('#infoDisplayHead').append('What makes Brighton cooler than an Eskimos sunglasses is...');
-		$('#infoDisplayBody').append(content.infoContent);
+		$('#infoDisplayBody').append(onLoadInfo.infoContent);
 	}
 
 	// this.infoDisplay = function ()
