@@ -1,5 +1,6 @@
 var ViewModel = function() {
 	var self = this;
+	// var bounds;
 	this.markers = [];
 	// this.bounds = new google.maps.LatLngBounds();
 	// Makes my model data observable and useable by the view via the ViewModel.
@@ -77,7 +78,6 @@ var ViewModel = function() {
 	this.createMarkers = function(poi) {
 		
 		var bounds = new google.maps.LatLngBounds();
-		console.log(bounds);
 		
 		self.markers = [];
 		
@@ -114,19 +114,26 @@ var ViewModel = function() {
 			})
 		});
 		self.map.fitBounds(bounds);
-		console.log(self.markers);
+		// console.log(self.markers);
 	};
 
 	this.filterMarkers = function(selectedArea, markers) {
+		var bounds = new google.maps.LatLngBounds();
 		markers.forEach(function(marker) {
-
 			marker.setVisible(false);
 			
 			if (selectedArea.area == marker.area) {
 				marker.setVisible(true);
+				bounds.extend(marker.position);
+			// } else {
+			// 	marker.setVisible(true);
 			};
+
+			if (selectedArea.area !== marker.area) {
+				console.log("Not equal");
+			}
 		});
-		// self.map.fitBounds(bounds);
+		self.map.fitBounds(bounds);
 	};
 
 	// Animate individual clicked marker
@@ -283,7 +290,7 @@ ko.applyBindings(vm);
 // Don't include sections which don't use wiki (remove the if block - as al sections will have wiki)
 // Wiki links aren't working becuase they are relative. Use replace() to replace /wiki with full wiki url to make links work.
 
-
+// Issues var bounds should be a reuseable global variable instead of being created by both marker functions.
 
 
 
