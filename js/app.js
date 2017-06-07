@@ -1,6 +1,7 @@
 var ViewModel = function() {
 	var self = this;
 	this.markers = [];
+	// this.bounds = new google.maps.LatLngBounds();
 	// Makes my model data observable and useable by the view via the ViewModel.
 	this.poiList = ko.observableArray([]);
 	// Populate the observable array 
@@ -14,62 +15,120 @@ var ViewModel = function() {
 	};
 	// Observe when the selectedArea changes and show markers and area info specific to that area
 	this.selectedArea.subscribe(function() {
-		self.showMarkers(self.selectedArea());
+		self.filterMarkers(self.selectedArea(), self.markers);
 		self.showAreaInfo(self.selectedArea());
 	});
-	this.showMarkers = function(findArea) {
-		// Clear all markers
-		for (var i = 0; i < self.markers.length; i++) {
-			self.markers[i].setMap(null);
-		}
-		// Clear array - not strictly necessary but will stop array getting clogged up with markers
-		self.markers = [];
-		// Add markers
-		var bounds = new google.maps.LatLngBounds();
+	// this.showMarkers = function(findArea) {
+	// 	// Clear all markers
+	// 	for (var i = 0; i < self.markers.length; i++) {
+	// 		self.markers[i].setMap(null);
+	// 	}
+	// 	// Clear array - not strictly necessary but will stop array getting clogged up with markers
+	// 	self.markers = [];
+	// 	// Add markers
+	// 	var bounds = new google.maps.LatLngBounds();
 		
-		// Argument of area here is referring to the whole object
-		// When showMarkers function is called initially in the init function, it is passed an argument of null, so will show markers in all areas
-		// Otherwise filter for where the object area, area property, is equal to the area passed in by the selectedArea.
+	// 	// Argument of area here is referring to the whole object
+	// 	// When showMarkers function is called initially in the init function, it is passed an argument of null, so will show markers in all areas
+	// 	// Otherwise filter for where the object area, area property, is equal to the area passed in by the selectedArea.
 
-		poi.forEach(function(area) {
+	// 	poi.forEach(function(area) {
 			
-			if (findArea === null || findArea.area == area.area) {
-				// For each location within the filtered area
-				area.locations.forEach(function(location) {
-					// Set the attribution to image source if it has one or else attribution is source is absent
-					var attrib = '';
-					if (location.mainImage.source) {
-						attrib = 'Image from venue <a target="_blank" href="' + location.mainImage.source + '">Website</a>';
-					} else {
-						attrib = '<a target="_blank" href="' + location.mainImage.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
-					}
-					// Make markers
-					var marker = new google.maps.Marker({
-						map: self.map,
-						position: location.location,
-						title: location.name,
-						image: location.mainImage.img,
-						attrib: attrib,
-						animation: google.maps.Animation.DROP
-					});
-					bounds.extend(location.location);
-					// Push markers to markers array
-					self.markers.push(marker);
-					marker.addListener('click', function() {
-						self.populateInfoPopup(this, location, self.infoPopup);
-						self.populateImageArea(location);
-						self.loadLocationInfo(location);
-						// Clear any previous individual marker animation before animating the current clicked marker
-						for (var i = 0; i < self.markers.length; i++) {
-							self.markers[i].setAnimation(null);
-						}
-						self.toggleBounce(this);
-					});
+	// 		if (findArea === null || findArea.area == area.area) {
+	// 			// For each location within the filtered area
+	// 			area.locations.forEach(function(location) {
+	// 				// Set the attribution to image source if it has one or else attribution is source is absent
+	// 				var attrib = '';
+	// 				if (location.mainImage.source) {
+	// 					attrib = 'Image from venue <a target="_blank" href="' + location.mainImage.source + '">Website</a>';
+	// 				} else {
+	// 					attrib = '<a target="_blank" href="' + location.mainImage.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
+	// 				}
+	// 				// Make markers
+	// 				var marker = new google.maps.Marker({
+	// 					map: self.map,
+	// 					position: location.location,
+	// 					title: location.name,
+	// 					image: location.mainImage.img,
+	// 					attrib: attrib,
+	// 					animation: google.maps.Animation.DROP
+	// 				});
+	// 				bounds.extend(location.location);
+	// 				// Push markers to markers array
+	// 				self.markers.push(marker);
+	// 				marker.addListener('click', function() {
+	// 					self.populateInfoPopup(this, location, self.infoPopup);
+	// 					self.populateImageArea(location);
+	// 					self.loadLocationInfo(location);
+	// 					// Clear any previous individual marker animation before animating the current clicked marker
+	// 					for (var i = 0; i < self.markers.length; i++) {
+	// 						self.markers[i].setAnimation(null);
+	// 					}
+	// 					self.toggleBounce(this);
+	// 				});
+	// 			});
+	// 		}
+	// 	});
+	// 	self.map.fitBounds(bounds);
+	// };
+
+	
+
+	this.createMarkers = function(poi) {
+		
+		var bounds = new google.maps.LatLngBounds();
+		console.log(bounds);
+		
+		self.markers = [];
+		
+		poi.forEach(function(area) {
+			area.locations.forEach(function(location) {
+				// Set the attribution to image source if it has one or else attribution is source is absent
+				var attrib = '';
+				if (location.mainImage.source) {
+					attrib = 'Image from venue <a target="_blank" href="' + location.mainImage.source + '">Website</a>';
+				} else {
+					attrib = '<a target="_blank" href="' + location.mainImage.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
+				}
+
+				var marker = new google.maps.Marker({
+					map: self.map,
+					position: location.location,
+					title: location.name,
+					image: location.mainImage.img,
+					attrib: attrib,
+					area: area.area,
+					animation: google.maps.Animation.DROP
 				});
-			}
+				bounds.extend(location.location);
+				self.markers.push(marker);
+				marker.addListener('click', function() {
+					self.populateInfoPopup(this, location, self.infoPopup);
+					self.populateImageArea(location);
+					self.loadLocationInfo(location);
+					for (var i = 0; i < self.markers.length; i++) {
+						self.markers[i].setAnimation(null);
+					}
+					self.toggleBounce(this);
+				})
+			})
 		});
 		self.map.fitBounds(bounds);
+		console.log(self.markers);
 	};
+
+	this.filterMarkers = function(selectedArea, markers) {
+		markers.forEach(function(marker) {
+
+			marker.setVisible(false);
+			
+			if (selectedArea.area == marker.area) {
+				marker.setVisible(true);
+			};
+		});
+		// self.map.fitBounds(bounds);
+	};
+
 	// Animate individual clicked marker
 	this.toggleBounce = function(marker) {
 		marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -200,7 +259,8 @@ var ViewModel = function() {
 		});
 		self.infoPopup = new google.maps.InfoWindow();
 		// Initially call showMarkers with filter as empty
-		self.showMarkers(null);
+		// self.showMarkers(null);
+		self.createMarkers(poi);
 		self.onLoadDisplay(onLoadInfo);
 	};
 };
@@ -212,6 +272,7 @@ ko.applyBindings(vm);
 // selecting a marker selects the category the marker belongs to and also allows all the other marker functionality to happen
 
 // TODO before resubmission
+// Create a list which then shows each of the areas within that list 
 // Provide a conditional check on showMarkers for where self.selectedArea is undefined (where "see all" is selected)
 // Markers should be created once and then filtered using setVisible (true/false)
 	// use createMarkers function to create all the markers on call from the init function
