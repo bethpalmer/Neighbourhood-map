@@ -10,6 +10,19 @@
 * The app is fully responsive and should run on any OS.
 * It has been fully tested in Google Chrome only.
 * There are no particular dependencies that a user would have to install.
+* To see the google maps error handling popups must not be blocked by your browser
+
+Step-by-step detailed instruction on how to open the app (locally, Github Page link doesn't count - even though it's excellent to host app on Github Pages)
+
+For example, we can instruct user to run app on localhost:8080 by setting up a local server using one of these Python methods (only one is adequate to meet Documentation requirement):
+
+Python 3:
+
+python -m http.server 8080
+Python 2:
+
+python -m SimpleHTTPServer 8080
+
 
 ## Programming Complications
 * Returning an alt property on the various images was complicated somewhat by having to source the alt content from 2 different locations. This was becuase of formatting which had to be applied to long location names, to allow them to fit into the popup info windows.
@@ -22,8 +35,8 @@
 
 ## Final thoughts
 * I am pleased with the product I have created. I am very happy to include this as a piece of portfolio work that I am proud of.
-# I am partiularly pleased with the originality of the project and I feel it does my home town justice.
-# I have learnt **a lot** by creating this project, and I feel it has stretched my programming skills significantly. I am also a lot more confident in taking a javascript based project from start to finish now which I am very pleased with.
+* I am partiularly pleased with the originality of the project and I feel it does my home town justice.
+* I have learnt **a lot** by creating this project, and I feel it has stretched my programming skills significantly. I am also a lot more confident in taking a javascript based project from start to finish now which I am very pleased with.
 * I've enjoyed working with a framework and definitely intend to look further into other available javascript frameworks for future project work.
 * I hope I have managed to fulfil all of the project criteria, albeit in a rather unconventional manor!
 * I hope you enjoy viewing the app as much as I do.

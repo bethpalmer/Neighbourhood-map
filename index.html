@@ -73,13 +73,6 @@
         </div>
     </section>
 
-    <section class="container">
-        <div class="row">
-            <div id="review0" class="col-xs-12 col-sm-6"></div>
-            <div id="review1" class="col-xs-12 col-sm-6"></div>
-        </div>
-    </section>
-
     <hr>
     <footer>
         <div class="row">
@@ -94,14 +87,14 @@
     <script>
     
         // Initialise function now handled in the ViewModel
-        function initMap(){
-            vm.init();
-        };  
+        // function initMap(){
+        //     vm.init();
+        // };  
 
 
 </script>
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery-3.2.1.slim.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -109,7 +102,7 @@
     <script src="js/app.js"></script>
 
      <script async defer
-     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAoEnMQe4ZX1tFEinO8c3XUHt7AHO0ipEM&callback=initMap">
+     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAoEnMQe4ZX1tFEinO8c3XUHt7AHO0ipEM&callback=vm.init" onerror="vm.googleError()">
     </script> 
 
 </body>

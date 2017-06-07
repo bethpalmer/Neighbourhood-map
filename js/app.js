@@ -652,6 +652,10 @@ var ViewModel = function(){
 		$('#infoDisplayBody').append(onLoadInfo.infoContent);
 	};
 
+	this.googleError = function() {
+		alert('There seems to be a problem with loading the google map. Please try again!');
+	};
+
 	// Initialise all the things needed on page load
 	this.init = function() {
 

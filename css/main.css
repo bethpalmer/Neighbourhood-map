@@ -1,11 +1,11 @@
 body {
-    font-family: 'Shadows Into Light', cursive, Verdana, Geneva, sans-serif;
-    font-family: 'Ravi Prakash', cursive, Verdana, Geneva, sans-serif;
+	font-family: "Shadows Into Light", cursive, Verdana, Geneva, sans-serif;
+	font-family: "Ravi Prakash", cursive, Verdana, Geneva, sans-serif;
 }
 
 p,
 h2 {
-	font-family: 'Shadows Into Light', cursive, Verdana, Geneva, sans-serif;
+	font-family: "Shadows Into Light", cursive, Verdana, Geneva, sans-serif;
 }
 
 h1,
@@ -14,13 +14,13 @@ h4,
 h5,
 h6,
 figure {
-	font-family: 'Ravi Prakash', cursive, Verdana, Geneva, sans-serif;
+	font-family: "Ravi Prakash", cursive, Verdana, Geneva, sans-serif;
 }
 
 p {
-  font-size: 15px;
-  line-height: 30px;
-  color: #233140
+	font-size: 15px;
+	line-height: 30px;
+	color: #233140
 }
 h1 {
 	font-size: 7em;
