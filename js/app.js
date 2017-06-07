@@ -14,7 +14,7 @@ var ViewModel = function() {
 	};
 	// Observe when the selectedArea changes and show markers and area info specific to that area
 	this.selectedArea.subscribe(function() {
-		self.showMarkers(self.selectedArea().area);
+		self.showMarkers(self.selectedArea());
 		self.showAreaInfo(self.selectedArea());
 	});
 	this.showMarkers = function(findArea) {
@@ -26,13 +26,14 @@ var ViewModel = function() {
 		self.markers = [];
 		// Add markers
 		var bounds = new google.maps.LatLngBounds();
+		
 		// Argument of area here is referring to the whole object
 		// When showMarkers function is called initially in the init function, it is passed an argument of null, so will show markers in all areas
 		// Otherwise filter for where the object area, area property, is equal to the area passed in by the selectedArea.
-		
-		console.log(findArea);
+
 		poi.forEach(function(area) {
-			if (findArea === null || area.area == findArea) {
+			
+			if (findArea === null || findArea.area == area.area) {
 				// For each location within the filtered area
 				area.locations.forEach(function(location) {
 					// Set the attribution to image source if it has one or else attribution is source is absent
@@ -185,7 +186,7 @@ var ViewModel = function() {
 		$('#infoDisplayHead').append('What makes Brighton cooler than an Eskimos sunglasses is...');
 		$('#infoDisplayBody').append(onLoadInfo.infoContent);
 	};
-	this.googleError = function() {
+	this.mapError = function() {
 		alert('There seems to be a problem with loading the google map. Please try again!');
 	};
 	// Initialise all the things needed on page load
@@ -206,5 +207,23 @@ var ViewModel = function() {
 // Variable can be accessed easily from outside of this object
 var vm = new ViewModel();
 ko.applyBindings(vm);
+
 // TODO - Future amends
 // selecting a marker selects the category the marker belongs to and also allows all the other marker functionality to happen
+
+// TODO before resubmission
+// Provide a conditional check on showMarkers for where self.selectedArea is undefined (where "see all" is selected)
+// Markers should be created once and then filtered using setVisible (true/false)
+	// use createMarkers function to create all the markers on call from the init function
+	// use filterMarkers function to setVisible(true/false) on filtered selection, with all true if selectArea is undefined
+	// These 2 functions should replace current showMarkers function
+// Use KO bindings to display images in the UI using a combo of foreach and attr bindings
+// For all location details - use ko text binding to show in the DOM - not jQuery
+// Don't include sections which don't use wiki (remove the if block - as al sections will have wiki)
+// Wiki links aren't working becuase they are relative. Use replace() to replace /wiki with full wiki url to make links work.
+
+
+
+
+
+
