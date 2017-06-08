@@ -122,16 +122,15 @@ var ViewModel = function() {
 		markers.forEach(function(marker) {
 			marker.setVisible(false);
 			
+			// if (marker.area !==selectedArea) {
+			// 	console.log("Not equal");
+			// };
+
 			if (selectedArea.area == marker.area) {
 				marker.setVisible(true);
 				bounds.extend(marker.position);
-			// } else {
-			// 	marker.setVisible(true);
 			};
 
-			if (selectedArea.area !== marker.area) {
-				console.log("Not equal");
-			}
 		});
 		self.map.fitBounds(bounds);
 	};
@@ -196,7 +195,8 @@ var ViewModel = function() {
 				attrib.push('<a target="_blank" href="' + img.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
 			});
 		}
-		// display images
+		// display images SHOULD BE DONE VIA KO IN VIEW
+		// CREATE AN OBSERVABLE ARRAY - [IMGARRAY [], ALT, ATTRIB []] - This fucking doesnt work- cunts!
 		for (var i = 0; i < imgArray.length; i++) {
 			$('#imageDisplay').append('<figure><img src="' + imgArray[i].img + '" class="img-responsive" alt="image of ' + alt + '"><figcaption>' + attrib[i] + '</figcaption></figure>');
 		}
@@ -280,14 +280,11 @@ ko.applyBindings(vm);
 
 // TODO before resubmission
 // Create a list which then shows each of the areas within that list 
-// Provide a conditional check on showMarkers for where self.selectedArea is undefined (where "see all" is selected)
-// Markers should be created once and then filtered using setVisible (true/false)
-	// use createMarkers function to create all the markers on call from the init function
-	// use filterMarkers function to setVisible(true/false) on filtered selection, with all true if selectArea is undefined
-	// These 2 functions should replace current showMarkers function
+// Provide a conditional check on filterMarkers for where self.selectedArea is undefined (where "see all" is selected)
+
 // Use KO bindings to display images in the UI using a combo of foreach and attr bindings
 // For all location details - use ko text binding to show in the DOM - not jQuery
-// Don't include sections which don't use wiki (remove the if block - as al sections will have wiki)
+// Don't include sections which don't use wiki (remove the if block - as all sections will have wiki)
 // Wiki links aren't working becuase they are relative. Use replace() to replace /wiki with full wiki url to make links work.
 
 // Issues var bounds should be a reuseable global variable instead of being created by both marker functions.
