@@ -139,11 +139,30 @@ var ViewModel = function() {
 		};
 	};
 
+	this.callWikiAjax = function(location) {
+		$.ajax({
+			type: "GET",
+			url: "http://en.wikipedia.org/w/api.php?action=parse&page=" + location.wiki + "&prop=text&format=json&callback=?",
+			contentType: "application/json; charset=utf-8",
+			async: true,
+			dataType: "json",
+			timeout: 8000,
+			success: function(data, textStatus, jqXHR) {
+				var markup = data.parse.text["*"];
+				var blurb = $('<div></div>').html(markup);
+				console.log(blurb);
+				$('#infoDisplayBody').html($(blurb).find('p'));
+			},
+			error: function(errorMessage) {
+				$('#infoDisplayBody').html("<p><b>Oops... looks like the extra information failed to load. Please try again!</b></p>");
+			}
+		});
+	};
+
 	this.infoHeader = ko.observable();
 	this.infoBody = ko.observable();
 
 	this.populateInfoDisplay = function(object) {
-		// $('#infoDisplayHead, #infoDisplayBody').empty();
 
 		if (object.infoContent) {
 			self.infoHeader("The "+object.area);
@@ -151,12 +170,15 @@ var ViewModel = function() {
 		
 		} else if (object.wiki) {
 			self.infoHeader(object.name);
+			self.callWikiAjax(object);
 
 		} else if (object.onLoadInfo) {
 			self.infoHeader(object.title);
 			self.infoBody(object.onLoadInfo);
 		};
 	};
+
+	
 
 	// USED BY THE SELECTEDAREA()
 	// this.showAreaInfo = function(object) {
