@@ -196,7 +196,7 @@ var ViewModel = function() {
 			});
 		}
 		// display images SHOULD BE DONE VIA KO IN VIEW
-		// CREATE AN OBSERVABLE ARRAY - [IMGARRAY [], ALT, ATTRIB []] - This fucking doesnt work- cunts!
+		// CREATE AN OBSERVABLE ARRAY
 		for (var i = 0; i < imgArray.length; i++) {
 			$('#imageDisplay').append('<figure><img src="' + imgArray[i].img + '" class="img-responsive" alt="image of ' + alt + '"><figcaption>' + attrib[i] + '</figcaption></figure>');
 		}
