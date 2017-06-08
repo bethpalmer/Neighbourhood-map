@@ -41,14 +41,21 @@
     <menu class="container">
         <div class="row">
             <div class="col-xs-3 text-center">
-                <select data-bind= "options: poiList,
+                <select data-bind= "options: areaList,
                                     optionsText: 'area',
                                     value: selectedArea,
                                     optionsCaption: 'See all...'"></select>
             </div>
             <div class="col-xs-9 text-right">
-                <ul id="list" class="cool" data-bind="foreach: poiList">
-                    <li data-bind="text: area, click: $parent.clickArea, css: { selected: $parent.selectedArea() == $data }"></li>
+                <ul id="list" class="nav-list" data-bind="foreach: areaList">
+                    <li data-bind="text: area, click: $parent.areaListClick, css: { selected: $parent.selectedArea() == $data }"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-right">
+                <ul class="nav-list" data-bind="foreach: locationList">
+                    <li data-bind="text: $data, click: $parent.locationListClick, css: { selected: $parent.selectedLocation() == $data }"></li>
                 </ul>
             </div>
         </div>

@@ -46,20 +46,20 @@ h6 {
 	padding-top: 10px;
 }
 
-ul.cool {
+ul.nav-list {
 	padding-left: 20px;
 }
 
 /* For the smallest screens */
-ul.cool li {
+ul.nav-list li {
 	text-decoration: none;
 	display: inline-block;
 	padding: 3px;
 }
 
 @media (min-width: 768px) {
-	ul.cool {
-		margin-right: 10%;
+	ul.nav-list {
+		margin-right: 40px;
 	}
 }
 

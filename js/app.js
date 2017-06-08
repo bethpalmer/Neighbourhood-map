@@ -4,23 +4,57 @@ var ViewModel = function() {
 	this.markers = [];
 	// this.bounds = new google.maps.LatLngBounds();
 	// Makes my model data observable and useable by the view via the ViewModel.
-	this.poiList = ko.observableArray([]);
+	this.areaList = ko.observableArray([]);
 	// Populate the observable array 
 	poi.forEach(function(area) {
-		self.poiList.push(area);
+		self.areaList.push(area);
 	});
 	this.selectedArea = ko.observable();
 	// For when you click on a list item
-	this.clickArea = function(clicked) {
+	this.areaListClick = function(clicked) {
 		self.selectedArea(clicked);
 	};
+
+	this.locationList = ko.observableArray([]);
+
+	this.populateLocationList = function(locations) {
+		self.locationList([]);
+		locations.forEach(function(location) {
+			self.locationList.push(location.name);
+		});
+	};
+
 	// Observe when the selectedArea changes and show markers and area info specific to that area
 	this.selectedArea.subscribe(function() {
-		self.filterMarkers(self.selectedArea(), self.markers);
-		self.populateInfoDisplay(self.selectedArea());
-		self.populateImageArray(self.selectedArea());
+		// self.populateLocationList(self.selectedArea().locations);
+		// self.filterMarkers(self.selectedArea(), self.markers);
+		// self.populateInfoDisplay(self.selectedArea());
+		// self.populateImageArray(self.selectedArea());
 
 	});
+
+	this.selectedLocation = ko.observable();
+
+	this.locationListClick = function(clicked) {
+		self.selectedLocation(clicked);
+	};
+
+	this.selectedLocation.subscribe(function(markers) {
+		self.populateInfoPopup(self.selectedLocation(), markers, self.infoPopup);
+		self.populateImageArray(location);
+		self.populateInfoDisplay(location);
+	});
+		
+			// for (var i = 0; i < self.markers.length; i++) {
+			// self.markers[i].setAnimation(null);
+			// }
+			// self.toggleBounce(this);
+			
+		// self.populateInfoPopup(this, location, self.infoPopup);
+		// self.populateImageArray(location);
+		// self.populateInfoDisplay(location);
+		
+
 
 	this.createMarkers = function(poi) {
 		
@@ -139,6 +173,11 @@ var ViewModel = function() {
 		};
 	};
 
+	var wikiInfo = '';
+
+	this.infoHeader = ko.observable();
+	this.infoBody = ko.observable();
+
 	this.callWikiAjax = function(location) {
 		$.ajax({
 			type: "GET",
@@ -151,16 +190,26 @@ var ViewModel = function() {
 				var markup = data.parse.text["*"];
 				var blurb = $('<div></div>').html(markup);
 				console.log(blurb);
-				$('#infoDisplayBody').html($(blurb).find('p'));
+				$(wikiInfo).html($(blurb).find('p'));
+				console.log($(wikiInfo));
+				
+				// console.log($(wikiInfo));
+				
+				// var use = function(content){
+				// 	content.forEach(function(p) {
+				// 		self.infoBody('<p>'+p.innerHTML+'</p>');
+				// 	});
+				// }(content);
+				
+				
+				// $(content:contains('<a href="/wiki/')).replace('<a href="https://en.wikipedia.org/wiki/');
+				// console.log(content);
 			},
 			error: function(errorMessage) {
 				$('#infoDisplayBody').html("<p><b>Oops... looks like the extra information failed to load. Please try again!</b></p>");
 			}
 		});
 	};
-
-	this.infoHeader = ko.observable();
-	this.infoBody = ko.observable();
 
 	this.populateInfoDisplay = function(object) {
 
@@ -171,6 +220,8 @@ var ViewModel = function() {
 		} else if (object.wiki) {
 			self.infoHeader(object.name);
 			self.callWikiAjax(object);
+			self.infoBody(wikiInfo);
+			console.log(self.infoBody());
 
 		} else if (object.onLoadInfo) {
 			self.infoHeader(object.title);
@@ -253,10 +304,9 @@ ko.applyBindings(vm);
 // Provide a conditional check on filterMarkers for where self.selectedArea is undefined (where "see all" is selected)
 	// Can I make 'see all' a category which has all the poi objects in?
 // Wiki links aren't working becuase they are relative. Use replace() to replace /wiki with full wiki url to make links work.
+// Wiki text not yet dispaying in the DOM
 
-// THIS NEXT
-// For all location details - use ko text binding to show in the DOM - not jQuery
-
+// IDEALLY
 // Issues var bounds should be a reuseable global variable instead of being created by both marker functions.
 
 // BUG When changing category the previous infoPop up does not close?!
