@@ -18,6 +18,7 @@ var ViewModel = function() {
 	this.selectedArea.subscribe(function() {
 		self.filterMarkers(self.selectedArea(), self.markers);
 		self.showAreaInfo(self.selectedArea());
+
 	});
 	// this.showMarkers = function(findArea) {
 	// 	// Clear all markers
@@ -104,7 +105,7 @@ var ViewModel = function() {
 				self.markers.push(marker);
 				marker.addListener('click', function() {
 					self.populateInfoPopup(this, location, self.infoPopup);
-					self.populateImageArea(location);
+					self.populateImageArray(location);
 					self.loadLocationInfo(location);
 					for (var i = 0; i < self.markers.length; i++) {
 						self.markers[i].setAnimation(null);
@@ -157,97 +158,118 @@ var ViewModel = function() {
 			});
 		}
 	};
+
+	this.imageArray = ko.observableArray([]);
+
+	
 	// To display images arrays relating to the area, or the specific location, or the initial load selection
-	this.populateImageArea = function(object) {
+	this.populateImageArray = function(object) {
 		$('#imageDisplay').empty();
-		var imgArray = [],
-			alt = '',
-			attrib = [];
-		// for object passed in from area
+		var imgDetails = {};
+
 		if (object.areaImages) {
-			imgArray = object.areaImages;
-			alt = 'Brighton ' + object.area;
-			imgArray.forEach(function(img) {
-				attrib.push('<a target="_blank" href="' + img.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
-			});
-			// for object passed in from location
+			object.areaImages.forEach (function(image) {
+				imgDetails.img = image.img;
+				imgDetails.attrib = image.attrib;
+				imgDetails.alt = "Photo of Brighton "+object.area;
+				self.imageArray.push(imgDetails);
+			})
+			
 		} else if (object.images) {
-			console.log(object.images);
-			imgArray = object.images;
-			// alt from 2 diffenet sources depending on licence	
-			if (object.images.alt) {
-				alt = object.images.alt;
-			} else {
-				alt = object.name;
-			}
-			imgArray.forEach(function(img) {
-				if (img.source) {
-					attrib.push('Image from venue <a target="_blank" href="' + img.source + '">Website</a>');
-				} else {
-					attrib.push('<a target="_blank" href="' + img.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
-				}
-			});
-			// for object passed in from initial load data object
+			object.images.forEach (function(image) {
+				imgDetails.img = image.img;
+				imgDetails.attrib = image.attrib;
+				imgDetails.alt = "Photo of "+object.name;
+				self.imageArray.push(imgDetails);
+			})
+	
 		} else if (object.photos) {
-			imgArray = object.photos;
-			alt = 'Brighton';
-			imgArray.forEach(function(img) {
-				attrib.push('<a target="_blank" href="' + img.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
-			});
-		}
-		// display images SHOULD BE DONE VIA KO IN VIEW
-		// CREATE AN OBSERVABLE ARRAY
-		for (var i = 0; i < imgArray.length; i++) {
-			$('#imageDisplay').append('<figure><img src="' + imgArray[i].img + '" class="img-responsive" alt="image of ' + alt + '"><figcaption>' + attrib[i] + '</figcaption></figure>');
-		}
+			object.photos.forEach (function(image) {
+				imgDetails.img = image.img;
+				imgDetails.attrib = image.attrib;
+				imgDetails.alt = "Photo of Brighton";
+				self.imageArray.push(imgDetails);
+			})
+		};
 	};
+		
+////// NOT THE BIT BELOW HERE - THIS IS OLD!! ///////////////
+	// 	$('#imageDisplay').empty();
+	// 	var imgArray = [],
+	// 		alt = '',
+	// 		attrib = [];
+	// 	// for object passed in from area
+	// 	if (object.areaImages) {
+	// 		imgArray = object.areaImages;
+	// 		alt = 'Brighton ' + object.area;
+	// 		imgArray.forEach(function(img) {
+	// 			attrib.push('<a target="_blank" href="' + img.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
+	// 		});
+	// 		// for object passed in from location
+	// 	} else if (object.images) {
+	// 		console.log(object.images);
+	// 		imgArray = object.images;
+	// 		// alt from 2 diffenet sources depending on licence	
+	// 		// if (object.images.alt) {
+	// 		// 	alt = object.images.alt;
+	// 		// } else {
+	// 		alt = object.name;
+	// 		// }
+	// 		imgArray.forEach(function(img) {
+	// 			// if (img.source) {
+	// 			// 	attrib.push('Image from venue <a target="_blank" href="' + img.source + '">Website</a>');
+	// 			// } else {
+	// 			attrib.push('<a target="_blank" href="' + img.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
+	// 			// }
+	// 		});
+	// 		// for object passed in from initial load data object
+	// 	} else if (object.photos) {
+	// 		imgArray = object.photos;
+	// 		alt = 'Brighton photo';
+	// 		imgArray.forEach(function(img) {
+	// 			attrib.push('<a target="_blank" href="' + img.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>');
+	// 		});
+	// 	}
+	// 	// display images SHOULD BE DONE VIA KO IN VIEW
+	// 	// CREATE AN OBSERVABLE ARRAY
+	// 	for (var i = 0; i < imgArray.length; i++) {
+	// 		$('#imageDisplay').append('<figure><img src="' + imgArray[i].img + '" class="img-responsive" alt="image of ' + alt + '"><figcaption>' + attrib[i] + '</figcaption></figure>');
+	// 	}
+	// };
 	// To display images and info relating to the area 
 	this.showAreaInfo = function(object) {
-		self.populateImageArea(object);
+		self.populateImageArray(object);
 		$('#infoDisplayHead, #infoDisplayBody').empty();
 		$('#infoDisplayHead').append('The ' + object.area);
 		$('#infoDisplayBody').append(object.infoContent);
 	};
 	// To display information in the info area from either wiki api or embeded yelp reviews
 	this.loadLocationInfo = function(location) {
-		if (!location.wiki && !location.yelp) {
-			return;
-		}
+		
 		$('#infoDisplayHead, #infoDisplayBody').empty();
-		$('#infoDisplayHead').append(location.name);
+		$('#infoDisplayHead').append(location.name+"<p style='text-decoration:underline'>Information displayed here is sourced from the encyclopedia of <a href='https://en.wikipedia.org/wiki/Main_Page'>Wikipedia</a></p>")
 		// Display wiki info for 3 of the 5 categories
-		if (location.wiki) {
-			// attribute wikipedia
-			$('#infoDisplayHead').append("<p style='text-decoration:underline'>Information displayed here is sourced from the encyclopedia of <a href='https://en.wikipedia.org/wiki/Main_Page'>Wikipedia</a></p>");
-			$.ajax({
-				type: "GET",
-				url: "http://en.wikipedia.org/w/api.php?action=parse&page=" + location.wiki + "&prop=text&format=json&callback=?",
-				contentType: "application/json; charset=utf-8",
-				async: true,
-				dataType: "json",
-				timeout: 8000,
-				success: function(data, textStatus, jqXHR) {
-					var markup = data.parse.text["*"];
-					var blurb = $('<div></div>').html(markup);
-					$('#infoDisplayBody').html($(blurb).find('p'));
-				},
-				error: function(errorMessage) {
-					$('#infoDisplayBody').html("<p><b>Oops... looks like the extra information failed to load. Please try again!</b></p>");
-				}
-			});
-		}
-		// Display embeded yelp review for nightlife area only
-		if (location.yelp) {
-			$('#infoDisplayHead').append("<p style='text-decoration:underline'>Information displayed here is sourced from the popular review site <a href='https://www.yelp.co.uk/'>Yelp</a></p>");
-			console.log(location.yelp);
-			for (var i = 0; i < location.yelp.length; i++) {
-				$('#infoDisplayBody').append('<div class="col-xs-12 col-sm-6">' + location.yelp[i] + '</div>');
+		$.ajax({
+			type: "GET",
+			url: "http://en.wikipedia.org/w/api.php?action=parse&page=" + location.wiki + "&prop=text&format=json&callback=?",
+			contentType: "application/json; charset=utf-8",
+			async: true,
+			dataType: "json",
+			timeout: 8000,
+			success: function(data, textStatus, jqXHR) {
+				var markup = data.parse.text["*"];
+				var blurb = $('<div></div>').html(markup);
+				$('#infoDisplayBody').html($(blurb).find('p'));
+			},
+			error: function(errorMessage) {
+				$('#infoDisplayBody').html("<p><b>Oops... looks like the extra information failed to load. Please try again!</b></p>");
 			}
-		}
+		});
 	};
+
 	// To display images and custom info content on initial load from onLoadInfo object
 	this.onLoadDisplay = function(onLoadInfo) {
-		self.populateImageArea(onLoadInfo);
+		self.populateImageArray(onLoadInfo);
 		$('#infoDisplayHead,  #infoDisplayBody').empty();
 		$('#infoDisplayHead').append('What makes Brighton cooler than an Eskimos sunglasses is...');
 		$('#infoDisplayBody').append(onLoadInfo.infoContent);
@@ -265,6 +287,7 @@ var ViewModel = function() {
 			zoom: 12
 		});
 		self.infoPopup = new google.maps.InfoWindow();
+		// self.bounds = new google.maps.LatLngBounds();
 		// Initially call showMarkers with filter as empty
 		// self.showMarkers(null);
 		self.createMarkers(poi);
@@ -289,6 +312,5 @@ ko.applyBindings(vm);
 
 // Issues var bounds should be a reuseable global variable instead of being created by both marker functions.
 
-
-
+// BUG When changing category the previous infoPop up does not close?!
 
