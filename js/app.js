@@ -73,8 +73,6 @@ var ViewModel = function() {
 	// 	self.map.fitBounds(bounds);
 	// };
 
-	
-
 	this.createMarkers = function(poi) {
 		
 		var bounds = new google.maps.LatLngBounds();
