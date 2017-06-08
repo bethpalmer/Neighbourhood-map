@@ -74,9 +74,9 @@
 <!-- ADDITIONAL INFO AREA -->
     <section class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h3 id="infoDisplayHead" class="text-center"></h3>
-                <div id="infoDisplayBody"></div>
+            <div class="col-sm-12" data-bind="with: $root">
+                <h3 id="infoDisplayHead" class="text-center" data-bind="text: infoHeader"></h3>
+                <div id="infoDisplayBody" data-bind="html: infoBody"></div>
             </div>
         </div>
     </section>
@@ -92,15 +92,6 @@
         </div>
     </footer>
 
-    <script>
-    
-        // Initialise function now handled in the ViewModel
-        // function initMap(){
-        //     vm.init();
-        // };  
-
-
-</script>
     <!-- jQuery -->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 
