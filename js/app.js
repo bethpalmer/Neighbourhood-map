@@ -293,8 +293,6 @@ var ViewModel = function() {
 var vm = new ViewModel();
 ko.applyBindings(vm);
 
-// TODO - Future amends
-// selecting a marker selects the category the marker belongs to and also allows all the other marker functionality to happen
 
 // TODO before resubmission
 // Provide a conditional check on filterMarkers for where self.selectedArea is undefined (where "see all" is selected)
@@ -306,3 +304,7 @@ ko.applyBindings(vm);
 // Issues var bounds should be a reuseable global variable instead of being created by both marker functions.
 
 // BUG When changing category the previous infoPop up does not close?!
+
+// TODO - Future amends
+// selecting a marker selects the category the marker belongs to and also allows all the other marker functionality to happen
+	// The problem with this was it stopped all the other marker functionality from happening - infoPopup, marker animation.
