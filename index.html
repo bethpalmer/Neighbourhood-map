@@ -55,7 +55,7 @@
         <div class="row">
             <div class="col-xs-12 text-right">
                 <ul class="nav-list" data-bind="foreach: locationList">
-                    <li data-bind="text: $data, click: $parent.locationListClick, css: { selected: $parent.selectedLocation() == $data }"></li>
+                    <li data-bind="text: name, click: $parent.locationListClick, css: { selected: $parent.selectedLocation() == $data }"></li>
                 </ul>
             </div>
         </div>

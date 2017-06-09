@@ -20,16 +20,16 @@ var ViewModel = function() {
 	this.populateLocationList = function(locations) {
 		self.locationList([]);
 		locations.forEach(function(location) {
-			self.locationList.push(location.name);
+			self.locationList.push(location);
 		});
 	};
 
 	// Observe when the selectedArea changes and show markers and area info specific to that area
 	this.selectedArea.subscribe(function() {
-		// self.populateLocationList(self.selectedArea().locations);
-		// self.filterMarkers(self.selectedArea(), self.markers);
-		// self.populateInfoDisplay(self.selectedArea());
-		// self.populateImageArray(self.selectedArea());
+		self.populateLocationList(self.selectedArea().locations);
+		self.filterMarkers(self.selectedArea(), self.markers);
+		self.populateInfoDisplay(self.selectedArea());
+		self.populateImageArray(self.selectedArea());
 
 	});
 
@@ -39,10 +39,11 @@ var ViewModel = function() {
 		self.selectedLocation(clicked);
 	};
 
-	this.selectedLocation.subscribe(function(markers) {
-		self.populateInfoPopup(self.selectedLocation(), markers, self.infoPopup);
-		self.populateImageArray(location);
-		self.populateInfoDisplay(location);
+	this.selectedLocation.subscribe(function() {
+		console.log(self.selectedLocation());
+		// self.populateInfoPopup(self.markers, self.selectedLocation(), self.infoPopup);
+		self.populateImageArray(self.selectedLocation());
+		self.populateInfoDisplay(self.selectedLocation());
 	});
 		
 			// for (var i = 0; i < self.markers.length; i++) {
