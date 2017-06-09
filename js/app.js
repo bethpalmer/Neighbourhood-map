@@ -30,6 +30,8 @@ var ViewModel = function() {
 		self.filterMarkers(self.selectedArea(), self.markers);
 		self.populateInfoDisplay(self.selectedArea());
 		self.populateImageArray(self.selectedArea());
+		// self.closeInfoPopup(self.infoPopup);
+		// self.closeInfoPopup();
 
 	});
 
@@ -125,11 +127,18 @@ var ViewModel = function() {
 			infoPopup.setContent('<h5>' + marker.title + '</h5><figure><img src="' + marker.image + '" alt="image of "' + alt + '><figcaption>' + marker.attrib + '</figcaption></figure>');
 			infoPopup.open(self.map, marker);
 			// Clear marker property when infoPopup is closed
-			infoPopup.addListener('closeclilck', function() {
+			infoPopup.addListener('closeclick', function() {
 				infoPopup.setMarker(null);
 			});
+			// self.closeInfoPopup(infoPopup);
 		}
 	};
+
+	// this.closeInfoPopup = function(infoPopup) {
+	// 	infoPopup.addListener('closeclick', function() {
+	// 		infoPopup.setMarker(null);
+	// 	});
+	// };
 
 	this.imageArray = ko.observableArray([]);
 
@@ -275,9 +284,6 @@ var ViewModel = function() {
 			zoom: 12
 		});
 		self.infoPopup = new google.maps.InfoWindow();
-		// self.bounds = new google.maps.LatLngBounds();
-		// Initially call showMarkers with filter as empty
-		// self.showMarkers(null);
 		self.createMarkers(poi);
 		self.populateInfoDisplay(onLoadGet);
 		self.populateImageArray(onLoadGet);
@@ -291,7 +297,6 @@ ko.applyBindings(vm);
 // selecting a marker selects the category the marker belongs to and also allows all the other marker functionality to happen
 
 // TODO before resubmission
-// Create a list which then shows each of the areas within that list 
 // Provide a conditional check on filterMarkers for where self.selectedArea is undefined (where "see all" is selected)
 	// Can I make 'see all' a category which has all the poi objects in?
 // Wiki links aren't working becuase they are relative. Use replace() to replace /wiki with full wiki url to make links work.
@@ -301,60 +306,3 @@ ko.applyBindings(vm);
 // Issues var bounds should be a reuseable global variable instead of being created by both marker functions.
 
 // BUG When changing category the previous infoPop up does not close?!
-
-
-// FOR REFERENCE
-	// this.showMarkers = function(findArea) {
-	// 	// Clear all markers
-	// 	for (var i = 0; i < self.markers.length; i++) {
-	// 		self.markers[i].setMap(null);
-	// 	}
-	// 	// Clear array - not strictly necessary but will stop array getting clogged up with markers
-	// 	self.markers = [];
-	// 	// Add markers
-	// 	var bounds = new google.maps.LatLngBounds();
-		
-	// 	// Argument of area here is referring to the whole object
-	// 	// When showMarkers function is called initially in the init function, it is passed an argument of null, so will show markers in all areas
-	// 	// Otherwise filter for where the object area, area property, is equal to the area passed in by the selectedArea.
-
-	// 	poi.forEach(function(area) {
-			
-	// 		if (findArea === null || findArea.area == area.area) {
-	// 			// For each location within the filtered area
-	// 			area.locations.forEach(function(location) {
-	// 				// Set the attribution to image source if it has one or else attribution is source is absent
-	// 				var attrib = '';
-	// 				if (location.mainImage.source) {
-	// 					attrib = 'Image from venue <a target="_blank" href="' + location.mainImage.source + '">Website</a>';
-	// 				} else {
-	// 					attrib = '<a target="_blank" href="' + location.mainImage.attrib + '">Photo</a> licenced under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC</a>';
-	// 				}
-	// 				// Make markers
-	// 				var marker = new google.maps.Marker({
-	// 					map: self.map,
-	// 					position: location.location,
-	// 					title: location.name,
-	// 					image: location.mainImage.img,
-	// 					attrib: attrib,
-	// 					animation: google.maps.Animation.DROP
-	// 				});
-	// 				bounds.extend(location.location);
-	// 				// Push markers to markers array
-	// 				self.markers.push(marker);
-	// 				marker.addListener('click', function() {
-	// 					self.populateInfoPopup(this, location, self.infoPopup);
-	// 					self.populateImageArea(location);
-	// 					self.loadLocationInfo(location);
-	// 					// Clear any previous individual marker animation before animating the current clicked marker
-	// 					for (var i = 0; i < self.markers.length; i++) {
-	// 						self.markers[i].setAnimation(null);
-	// 					}
-	// 					self.toggleBounce(this);
-	// 				});
-	// 			});
-	// 		}
-	// 	});
-	// 	self.map.fitBounds(bounds);
-	// };
-
