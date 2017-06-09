@@ -40,27 +40,10 @@ var ViewModel = function() {
 	};
 
 	this.selectedLocation.subscribe(function() {
-		console.log(self.selectedLocation());
-		// self.populateInfoPopup(self.markers, self.selectedLocation(), self.infoPopup);
 		self.clickMarker(self.selectedLocation(), self.markers);
 		self.populateImageArray(self.selectedLocation());
 		self.populateInfoDisplay(self.selectedLocation());
-	// 	for (var i = 0; i < self.markers.length; i++) {
-	// 		self.markers[i].setAnimation(null);
-	// 	}
-	// 	self.toggleBounce(self.marker);
 	});
-		
-			// for (var i = 0; i < self.markers.length; i++) {
-			// self.markers[i].setAnimation(null);
-			// }
-			// self.toggleBounce(this);
-			
-		// self.populateInfoPopup(this, location, self.infoPopup);
-		// self.populateImageArray(location);
-		// self.populateInfoDisplay(location);
-		
-
 
 	this.createMarkers = function(poi) {
 		
@@ -90,18 +73,13 @@ var ViewModel = function() {
 				bounds.extend(location.location);
 				self.markers.push(marker);
 				marker.addListener('click', function() {
-					self.populateInfoPopup(this, location, self.infoPopup);
+					self.clickMarker(location, self.markers);
 					self.populateImageArray(location);
 					self.populateInfoDisplay(location);
-					for (var i = 0; i < self.markers.length; i++) {
-						self.markers[i].setAnimation(null);
-					}
-					self.toggleBounce(this);
 				})
 			})
 		});
 		self.map.fitBounds(bounds);
-		// console.log(self.markers);
 	};
 
 	this.filterMarkers = function(selectedArea, markers) {
@@ -109,12 +87,10 @@ var ViewModel = function() {
 		markers.forEach(function(marker) {
 			marker.setVisible(false);
 			
-			console.log(marker);
 			if (selectedArea.area == marker.area) {
 				marker.setVisible(true);
 				bounds.extend(marker.position);
 			};
-
 		});
 		self.map.fitBounds(bounds);
 	};
