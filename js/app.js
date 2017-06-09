@@ -42,8 +42,13 @@ var ViewModel = function() {
 	this.selectedLocation.subscribe(function() {
 		console.log(self.selectedLocation());
 		// self.populateInfoPopup(self.markers, self.selectedLocation(), self.infoPopup);
+		self.clickMarker(self.selectedLocation(), self.markers);
 		self.populateImageArray(self.selectedLocation());
 		self.populateInfoDisplay(self.selectedLocation());
+	// 	for (var i = 0; i < self.markers.length; i++) {
+	// 		self.markers[i].setAnimation(null);
+	// 	}
+	// 	self.toggleBounce(self.marker);
 	});
 		
 			// for (var i = 0; i < self.markers.length; i++) {
@@ -104,10 +109,7 @@ var ViewModel = function() {
 		markers.forEach(function(marker) {
 			marker.setVisible(false);
 			
-			// if (marker.area !==selectedArea) {
-			// 	console.log("Not equal");
-			// };
-
+			console.log(marker);
 			if (selectedArea.area == marker.area) {
 				marker.setVisible(true);
 				bounds.extend(marker.position);
@@ -115,6 +117,18 @@ var ViewModel = function() {
 
 		});
 		self.map.fitBounds(bounds);
+	};
+
+	this.clickMarker = function(selectedLocation, markers) {
+		for (var i = 0; i < self.markers.length; i++) {
+			self.markers[i].setAnimation(null);
+		}
+		markers.forEach(function(marker) {
+			if (selectedLocation.name == marker.title) {
+				self.populateInfoPopup(marker, selectedLocation, self.infoPopup);
+				self.toggleBounce(marker);
+			}
+		})
 	};
 
 	// Animate individual clicked marker
