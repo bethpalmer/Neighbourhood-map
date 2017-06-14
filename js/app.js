@@ -17,17 +17,19 @@ var ViewModel = function() {
 
 	this.locationList = ko.observableArray([]);
 
-	this.populateLocationList = function(locations) {
+	this.populateLocationList = function(area) {
 		self.locationList([]);
-		locations.forEach(function(location) {
-			self.locationList.push(location);
-		});
+		if (area) {
+			area.locations.forEach(function(location) {
+				self.locationList.push(location);
+			});
+		}
 	};
 
 	// Observe when the selectedArea changes and show markers and area info specific to that area
 	this.selectedArea.subscribe(function() {
-		self.populateLocationList(self.selectedArea().locations);
-		self.filterMarkers(self.selectedArea(), self.markers);
+		self.populateLocationList(self.selectedArea());
+		self.filterMarkers(self.selectedArea());
 		self.populateInfoDisplay(self.selectedArea());
 		self.populateImageArray(self.selectedArea());
 		self.infoPopup.close();
@@ -43,14 +45,12 @@ var ViewModel = function() {
 	};
 
 	this.selectedLocation.subscribe(function() {
-		self.clickMarker(self.selectedLocation(), self.markers);
+		self.clickMarker(self.selectedLocation());
 		self.populateImageArray(self.selectedLocation());
 		self.populateInfoDisplay(self.selectedLocation());
 	});
 
 	this.createMarkers = function(poi) {
-		
-		var bounds = new google.maps.LatLngBounds();
 		
 		self.markers = [];
 		
@@ -73,36 +73,35 @@ var ViewModel = function() {
 					area: area.area,
 					animation: google.maps.Animation.DROP
 				});
-				bounds.extend(location.location);
 				self.markers.push(marker);
 				marker.addListener('click', function() {
-					self.clickMarker(location, self.markers);
+					self.clickMarker(location);
 					self.populateImageArray(location);
 					self.populateInfoDisplay(location);
 				})
 			})
 		});
-		self.map.fitBounds(bounds);
 	};
 
-	this.filterMarkers = function(selectedArea, markers) {
+	this.filterMarkers = function(selectedArea) {
 		var bounds = new google.maps.LatLngBounds();
-		markers.forEach(function(marker) {
-			marker.setVisible(false);
-			
-			if (selectedArea.area == marker.area) {
+		self.markers.forEach(function(marker) {
+
+			if (!selectedArea || selectedArea.area == marker.area) {
 				marker.setVisible(true);
 				bounds.extend(marker.position);
-			};
+			} else {
+				marker.setVisible(false);;
+			}
 		});
 		self.map.fitBounds(bounds);
 	};
 
-	this.clickMarker = function(selectedLocation, markers) {
+	this.clickMarker = function(selectedLocation) {
 		for (var i = 0; i < self.markers.length; i++) {
 			self.markers[i].setAnimation(null);
 		}
-		markers.forEach(function(marker) {
+		self.markers.forEach(function(marker) {
 			if (selectedLocation.name == marker.title) {
 				self.populateInfoPopup(marker, selectedLocation, self.infoPopup);
 				self.toggleBounce(marker);
@@ -148,6 +147,10 @@ var ViewModel = function() {
 		$('#imageDisplay').empty();
 		var imgDetails = {};
 
+		if (!object) {
+			object = onLoadGet;
+		}
+
 		if (object.areaImages) {
 			object.areaImages.forEach (function(image) {
 				imgDetails.img = image.img;
@@ -179,7 +182,7 @@ var ViewModel = function() {
 	this.infoHeader = ko.observable();
 	this.infoBody = ko.observable();
 
-	this.callWikiAjax = function(location) {
+	this.callWikiAjax = function(location, callback) {
 		$.ajax({
 			type: "GET",
 			url: "http://en.wikipedia.org/w/api.php?action=parse&page=" + location.wiki + "&prop=text&format=json&callback=?",
@@ -189,10 +192,14 @@ var ViewModel = function() {
 			timeout: 8000,
 			success: function(data, textStatus, jqXHR) {
 				var markup = data.parse.text["*"];
-				var blurb = $('<div></div>').html(markup);
-				console.log(blurb);
-				$(wikiInfo).html($(blurb).find('p'));
-				console.log($(wikiInfo));
+				var paragraphs = $(markup).find('p');
+				var html = $('<div></div>').append(paragraphs).html();
+				html = html.split('<a href="/').join('<a href="http://wikipedia.org/');
+
+				callback(html);
+
+				// self.wikiInfo.html();
+				// console.log(self.wikiInfo);
 				
 				// console.log($(wikiInfo));
 				
@@ -207,12 +214,16 @@ var ViewModel = function() {
 				// console.log(content);
 			},
 			error: function(errorMessage) {
-				$('#infoDisplayBody').html("<p><b>Oops... looks like the extra information failed to load. Please try again!</b></p>");
+				callback("<p><b>Oops... looks like the extra information failed to load. Please try again!</b></p>");
 			}
 		});
 	};
 
 	this.populateInfoDisplay = function(object) {
+
+		if (!object) {
+			object = onLoadGet;
+		};
 
 		if (object.infoContent) {
 			self.infoHeader("The "+object.area);
@@ -220,9 +231,13 @@ var ViewModel = function() {
 		
 		} else if (object.wiki) {
 			self.infoHeader(object.name);
-			self.callWikiAjax(object);
-			self.infoBody(wikiInfo);
-			console.log(self.infoBody());
+			self.callWikiAjax(object, function(result) {
+				self.infoBody(result);
+			});
+			
+			// var wiki = self.wikiInfo.html($(blurb).find('p'));
+			// self.infoBody(self.wikiInfo);
+			console.log(self.wikiInfo);
 
 		} else if (object.onLoadInfo) {
 			self.infoHeader(object.title);
@@ -286,8 +301,9 @@ var ViewModel = function() {
 		});
 		self.infoPopup = new google.maps.InfoWindow();
 		self.createMarkers(poi);
-		self.populateInfoDisplay(onLoadGet);
-		self.populateImageArray(onLoadGet);
+		self.filterMarkers();
+		self.populateInfoDisplay();
+		self.populateImageArray();
 	};
 };
 // Variable can be accessed easily from outside of this object
@@ -295,16 +311,10 @@ var vm = new ViewModel();
 ko.applyBindings(vm);
 
 
-// TODO before resubmission
-// Provide a conditional check on filterMarkers for where self.selectedArea is undefined (where "see all" is selected)
-	// Can I make 'see all' a category which has all the poi objects in?
-// Wiki links aren't working becuase they are relative. Use replace() to replace /wiki with full wiki url to make links work.
-// Wiki text not yet dispaying in the DOM
-
-// IDEALLY
-// Issues var bounds should be a reuseable global variable instead of being created by both marker functions.
-
 
 // TODO - Future amends
 // selecting a marker selects the category the marker belongs to and also allows all the other marker functionality to happen
 	// The problem with this was it stopped all the other marker functionality from happening - infoPopup, marker animation.
+
+
+	
