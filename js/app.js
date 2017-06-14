@@ -30,6 +30,7 @@ var ViewModel = function() {
 		self.filterMarkers(self.selectedArea(), self.markers);
 		self.populateInfoDisplay(self.selectedArea());
 		self.populateImageArray(self.selectedArea());
+		self.infoPopup.close();
 		// self.closeInfoPopup(self.infoPopup);
 		// self.closeInfoPopup();
 
@@ -303,7 +304,6 @@ ko.applyBindings(vm);
 // IDEALLY
 // Issues var bounds should be a reuseable global variable instead of being created by both marker functions.
 
-// BUG When changing category the previous infoPop up does not close?!
 
 // TODO - Future amends
 // selecting a marker selects the category the marker belongs to and also allows all the other marker functionality to happen
