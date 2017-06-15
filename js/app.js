@@ -28,41 +28,30 @@ var ViewModel = function() {
 
     // This populates the secondary list in the UI
     this.locationList = ko.observableArray([]);
-
+    // This always holds all areas objects with location objects nested
     this.locationsArray = [];
 
-    // console.log(self.areaList());
-    // console.log(self.locationList()); // What doesn't work about this list is it doesn't know to which object each thing belongs...
-
-	poi.forEach(function(area) {
-    	area.locations.forEach(function(location){
-    		self.locationsArray.push(location);
-    	});
+    poi.forEach(function(area) {
+        area.locations.forEach(function(location) {
+            self.locationsArray.push(location);
+        });
     });
-    
+
 
     this.populateLocationList = function(area) {
         if (!area) {
-        	self.locationList(self.locationsArray);
+            // Go back to the original array with all objects
+            self.locationList(self.locationsArray);
         }
 
         if (area) {
-        	 // LOCATIONS LIST NEEDS TO HAVE PARENT PROPERTIES SO I CAN FILTER MY AREA NAME. ESSENTIALLY THIS SHOULD BE A BIT LIKE FILTER MARKERS?
-        	console.log(area);
-        	// Empty array
-	        self.locationList([]);
-	     //    if (area == self.locationList.name // I need to check if selectedArea is equal to poi.area and if it is then set visibility to true on poi.area.locations else false on everything else
-		    //     self.locationList().forEach(function() {
-		    //     	self.locationList().style.visibility = 'hidden';
-		    //     })
-	        
-    		area.locations.forEach(function(location) {
+            // Empty observable array
+            self.locationList([]);
+            // Add only the locations of the provided area
+            area.locations.forEach(function(location) {
                 self.locationList.push(location);
-                // this.location.style.visibility = 'visible';
             });
-            console.log(self.locationList());
-
-	    }
+        }
     };
 
     this.selectedLocation = ko.observable();
@@ -127,8 +116,9 @@ var ViewModel = function() {
         self.map.fitBounds(bounds);
     };
 
-    // Called by the create markers, marker click() as well as the selectedLocation()
+    // Called by the create markers, marker click() as well as the selectedLocation.subscribe
     this.clickMarker = function(selectedLocation) {
+        // Cancel any bouncing
         for (var i = 0; i < self.markers.length; i++) {
             self.markers[i].setAnimation(null);
         }
@@ -196,7 +186,6 @@ var ViewModel = function() {
         }
     };
 
-    // var wikiInfo = '';
     // To display info in the bottom info section
     this.infoHeader = ko.observable();
     this.infoBody = ko.observable();
@@ -243,7 +232,7 @@ var ViewModel = function() {
                 // returns the html via the callback()
                 self.infoBody(result);
             });
-            // Initial load data	
+            // Initial load data    
         } else if (object.onLoadInfo) {
             self.infoHeader(object.title);
             self.infoBody(object.onLoadInfo);
@@ -268,7 +257,6 @@ var ViewModel = function() {
         self.populateInfoDisplay();
         self.populateImageArray();
         self.locationList(self.locationsArray);
-        // self.displayAllLocations();
     };
 };
 // Variable can be accessed easily from outside of this object
