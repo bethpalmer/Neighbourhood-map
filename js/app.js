@@ -29,15 +29,36 @@ var ViewModel = function() {
     // This populates the secondary list in the UI
     this.locationList = ko.observableArray([]);
 
+	poi.forEach(function(area) {
+    	area.locations.forEach(function(location){
+    		self.locationList.push(location);
+    	});
+    });
+
+    console.log(self.locationList());
+    
+
     this.populateLocationList = function(area) {
-        // Empty array
-        self.locationList([]);
-        // if no area then leave the array empty (see all..)
+        // if (!area) {
+        // 	self.locationList.style.visibility = 'visible';
+        // }
+
         if (area) {
-            area.locations.forEach(function(location) {
-                self.locationList.push(location);
-            });
-        }
+        	console.log(self.locationList()); // LOCATIONS LIST NEEDS TO HAVE PARENT PROPERTIES SO I CAN FILTER MY AREA NAME. ESSENTIALLY THIS SHOULD BE A BIT LIKE FILTER MARKERS?
+        	console.log(area);
+        	// Empty array
+	        // self.locationList([]);
+	     //    if (area == self.locationList.name // I need to check if selectedArea is equal to poi.area and if it is then set visibility to true on poi.area.locations else false on everything else
+		    //     self.locationList().forEach(function() {
+		    //     	self.locationList().style.visibility = 'hidden';
+		    //     })
+	        
+    		// area.locations.forEach(function(location) {
+      //           // self.locationList.push(location);
+      //           this.location.style.visibility = 'visible';
+      //       });
+
+	    }
     };
 
     this.selectedLocation = ko.observable();
@@ -136,7 +157,8 @@ var ViewModel = function() {
     this.imageArray = ko.observableArray([]);
 
     this.populateImageArray = function(object) {
-        $('#imageDisplay').empty();
+        // empty array
+        self.imageArray([]);
         var imgDetails = {};
 
         // If no object is passed in - undefined (see all...) - get initial load data
@@ -241,6 +263,7 @@ var ViewModel = function() {
         self.filterMarkers();
         self.populateInfoDisplay();
         self.populateImageArray();
+        // self.displayAllLocations();
     };
 };
 // Variable can be accessed easily from outside of this object
