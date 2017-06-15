@@ -21,7 +21,7 @@ var ViewModel = function() {
         self.filterMarkers(self.selectedArea());
         self.populateInfoDisplay(self.selectedArea());
         self.populateImageArray(self.selectedArea());
-        // The info window only closes for another window to open. When you click a new area it also needs to close.
+        // The info window only closes when another infowindow opens. When you click a new area it also needs to close.
         self.infoPopup.close();
 
     });
@@ -29,34 +29,38 @@ var ViewModel = function() {
     // This populates the secondary list in the UI
     this.locationList = ko.observableArray([]);
 
+    this.locationsArray = [];
+
+    // console.log(self.areaList());
+    // console.log(self.locationList()); // What doesn't work about this list is it doesn't know to which object each thing belongs...
+
 	poi.forEach(function(area) {
     	area.locations.forEach(function(location){
-    		self.locationList.push(location);
+    		self.locationsArray.push(location);
     	});
     });
-
-    console.log(self.locationList());
     
 
     this.populateLocationList = function(area) {
-        // if (!area) {
-        // 	self.locationList.style.visibility = 'visible';
-        // }
+        if (!area) {
+        	self.locationList(self.locationsArray);
+        }
 
         if (area) {
-        	console.log(self.locationList()); // LOCATIONS LIST NEEDS TO HAVE PARENT PROPERTIES SO I CAN FILTER MY AREA NAME. ESSENTIALLY THIS SHOULD BE A BIT LIKE FILTER MARKERS?
+        	 // LOCATIONS LIST NEEDS TO HAVE PARENT PROPERTIES SO I CAN FILTER MY AREA NAME. ESSENTIALLY THIS SHOULD BE A BIT LIKE FILTER MARKERS?
         	console.log(area);
         	// Empty array
-	        // self.locationList([]);
+	        self.locationList([]);
 	     //    if (area == self.locationList.name // I need to check if selectedArea is equal to poi.area and if it is then set visibility to true on poi.area.locations else false on everything else
 		    //     self.locationList().forEach(function() {
 		    //     	self.locationList().style.visibility = 'hidden';
 		    //     })
 	        
-    		// area.locations.forEach(function(location) {
-      //           // self.locationList.push(location);
-      //           this.location.style.visibility = 'visible';
-      //       });
+    		area.locations.forEach(function(location) {
+                self.locationList.push(location);
+                // this.location.style.visibility = 'visible';
+            });
+            console.log(self.locationList());
 
 	    }
     };
