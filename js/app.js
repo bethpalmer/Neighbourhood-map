@@ -267,6 +267,7 @@ var ViewModel = function() {
         self.filterMarkers();
         self.populateInfoDisplay();
         self.populateImageArray();
+        self.locationList(self.locationsArray);
         // self.displayAllLocations();
     };
 };
